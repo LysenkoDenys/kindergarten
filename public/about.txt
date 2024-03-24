@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Stick
+- Font Author: Copyright 2020 The Stick Project Authors (https://github.com/fontworks-fonts/Stick/)
+- Font Source: https://fonts.gstatic.com/s/stick/v17/Qw3TZQpMCyTtJSvfvPVDMPoF.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
