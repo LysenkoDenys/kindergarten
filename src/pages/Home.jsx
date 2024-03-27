@@ -10,6 +10,12 @@ const Home = () => {
 
   const date = new Date();
   const currentDate = date.toISOString().split('T')[0];
+
+  const handleListOfMainOne = () => {
+    groupMates.map((el) => `<div>${el.lastName} ${el.firstName}</div>`);
+  };
+
+  console.log(handleListOfMainOne); //
   return (
     <section className="select-none">
       <h1 className="text-3xl font-bold text-center mb-3 mt-3">
@@ -19,12 +25,12 @@ const Home = () => {
         <article>
           <h3 className="text-xl font-bold">Загальна інформація.</h3>
           <p>
-            &ensp; Станом на {currentDate} садочок "Березка" м.Нова Самарь
-            розформовано та існує тільки в наших спогадах.
+            &ensp; Станом на {currentDate} садочок "Березка" м.Самар (був.
+            Новомосковськ) розформовано та існує тільки в наших спогадах.
           </p>
           <p>
-            &ensp; Протягом терміну виховання крізь групу пройшло щонайменьше {}
-            {groupMates.length} визначені особистості (цифра не остаточна):
+            &ensp; Протягом терміну виховання крізь групу пройшло щонайменше {}
+            {groupMates.length} особистості (цифра ще не остаточна):
           </p>
           <ul className="ml-6">
             <li>
@@ -38,10 +44,30 @@ const Home = () => {
             </li>
           </ul>
           <p>
-            &ensp; Частину одногрупників (27 осіб) представлено на фото нижче:
+            &ensp; Частину одногрупників (27 осіб) представлено на фото
+            святкування Нового Року нижче:
           </p>
-          <div className="flex justify-center items-center flex-col">
-            <img src={require('../assets/main-01.jpg')} alt="my group mates" />
+          <div className="flex items-center flex-col">
+            <img
+              src={require('../assets/main-01.jpg')}
+              alt="my group mates 01"
+            />
+            <button
+              className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg"
+              onClick={handleListOfMainOne}
+            >
+              Перелік одногрупників на фото
+            </button>
+          </div>
+          <p>
+            &ensp; Частину одногрупників (20 осіб) представлено на фото якогось
+            саята влітку нижче:
+          </p>
+          <div className="flex items-center flex-col">
+            <img
+              src={require('../assets/main-02.jpg')}
+              alt="my group mates 02"
+            />
             <button className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg">
               Перелік одногрупників на фото
             </button>
