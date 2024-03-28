@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md'; //<MdDarkMode />    <MdOutlineDarkMode />
 import Hamburger from './Hamburger';
+import { useTheme, useThemeUpdate } from '../../ThemeContext';
 import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
@@ -10,10 +12,33 @@ const MainNavigation = () => {
     setHamburgerOpen(!hamburgerOpen);
   };
 
+  // theme=================================
+  const darkTheme = useTheme();
+  const toggleTheme = useThemeUpdate();
+
+  const themeStyles = {
+    backgroundColor: darkTheme ? '#333' : '#CCC',
+    color: darkTheme ? '#CCC' : '#333',
+  };
+  // theme=================================
+
   return (
-    <header className={classes.header}>
-      <div className={classes.logo}>
+    <header className={classes.header} style={themeStyles}>
+      <div className="font-[2rem] font-bold">
         <Link to="/">Berezka</Link>
+      </div>
+      <div className="">
+        {darkTheme ? (
+          <MdDarkMode
+            onClick={toggleTheme}
+            className="cursor-pointer text-[30px]"
+          />
+        ) : (
+          <MdOutlineDarkMode
+            onClick={toggleTheme}
+            className="cursor-pointer text-[30px]"
+          />
+        )}
       </div>
       <nav className="navigation">
         <ul>
@@ -62,7 +87,7 @@ const MainNavigation = () => {
 
           .navigation ul {
             display: ${hamburgerOpen ? 'inline' : 'none'};
-            background-color: #fcce09;
+            background-color: #878477;
             border-radius: 3px;
             padding-right: 20px;
             position: fixed;

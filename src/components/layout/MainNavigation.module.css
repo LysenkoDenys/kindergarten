@@ -20,12 +20,6 @@
   z-index: 50;
 }
 
-.logo {
-  font-size: 2rem;
-  color: #000000;
-  font-weight: bold;
-}
-
 .header ul {
   list-style: none;
   margin: 0;
