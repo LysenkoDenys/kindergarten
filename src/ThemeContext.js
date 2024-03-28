@@ -14,6 +14,12 @@ const getTheme = () => {
     localStorage.setItem('theme', false);
     return false;
   } else {
+    console.log(typeof theme); //
+    if (theme === 'false') {
+      document.body.style.backgroundColor = 'white';
+    } else {
+      document.body.style.backgroundColor = 'black';
+    }
     return theme === 'true' ? true : false;
   }
 };

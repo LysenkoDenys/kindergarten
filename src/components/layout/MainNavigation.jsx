@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md'; //<MdDarkMode />    <MdOutlineDarkMode />
+import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md'; //<MdDarkMode />    <MdOutlineDarkMode />
 import Hamburger from './Hamburger';
 import { useTheme, useThemeUpdate } from '../../ThemeContext';
 import classes from './MainNavigation.module.css';
@@ -17,8 +17,13 @@ const MainNavigation = () => {
   const toggleTheme = useThemeUpdate();
 
   const themeStyles = {
-    backgroundColor: darkTheme ? '#333' : '#CCC',
+    backgroundColor: darkTheme
+      ? 'rgba(0, 0, 0, 0.5)'
+      : 'rgba(204, 204, 204, 0.5)',
     color: darkTheme ? '#CCC' : '#333',
+    boxShadow: darkTheme
+      ? '5px 5px 10px rgba(255, 255, 255, 0.9)'
+      : '5px 5px 10px rgba(0, 0, 0, 0.5)',
   };
   // theme=================================
 
@@ -29,12 +34,12 @@ const MainNavigation = () => {
       </div>
       <div className="">
         {darkTheme ? (
-          <MdDarkMode
+          <MdOutlineLightMode
             onClick={toggleTheme}
             className="cursor-pointer text-[30px]"
           />
         ) : (
-          <MdOutlineDarkMode
+          <MdDarkMode
             onClick={toggleTheme}
             className="cursor-pointer text-[30px]"
           />
@@ -87,7 +92,7 @@ const MainNavigation = () => {
 
           .navigation ul {
             display: ${hamburgerOpen ? 'inline' : 'none'};
-            background-color: #878477;
+            background-color: rgba(204, 204, 204, 0.5);
             border-radius: 3px;
             padding-right: 20px;
             position: fixed;

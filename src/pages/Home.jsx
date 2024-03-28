@@ -26,10 +26,17 @@ const Home = () => {
     color: darkTheme ? '#CCC' : '#333',
   };
 
+  const themeStyles2 = {
+    color: darkTheme ? '#CCC' : '#333',
+  };
+
   // style={themeStyles}
   return (
     <section className="select-none">
-      <h1 className="text-3xl font-bold text-center mb-3 mt-3">
+      <h1
+        className="text-3xl font-bold text-center mb-3 mt-3"
+        style={themeStyles2}
+      >
         Група 1979-1980 років народження.
       </h1>
       <div
@@ -37,24 +44,37 @@ const Home = () => {
         style={themeStyles}
       >
         <article>
-          <h3 className="text-xl font-bold">Загальна інформація.</h3>
+          <h3 className="text-xl font-bold text-center">
+            Загальна інформація.
+          </h3>
           <p>
             &ensp; Станом на {currentDate} (через <strong>{yearsPassed}</strong>{' '}
             років після випуску нашої групи) садочок "Березка" м. Самар (був.
             Новомосковськ) розформовано та існує тільки в наших спогадах.
           </p>
+          <hr className="mt-2" />
+          <p className="text-center mb-2 mt-2">
+            <strong>
+              &ensp; DISCLAIMER: контент даного застосунку засновано на подіях,
+              які згадує автор і носить розважальний характер. В разі виникнення
+              пропозицій, доповнень, прохання надати Ваші спогади,
+              фото-матеріали, тощо для розміщення в даному застосунку. Реквізити
+              автора надані нижче.
+            </strong>
+          </p>
+          <hr className="mb-2" />
           <p>
             &ensp; Протягом терміну виховання крізь групу пройшло щонайменше {}
             {groupMates.length} особистості (цифра ще не остаточна):
           </p>
           <ul className="ml-6">
             <li>
-              <TbGenderDemiboy className="inline-block" />
+              <TbGenderDemiboy className="inline-block text-[25px]" />
               хлопчиків: {malesQty} ({malesQtyDeg}%);
             </li>
 
             <li>
-              <TbGenderDemigirl className="inline-block" />
+              <TbGenderDemigirl className="inline-block text-[25px]" />
               дівчаток: {femalesQty} ({femalesQtyDeg}%);
             </li>
           </ul>
@@ -106,7 +126,9 @@ const Home = () => {
         style={themeStyles}
       >
         <article>
-          <h3 className="text-xl font-bold">Додаткова інформація.</h3>
+          <h3 className="text-xl font-bold text-center">
+            Додаткова інформація.
+          </h3>
           <p>&ensp; Основні виховательки:</p>
           <ul>
             <li>Валентина Василівна;</li>
