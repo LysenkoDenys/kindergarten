@@ -28,26 +28,30 @@ const MainNavigation = () => {
   // theme=================================
 
   return (
+    // className="w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0"
+
     <header className={classes.header} style={themeStyles}>
-      <div className="font-[2rem] font-bold">
+      <div className="font-[2rem] font-bold hover:scale-125 ease-in-out duration-300">
         <Link to="/">Berezka</Link>
       </div>
       <div className="">
         {darkTheme ? (
           <MdOutlineLightMode
             onClick={toggleTheme}
-            className="cursor-pointer text-[30px]"
+            className="cursor-pointer text-[30px] hover:scale-125 ease-in-out duration-300"
           />
         ) : (
           <MdDarkMode
             onClick={toggleTheme}
-            className="cursor-pointer text-[30px]"
+            className="cursor-pointer text-[30px] hover:scale-125 ease-in-out duration-300"
           />
         )}
       </div>
       <nav className="navigation">
         <ul>
+          {/*  className="  ml-8" */}
           <li>
+            {/*  className=" no-underline text-2xl"*/}
             <Link to="/" onClick={toggleHamburger}>
               Home
             </Link>

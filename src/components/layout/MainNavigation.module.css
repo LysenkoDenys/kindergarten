@@ -28,11 +28,14 @@
 .header li {
   margin-left: 2rem;
 }
+.header li:hover {
+  scale: 1.25;
+}
 
 .header a {
   text-decoration: none;
   font-size: 1.5rem;
-  color: #000000;
+  /* color: #000000; */
 }
 
 .header a:hover,
