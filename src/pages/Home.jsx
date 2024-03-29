@@ -1,9 +1,12 @@
+import { useState, useEffect } from 'react';
 import { TbGenderDemiboy } from 'react-icons/tb';
 import { TbGenderDemigirl } from 'react-icons/tb';
 import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
 
 const Home = () => {
+  const [matesOne, setMatesOne] = useState([]);
+
   const malesQty = groupMates.filter((el) => el.sex === 'male').length;
   const malesQtyDeg = Math.round((malesQty / groupMates.length) * 100);
   const femalesQty = groupMates.filter((el) => el.sex === 'female').length;
@@ -14,10 +17,28 @@ const Home = () => {
   const yearsPassed = date.getFullYear() - 1986;
 
   const handleListOfMainOne = () => {
-    groupMates.map((el) => `<div>${el.lastName} ${el.firstName}</div>`);
+    const arrIdMatesPhotoOne = [
+      1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 29, 32, 33, 34,
+      36, 37, 38, 41, 42, 44, 45,
+    ];
+    const filteredMatesPhotoOne = groupMates.filter((el) =>
+      arrIdMatesPhotoOne.includes(el.id)
+    );
+
+    return filteredMatesPhotoOne.map((el) => (
+      <div key={el.id}>
+        {el.lastName} {el.firstName}
+      </div>
+    ));
   };
 
-  // console.log(handleListOfMainOne); //
+  //======================================= WARN INFINITY:
+  useEffect(() => {
+    setMatesOne(handleListOfMainOne);
+  }, [matesOne]);
+
+  // console.log(handleListOfMainOne()); //
+  //=======================================
 
   const darkTheme = useTheme();
 
@@ -30,7 +51,6 @@ const Home = () => {
     color: darkTheme ? '#CCC' : '#333',
   };
 
-  // style={themeStyles}
   return (
     <section className="select-none">
       <h1
@@ -99,7 +119,24 @@ const Home = () => {
             >
               Перелік одногрупників на фото-01
             </button>
+            <div className="">
+              <ul>
+                <li>{matesOne}</li>
+              </ul>
+            </div>
           </div>
+          <p>&ensp; Найпопулярніші імена в групі:</p>
+          <ul className="ml-6">
+            <li>
+              <TbGenderDemiboy className="inline-block text-[25px]" />в
+              хлопчиків: "Сергій" - 6 од.;
+            </li>
+
+            <li>
+              <TbGenderDemigirl className="inline-block text-[25px]" />в
+              дівчаток: "Наталія" - 5 од.;
+            </li>
+          </ul>
           <p>
             &ensp; Частину одногрупників (20 осіб) представлено на фото-02
             нижче:
@@ -117,6 +154,19 @@ const Home = () => {
             </figure>
             <button className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg">
               Перелік одногрупників на фото-02
+            </button>
+          </div>
+          <p>
+            &ensp; Всі одногрупники, яких згадав (але не всіх ідентифікував)
+            автор, знаходяться в переліку нижче (натисни кнопку). Прохання не
+            цуратися і допомогти згадати ВСІХ хлопців і дівчат. Також, Ваші
+            фото, спогади , надіслані в текстовому вигляді можуть бути
+            розміщеними в даному застосунку, тож звертайтеся за посиланнями
+            нижче.
+          </p>
+          <div className="flex items-center flex-col">
+            <button className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg">
+              Перелік ВСІХ одногрупників
             </button>
           </div>
         </article>
