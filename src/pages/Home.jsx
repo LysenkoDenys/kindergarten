@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { TbGenderDemiboy } from 'react-icons/tb';
 import { TbGenderDemigirl } from 'react-icons/tb';
 import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
+import MateItem from '../components/layout/MateItem';
 
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
+  const [isButtonToggled, setIsButtonToggled] = useState(false);
 
   const malesQty = groupMates.filter((el) => el.sex === 'male').length;
   const malesQtyDeg = Math.round((malesQty / groupMates.length) * 100);
@@ -24,21 +26,18 @@ const Home = () => {
     const filteredMatesPhotoOne = groupMates.filter((el) =>
       arrIdMatesPhotoOne.includes(el.id)
     );
+    setIsButtonToggled(!isButtonToggled);
 
-    return filteredMatesPhotoOne.map((el) => (
-      <div key={el.id}>
-        {el.lastName} {el.firstName}
-      </div>
-    ));
+    return !isButtonToggled
+      ? setMatesOne(
+          filteredMatesPhotoOne.map((el) => (
+            <div key={el.id}>
+              {el.lastName} {el.firstName}
+            </div>
+          ))
+        )
+      : setMatesOne([]);
   };
-
-  //======================================= WARN INFINITY:
-  useEffect(() => {
-    setMatesOne(handleListOfMainOne);
-  }, [matesOne]);
-
-  // console.log(handleListOfMainOne()); //
-  //=======================================
 
   const darkTheme = useTheme();
 
@@ -79,7 +78,7 @@ const Home = () => {
               які згадує автор і носить розважальний характер. В разі виникнення
               пропозицій, доповнень, прохання надати Ваші спогади,
               фото-матеріали, тощо для розміщення в даному застосунку. Реквізити
-              автора надані нижче.
+              автора надано нижче.
             </strong>
           </p>
           <hr className="mb-2" />
@@ -117,8 +116,11 @@ const Home = () => {
               className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg"
               onClick={handleListOfMainOne}
             >
-              Перелік одногрупників на фото-01
+              {isButtonToggled
+                ? ' Сховати перелік одногрупників на Фото-01'
+                : 'Показати перелік одногрупників на Фото-01'}
             </button>
+            <MateItem />
             <div className="">
               <ul>
                 <li>{matesOne}</li>
@@ -128,13 +130,13 @@ const Home = () => {
           <p>&ensp; Найпопулярніші імена в групі:</p>
           <ul className="ml-6">
             <li>
-              <TbGenderDemiboy className="inline-block text-[25px]" />в
-              хлопчиків: "Сергій" - 6 од.;
+              <TbGenderDemiboy className="inline-block text-[25px]" />
+              серед хлопчиків: "Сергій" - 6 од.;
             </li>
 
             <li>
-              <TbGenderDemigirl className="inline-block text-[25px]" />в
-              дівчаток: "Наталія" - 5 од.;
+              <TbGenderDemigirl className="inline-block text-[25px]" />
+              серед дівчаток: "Наталія" - 5 од.;
             </li>
           </ul>
           <p>

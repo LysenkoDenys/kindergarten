@@ -1,4 +1,8 @@
+import { useTheme } from '../../ThemeContext';
+
 const Hamburger = ({ isOpen }) => {
+  const darkTheme = useTheme();
+  const themeStyles = () => (darkTheme ? '#CCC' : '#333');
   return (
     <>
       <div className="hamburger">
@@ -21,7 +25,7 @@ const Hamburger = ({ isOpen }) => {
           height: 0.2rem;
           border-radius: 5px;
           margin: 6px 0px 0px 0px;
-          background-color: black;
+          background-color: ${themeStyles()};
           transform-origin: 1px;
           transition: all 0.3s linear;
         }

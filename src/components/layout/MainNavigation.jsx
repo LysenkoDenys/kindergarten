@@ -96,7 +96,9 @@ const MainNavigation = () => {
 
           .navigation ul {
             display: ${hamburgerOpen ? 'inline' : 'none'};
-            background-color: rgba(204, 204, 204, 0.5);
+            background-color: ${darkTheme
+              ? 'rgba(0, 0, 0, 0.5)'
+              : 'rgba(204, 204, 204, 0.5)'};
             border-radius: 3px;
             padding-right: 20px;
             position: fixed;
