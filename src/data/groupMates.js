@@ -6,7 +6,7 @@ const groupMates = [
     sex: 'female',
     id: 1,
     story: 'світла дівчина',
-    image: 'alieva-01.png',
+    image: 'alieva-01.jpg',
     url: '',
   },
   {
@@ -26,7 +26,7 @@ const groupMates = [
     sex: 'female',
     id: 3,
     story: '',
-    image: '',
+    image: 'bila-03.jpg',
     url: 'https://www.facebook.com/profile.php?id=100022192518294',
   },
   {
@@ -36,7 +36,7 @@ const groupMates = [
     sex: 'male',
     id: 4,
     story: '',
-    image: '',
+    image: 'bondarenko-04.jpg',
     url: 'https://www.facebook.com/profile.php?id=100003191563688',
   },
   {
@@ -56,7 +56,7 @@ const groupMates = [
     sex: 'male',
     id: 6,
     story: '',
-    image: '',
+    image: 'vasyliv-06.jpg',
     url: 'https://www.facebook.com/profile.php?id=100005367706457',
   },
   {
@@ -86,7 +86,7 @@ const groupMates = [
     sex: 'female',
     id: 9,
     story: '',
-    image: 'dachenko-09.png',
+    image: 'dachenko-09.jpg',
     url: '',
   },
   {
@@ -96,7 +96,7 @@ const groupMates = [
     sex: 'male',
     id: 10,
     story: '',
-    image: '',
+    image: 'dyachkov-10.jpg',
     url: 'https://www.facebook.com/profile.php?id=100023177715064',
   },
   {
@@ -106,7 +106,7 @@ const groupMates = [
     sex: 'male',
     id: 11,
     story: '',
-    image: '',
+    image: 'dudnik-11.jpg',
     url: '',
   },
   {
@@ -126,7 +126,7 @@ const groupMates = [
     sex: 'male',
     id: 13,
     story: '',
-    image: '',
+    image: 'jukov-13.jpg',
     url: '',
   },
   {
@@ -146,7 +146,7 @@ const groupMates = [
     sex: 'male',
     id: 15,
     story: '',
-    image: '',
+    image: 'ivanchuck-15.jpg',
     url: '',
   },
   {
@@ -186,7 +186,7 @@ const groupMates = [
     sex: 'male',
     id: 19,
     story: '',
-    image: '',
+    image: 'kardashov-19.jpg',
     url: '',
   },
   {
@@ -206,7 +206,7 @@ const groupMates = [
     sex: 'male',
     id: 21,
     story: '',
-    image: '',
+    image: 'kigim-21.jpg',
     url: '',
   },
   {
@@ -216,7 +216,7 @@ const groupMates = [
     sex: 'male',
     id: 22,
     story: 'розумний хлопець',
-    image: 'kozlov-22.png',
+    image: 'kozlov-22.jpg',
     url: '',
   },
   {
@@ -236,7 +236,7 @@ const groupMates = [
     sex: 'male',
     id: 24,
     story: '',
-    image: '',
+    image: 'lysenko-24.jpg',
     url: '',
   },
   {
@@ -266,7 +266,7 @@ const groupMates = [
     sex: 'male',
     id: 27,
     story: '',
-    image: '',
+    image: 'mogylny-27.jpg',
     url: 'https://www.facebook.com/profile.php?id=100010738607183',
   },
   {
@@ -306,7 +306,7 @@ const groupMates = [
     sex: 'male',
     id: 31,
     story: '',
-    image: '',
+    image: 'petyn-31.jpg',
     url: '',
   },
   {
@@ -316,7 +316,7 @@ const groupMates = [
     sex: 'female',
     id: 32,
     story: '',
-    image: 'plugnik-32.png',
+    image: 'plugnik-32.jpg',
     url: 'https://www.facebook.com/profile.php?id=100009115036307',
   },
   {
@@ -336,7 +336,7 @@ const groupMates = [
     sex: 'male',
     id: 34,
     story: '',
-    image: '',
+    image: 'rayhel-34.jpg',
     url: '',
   },
   {
@@ -346,7 +346,7 @@ const groupMates = [
     sex: 'male',
     id: 35,
     story: '',
-    image: '',
+    image: 'rogko-35.jpg',
     url: '',
   },
   {
@@ -356,7 +356,7 @@ const groupMates = [
     sex: 'male',
     id: 36,
     story: '',
-    image: '',
+    image: 'syrtsov-36.jpg',
     url: '',
   },
   {
@@ -366,7 +366,7 @@ const groupMates = [
     sex: 'female',
     id: 37,
     story: '',
-    image: '',
+    image: 'sida-37.jpg',
     url: '',
   },
   {
@@ -376,7 +376,7 @@ const groupMates = [
     sex: 'male',
     id: 38,
     story: '',
-    image: '',
+    image: 'philipetsky-38.jpg',
     url: '',
   },
   {
