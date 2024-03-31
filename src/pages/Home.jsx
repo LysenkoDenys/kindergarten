@@ -31,9 +31,7 @@ const Home = () => {
     return !isButtonToggled
       ? setMatesOne(
           filteredMatesPhotoOne.map((el) => (
-            <div key={el.id}>
-              {el.lastName} {el.firstName}
-            </div>
+            <MateItem element={el} key={el.id} />
           ))
         )
       : setMatesOne([]);
@@ -120,13 +118,7 @@ const Home = () => {
                 ? ' Сховати перелік одногрупників на Фото-01'
                 : 'Показати перелік одногрупників на Фото-01'}
             </button>
-            <MateItem />
-            <MateItem />
-            <div className="">
-              <ul>
-                <li>{matesOne}</li>
-              </ul>
-            </div>
+            <div>{matesOne}</div>
           </div>
           <p>&ensp; Найпопулярніші імена в групі:</p>
           <ul className="ml-6">
@@ -163,9 +155,8 @@ const Home = () => {
             &ensp; Всі одногрупники, яких згадав (але не всіх ідентифікував)
             автор, знаходяться в переліку нижче (натисни кнопку). Прохання не
             цуратися і допомогти згадати ВСІХ хлопців і дівчат. Також, Ваші
-            фото, спогади , можуть бути
-            розміщеними в даному застосунку, тож звертайтеся за посиланнями
-            нижче.
+            фото, спогади , можуть бути розміщеними в даному застосунку, тож
+            звертайтеся за посиланнями нижче.
           </p>
           <div className="flex items-center flex-col">
             <button className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg">

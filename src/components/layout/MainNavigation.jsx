@@ -11,6 +11,9 @@ const MainNavigation = () => {
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
   };
+  const closeHamburger = () => {
+    setHamburgerOpen(false);
+  };
 
   // theme=================================
   const darkTheme = useTheme();
@@ -31,7 +34,10 @@ const MainNavigation = () => {
     // className="w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0"
 
     <header className={classes.header} style={themeStyles}>
-      <div className="font-[2rem] font-bold hover:scale-125 ease-in-out duration-300">
+      <div
+        className="font-[2rem] font-bold hover:scale-125 ease-in-out duration-300"
+        onClick={closeHamburger}
+      >
         <Link to="/">Berezka</Link>
       </div>
       <div className="">

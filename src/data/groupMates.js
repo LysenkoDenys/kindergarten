@@ -86,7 +86,7 @@ const groupMates = [
     sex: 'female',
     id: 9,
     story: '',
-    image: '',
+    image: 'dachenko-09.png',
     url: '',
   },
   {
@@ -316,7 +316,7 @@ const groupMates = [
     sex: 'female',
     id: 32,
     story: '',
-    image: '',
+    image: 'plugnik-32.png',
     url: 'https://www.facebook.com/profile.php?id=100009115036307',
   },
   {
