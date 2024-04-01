@@ -28,7 +28,6 @@ const MateItem = ({ element }) => {
             src={require(`../../assets/faces/${imageView}`)}
             alt={`my group mate ${groupMates[index].lastName}`}
             className={themePhoto}
-            // style={themeStyles}
           />
         </div>
         <div className={themeBlock}>

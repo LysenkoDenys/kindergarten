@@ -1,4 +1,5 @@
 import { useTheme } from '../ThemeContext';
+import SearchBar from '../components/layout/SearchBar';
 
 const Memo = () => {
   const darkTheme = useTheme();
@@ -31,6 +32,12 @@ const Memo = () => {
             самостійно тримати ложку в руках (з півтора року).
           </p>
         </article>
+      </div>
+      <div
+        className="bg-[#e6e7eb] rounded-[5px] p-2 mb-4 text-[1em] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[2px_2px_2px_rgba(0,0,0,0.3)]"
+        style={themeStyles}
+      >
+        <SearchBar />
       </div>
     </section>
   );
