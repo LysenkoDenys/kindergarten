@@ -17,26 +17,21 @@ const MainNavigation = () => {
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
-  const themeStyles = {
-    backgroundColor: darkTheme
-      ? 'rgba(0, 0, 0, 0.5)'
-      : 'rgba(204, 204, 204, 0.5)',
-    color: darkTheme ? '#CCC' : '#333',
-    boxShadow: darkTheme
-      ? '5px 5px 10px rgba(255, 255, 255, 0.9)'
-      : '5px 5px 10px rgba(0, 0, 0, 0.5)',
-  };
+  const themeHeader = darkTheme
+    ? 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0 select-none bg-[rgba(0,0,0,0.5)] text-[#CCCCCC] shadow-[5px_5px_10px_rgba(255,255,255,0.9)]'
+    : 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0 select-none bg-[rgba(204,204,204,0.5)] text-[#333333] shadow-[5px_5px_10px_rgba(0,0,0,0.5)]';
+
+  const themeLink = darkTheme
+    ? 'no-underline text-2xl hover:text-gray-400'
+    : 'no-underline text-2xl hover:text-black';
 
   return (
-    <header
-      className="w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0 select-none"
-      style={themeStyles}
-    >
+    <header className={themeHeader}>
       <div
-        className="text-[2rem] font-bold hover:scale-125 ease-in-out duration-300"
+        className="text-[2rem] font-bold hover:scale-110 ease-in-out duration-300"
         onClick={closeHamburger}
       >
-        <Link className="hover:text-[white]" to="/">
+        <Link className={themeLink} to="/">
           Berezka
         </Link>
       </div>
@@ -44,32 +39,24 @@ const MainNavigation = () => {
         {darkTheme ? (
           <MdOutlineLightMode
             onClick={toggleTheme}
-            className="cursor-pointer text-[30px] hover:scale-125 ease-in-out duration-300 hover:text-[white]"
+            className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300 hover:text-gray-400"
           />
         ) : (
           <MdDarkMode
             onClick={toggleTheme}
-            className="cursor-pointer text-[30px] hover:scale-125 ease-in-out duration-300 hover:text-[white]"
+            className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300 hover:text-black"
           />
         )}
       </div>
       <nav className="navigation">
         <ul className="list-none flex flex-wrap items-baseline m-0 p-0 md:hidden ">
-          <li className="ml-8 hover:scale-125 ease-in-out duration-300">
-            <Link
-              className="no-underline text-2xl hover:text-[white]"
-              to="/"
-              onClick={toggleHamburger}
-            >
+          <li className="ml-8 hover:scale-110 ease-in-out duration-300">
+            <Link className={themeLink} to="/" onClick={toggleHamburger}>
               Home
             </Link>
           </li>
-          <li className="ml-8 hover:scale-125 ease-in-out duration-300">
-            <Link
-              className="no-underline text-2xl hover:text-[white]"
-              to="/memo"
-              onClick={toggleHamburger}
-            >
+          <li className="ml-8 hover:scale-110 ease-in-out duration-300">
+            <Link className={themeLink} to="/memo" onClick={toggleHamburger}>
               Memo
             </Link>
           </li>
@@ -109,8 +96,8 @@ const MainNavigation = () => {
           .navigation ul {
             display: ${hamburgerOpen ? 'inline' : 'none'};
             background-color: ${darkTheme
-              ? 'rgba(0, 0, 0, 0.5)'
-              : 'rgba(204, 204, 204, 0.5)'};
+              ? 'rgba(0, 0, 0, 0.8)'
+              : 'rgba(204, 204, 204, 0.8)'};
             border-radius: 3px;
             padding-right: 20px;
             position: fixed;

@@ -72,23 +72,13 @@ const Home = () => {
 
   const darkTheme = useTheme();
 
-  const themeStyles = {
-    backgroundColor: darkTheme ? '#333' : '#CCC',
-    color: darkTheme ? '#CCC' : '#333',
-  };
-
-  const themeStyles2 = {
-    color: darkTheme ? '#CCC' : '#333',
-  };
+  const themeHeaderOne = darkTheme
+    ? 'text-3xl font-bold text-center mb-3 mt-3 text-[#CCCCCC]'
+    : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
 
   return (
     <section className="select-none">
-      <h1
-        className="text-3xl font-bold text-center mb-3 mt-3"
-        style={themeStyles2}
-      >
-        Група 1979-1980 років народження.
-      </h1>
+      <h1 className={themeHeaderOne}>Група 1979-1980 років народження.</h1>
       <Block>
         <article>
           <h3 className="text-xl font-bold text-center">
@@ -217,7 +207,9 @@ const Home = () => {
       </Block>
       <Block>
         <article>
-          <h3 className="text-xl font-bold text-center">Допоможіть згадати.</h3>
+          <h3 className="text-xl font-bold text-center">
+            Допоможіть пригадати.
+          </h3>
           <p>&ensp; Ознаки осіб по яких бракує інформації:</p>
           <ul className="ml-6">
             <li>вихователька Валентина Василівна - прізвище;</li>

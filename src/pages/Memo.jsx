@@ -5,17 +5,13 @@ import Block from '../../src/components/layout/Block';
 const Memo = () => {
   const darkTheme = useTheme();
 
-  const themeStyles2 = {
-    color: darkTheme ? '#CCC' : '#333',
-  };
+  const themeHeaderOne = darkTheme
+    ? 'text-3xl font-bold text-center mb-3 mt-3 text-[#CCCCCC]'
+    : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
+
   return (
     <section className="select-none">
-      <h1
-        className="text-3xl font-bold text-center mb-3 mt-3"
-        style={themeStyles2}
-      >
-        Спогади.
-      </h1>
+      <h1 className={themeHeaderOne}>Спогади.</h1>
       <Block>
         <article>
           <h3 className="text-xl font-bold text-center">Загальні.</h3>
