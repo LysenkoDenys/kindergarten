@@ -4,6 +4,7 @@ import { TbGenderDemigirl } from 'react-icons/tb';
 import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
 import MateItem from '../components/layout/MateItem';
+import Button from '../components/layout/Button';
 
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
@@ -109,10 +110,9 @@ const Home = () => {
           <p className="text-center mb-2 mt-2">
             <strong>
               &ensp; DISCLAIMER: контент даного сайту засновано на подіях, які
-              згадує автор і носить розважальний характер. В разі виникнення
-              пропозицій, доповнень, прохання надати Ваші спогади,
-              фото-матеріали, тощо для розміщення на даному сайті. Реквізити
-              автора надано нижче.
+              згадує автор та носить розважальний характер. В разі виникнення
+              пропозицій, доповнень, прохання надати Ваші спогади, фото, тощо
+              для розміщення на даному сайті. Реквізити автора надано нижче.
             </strong>
           </p>
           <hr className="mb-2" />
@@ -204,14 +204,24 @@ const Home = () => {
             звертайтеся за посиланнями нижче.
           </p>
           <div className="flex items-center flex-col">
-            <button
+            {/* <button
               className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg"
               onClick={handleListOfMainAll}
             >
+              {' '}
               {isButtonAllToggled
                 ? ' Сховати перелік ВСІХ одногрупників'
                 : 'Показати перелік ВСІХ одногрупників'}
             </button>
+            <div>{matesAll}</div> */}
+            <Button
+              label={
+                isButtonAllToggled
+                  ? ' Сховати перелік ВСІХ одногрупників'
+                  : 'Показати перелік ВСІХ одногрупників'
+              }
+              actionOnClick={handleListOfMainAll}
+            />
             <div>{matesAll}</div>
           </div>
         </article>
