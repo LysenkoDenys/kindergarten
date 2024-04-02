@@ -1,13 +1,9 @@
 import { useTheme } from '../ThemeContext';
 import SearchBar from '../components/layout/SearchBar';
+import Block from '../../src/components/layout/Block';
 
 const Memo = () => {
   const darkTheme = useTheme();
-
-  const themeStyles = {
-    backgroundColor: darkTheme ? '#333' : '#CCC',
-    color: darkTheme ? '#CCC' : '#333',
-  };
 
   const themeStyles2 = {
     color: darkTheme ? '#CCC' : '#333',
@@ -20,10 +16,7 @@ const Memo = () => {
       >
         Спогади.
       </h1>
-      <div
-        className="bg-[#e6e7eb] rounded-[5px] p-2 mb-4 text-[1em] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[2px_2px_2px_rgba(0,0,0,0.3)]"
-        style={themeStyles}
-      >
+      <Block>
         <article>
           <h3 className="text-xl font-bold text-center">Загальні.</h3>
           <h6 className="font-bold">&ensp; Від автора.</h6>
@@ -32,13 +25,10 @@ const Memo = () => {
             самостійно тримати ложку в руках (з півтора року).
           </p>
         </article>
-      </div>
-      <div
-        className="bg-[#e6e7eb] rounded-[5px] p-2 mb-4 text-[1em] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[2px_2px_2px_rgba(0,0,0,0.3)]"
-        style={themeStyles}
-      >
+      </Block>
+      <Block>
         <SearchBar />
-      </div>
+      </Block>
     </section>
   );
 };

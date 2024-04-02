@@ -5,6 +5,7 @@ import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
 import MateItem from '../components/layout/MateItem';
 import Button from '../components/layout/Button';
+import Block from '../../src/components/layout/Block';
 
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
@@ -88,10 +89,7 @@ const Home = () => {
       >
         Група 1979-1980 років народження.
       </h1>
-      <div
-        className="bg-[#e6e7eb] rounded-[5px] p-2 mb-4 text-[1em] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[2px_2px_2px_rgba(0,0,0,0.3)]"
-        style={themeStyles}
-      >
+      <Block>
         <article>
           <h3 className="text-xl font-bold text-center">
             Загальна інформація.
@@ -111,8 +109,9 @@ const Home = () => {
             <strong>
               &ensp; DISCLAIMER: контент даного сайту засновано на подіях, які
               згадує автор та носить розважальний характер. В разі виникнення
-              пропозицій, доповнень, прохання надати Ваші спогади, фото, тощо
-              для розміщення на даному сайті. Реквізити автора надано нижче.
+              уточнень, доповнень, коринуівань, прохання надати Ваші спогади,
+              фото, тощо для розміщення на даному сайті. Реквізити автора надано
+              нижче.
             </strong>
           </p>
           <hr className="mb-2" />
@@ -146,14 +145,14 @@ const Home = () => {
                 хлопчики - зайчики, дівчатка - сніжинки.
               </figcaption>
             </figure>
-            <button
-              className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg"
-              onClick={handleListOfMainOne}
-            >
-              {isButtonOneToggled
-                ? ' Сховати перелік одногрупників на Фото-01'
-                : 'Показати перелік одногрупників на Фото-01'}
-            </button>
+            <Button
+              label={
+                isButtonOneToggled
+                  ? ' Сховати перелік групи на Фото-01'
+                  : 'Показати перелік групи на Фото-01'
+              }
+              actionOnClick={handleListOfMainOne}
+            />
             <div>{matesOne}</div>
           </div>
           <p>&ensp; Найпопулярніші імена в групі:</p>
@@ -186,14 +185,14 @@ const Home = () => {
                 Микола). А зате, в дівчат шикарні банти!
               </figcaption>
             </figure>
-            <button
-              className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg"
-              onClick={handleListOfMainTwo}
-            >
-              {isButtonTwoToggled
-                ? ' Сховати перелік одногрупників на Фото-02'
-                : 'Показати перелік одногрупників на Фото-02'}
-            </button>
+            <Button
+              label={
+                isButtonTwoToggled
+                  ? ' Сховати перелік групи на Фото-02'
+                  : 'Показати перелік групи на Фото-02'
+              }
+              actionOnClick={handleListOfMainTwo}
+            />
             <div>{matesTwo}</div>
           </div>
           <p>
@@ -204,16 +203,6 @@ const Home = () => {
             звертайтеся за посиланнями нижче.
           </p>
           <div className="flex items-center flex-col">
-            {/* <button
-              className="bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold py-2 px-4 m-3 rounded-[5px] shadow hover:shadow-lg"
-              onClick={handleListOfMainAll}
-            >
-              {' '}
-              {isButtonAllToggled
-                ? ' Сховати перелік ВСІХ одногрупників'
-                : 'Показати перелік ВСІХ одногрупників'}
-            </button>
-            <div>{matesAll}</div> */}
             <Button
               label={
                 isButtonAllToggled
@@ -225,22 +214,19 @@ const Home = () => {
             <div>{matesAll}</div>
           </div>
         </article>
-      </div>
-      <div
-        className="bg-[#e6e7eb] rounded-[5px] p-2 mb-4 text-[1em] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9]"
-        style={themeStyles}
-      >
+      </Block>
+      <Block>
         <article>
           <h3 className="text-xl font-bold text-center">Допоможіть згадати.</h3>
           <p>&ensp; Ознаки осіб по яких бракує інформації:</p>
           <ul className="ml-6">
-            <li>вихователька Валентина Василівна - прізвище</li>
+            <li>вихователька Валентина Василівна - прізвище;</li>
             <li>вихователька Валентина Вікторівна - прізвище;</li>
             <li>дівчинка, родичка Валентини Василівни - Діна - прізвище;</li>
             <li>хлопчик В'ячеслав (руденький) - прізвище;</li>
           </ul>
         </article>
-      </div>
+      </Block>
     </section>
   );
 };

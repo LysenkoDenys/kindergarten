@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md'; //<MdDarkMode />    <MdOutlineDarkMode />
 import Hamburger from './Hamburger';
 import { useTheme, useThemeUpdate } from '../../ThemeContext';
-import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -15,7 +14,6 @@ const MainNavigation = () => {
     setHamburgerOpen(false);
   };
 
-  // theme=================================
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
@@ -28,42 +26,50 @@ const MainNavigation = () => {
       ? '5px 5px 10px rgba(255, 255, 255, 0.9)'
       : '5px 5px 10px rgba(0, 0, 0, 0.5)',
   };
-  // theme=================================
 
   return (
-    // className="w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0"
-
-    <header className={classes.header} style={themeStyles}>
+    <header
+      className="w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0 select-none"
+      style={themeStyles}
+    >
       <div
-        className="font-[2rem] font-bold hover:scale-125 ease-in-out duration-300"
+        className="text-[2rem] font-bold hover:scale-125 ease-in-out duration-300"
         onClick={closeHamburger}
       >
-        <Link to="/">Berezka</Link>
+        <Link className="hover:text-[white]" to="/">
+          Berezka
+        </Link>
       </div>
       <div className="">
         {darkTheme ? (
           <MdOutlineLightMode
             onClick={toggleTheme}
-            className="cursor-pointer text-[30px] hover:scale-125 ease-in-out duration-300"
+            className="cursor-pointer text-[30px] hover:scale-125 ease-in-out duration-300 hover:text-[white]"
           />
         ) : (
           <MdDarkMode
             onClick={toggleTheme}
-            className="cursor-pointer text-[30px] hover:scale-125 ease-in-out duration-300"
+            className="cursor-pointer text-[30px] hover:scale-125 ease-in-out duration-300 hover:text-[white]"
           />
         )}
       </div>
       <nav className="navigation">
-        <ul>
-          {/*  className="  ml-8" */}
-          <li>
-            {/*  className=" no-underline text-2xl"*/}
-            <Link to="/" onClick={toggleHamburger}>
+        <ul className="list-none flex flex-wrap items-baseline m-0 p-0 md:hidden ">
+          <li className="ml-8 hover:scale-125 ease-in-out duration-300">
+            <Link
+              className="no-underline text-2xl hover:text-[white]"
+              to="/"
+              onClick={toggleHamburger}
+            >
               Home
             </Link>
           </li>
-          <li>
-            <Link to="/memo" onClick={toggleHamburger}>
+          <li className="ml-8 hover:scale-125 ease-in-out duration-300">
+            <Link
+              className="no-underline text-2xl hover:text-[white]"
+              to="/memo"
+              onClick={toggleHamburger}
+            >
               Memo
             </Link>
           </li>
