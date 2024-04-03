@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { TbGenderDemiboy } from 'react-icons/tb';
-import { TbGenderDemigirl } from 'react-icons/tb';
+import { TbGenderDemiboy, TbGenderDemigirl } from 'react-icons/tb';
 import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
 import MateItem from '../components/layout/MateItem';

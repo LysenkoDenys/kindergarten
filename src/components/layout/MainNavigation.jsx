@@ -79,6 +79,7 @@ const MainNavigation = () => {
         .navigation ul li {
           list-style-type: none;
           padding-right: 10px;
+          margin: 20px 0px 20px 10px;
         }
 
         .hamburger {

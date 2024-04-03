@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import { useTheme } from '../ThemeContext';
 import SearchBar from '../components/layout/SearchBar';
 import Block from '../../src/components/layout/Block';
+import groupMates from '../data/groupMates';
 
 const Memo = () => {
   const darkTheme = useTheme();
@@ -9,6 +11,18 @@ const Memo = () => {
     ? 'text-3xl font-bold text-center mb-3 mt-3 text-[#CCCCCC]'
     : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
 
+  const [matesAll, setMatesAll] = useState([]);
+
+  useEffect(() => {
+    setMatesAll(
+      groupMates.map((el) => (
+        <Block key={el.id}>
+          {el.lastName} {el.firstName} {el.image} {el.story} {el.url}
+        </Block>
+      ))
+    );
+  }, [matesAll]);
+
   return (
     <section className="select-none">
       <h1 className={themeHeaderOne}>Спогади.</h1>
@@ -16,8 +30,14 @@ const Memo = () => {
         <article>
           <h3 className="text-xl font-bold text-center">Загальні.</h3>
           <h6 className="font-bold">&ensp; Від автора.</h6>
-          <p>&ensp; Розташування: м. Новомосковськ, вул. Шевченка, 39.</p>
-          <figure className="">
+          <a
+            href="https://www.google.com/maps/d/viewer?mid=1vCF4ZZdZy4rKsdFEzFzTBVGtS94&hl=en&ll=48.62696229721938%2C35.25370555104844&z=19"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p>&ensp; Розташування: м. Самар, вул. Шевченка, 39.</p>
+          </a>
+          <figure className="flex items-center flex-col">
             <img
               src={require('../assets/building.jpg')}
               alt="building of berezka"
@@ -29,17 +49,16 @@ const Memo = () => {
           </figure>
           <p>
             &ensp; В садочку яслях "Берізка" приймали на виховання з 1 року (я
-            прийшов з 1,5).
+            прийшов з 1,5). Перший клас також був організований на його базі.
           </p>
         </article>
       </Block>
       <Block>
         <SearchBar />
       </Block>
+      {matesAll}
     </section>
   );
 };
 
 export default Memo;
-
-// https://www.google.com/maps/dir//%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%B0,+39,+%D0%9D%D0%BE%D0%B2%D0%BE%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D1%8C%D0%BA,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0,+51200/@48.6268906,35.2528992,226m/data=!3m1!1e3!4m9!4m8!1m1!4e2!1m5!1m1!1s0x40d94524ed20b835:0xe094a9e24a5e5820!2m2!1d35.2536598!2d48.6269538?entry=ttu
