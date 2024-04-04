@@ -167,7 +167,7 @@ const groupMates = [
     sex: 'female',
     id: 17,
     story: '',
-    image: '',
+    image: 'kalaptur-17.jpg',
     url: 'https://www.facebook.com/profile.php?id=100055040817289',
   },
   {
@@ -247,7 +247,7 @@ const groupMates = [
     sex: 'female',
     id: 25,
     story: '',
-    image: '',
+    image: 'litovchenko-25.jpg',
     url: '',
   },
   {
@@ -287,7 +287,7 @@ const groupMates = [
     sex: 'female',
     id: 29,
     story: '',
-    image: '',
+    image: 'onishenko-29.jpg',
     url: '',
   },
   {
@@ -297,7 +297,7 @@ const groupMates = [
     sex: 'male',
     id: 30,
     story: '',
-    image: '',
+    image: 'otstavnov-30.jpg',
     url: 'https://www.facebook.com/profile.php?id=100034286177342',
   },
   {
@@ -397,7 +397,7 @@ const groupMates = [
     sex: 'female',
     id: 40,
     story: '',
-    image: '',
+    image: 'cabanenko-40.jpg',
     url: '',
   },
   {
@@ -417,7 +417,7 @@ const groupMates = [
     sex: 'male',
     id: 42,
     story: '',
-    image: '',
+    image: 'vyacheslav-42.jpg',
     url: '',
   },
   {
@@ -447,7 +447,7 @@ const groupMates = [
     sex: 'female',
     id: 45,
     story: '',
-    image: '',
+    image: 'unknown-45.jpg',
     url: '',
   },
   {
@@ -467,7 +467,7 @@ const groupMates = [
     sex: 'female',
     id: 47,
     story: '',
-    image: '',
+    image: 'unknown-47.jpg',
     url: '',
   },
 ];

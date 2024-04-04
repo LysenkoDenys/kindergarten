@@ -26,12 +26,15 @@ const Home = () => {
   const handleListOfMainOne = () => {
     const arrIdMatesPhotoOne = [
       1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 29, 32, 33, 34,
-      36, 37, 38, 41, 42, 44, 45,
+      36, 37, 38, 41, 42, 16, 45,
     ];
-    const filteredMatesPhotoOne = groupMates.filter((el) =>
-      arrIdMatesPhotoOne.includes(el.id)
-    );
+    const filteredMatesPhotoOne = groupMates
+      .filter((el) => arrIdMatesPhotoOne.includes(el.id))
+      .sort((a, b) =>
+        a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1
+      );
     setIsButtonOneToggled(!isButtonOneToggled);
+    console.log(filteredMatesPhotoOne); //
 
     return !isButtonOneToggled
       ? setMatesOne(
@@ -45,9 +48,11 @@ const Home = () => {
     const arrIdMatesPhotoTwo = [
       2, 3, 5, 9, 10, 12, 15, 16, 19, 20, 23, 24, 29, 35, 36, 37, 38, 47,
     ];
-    const filteredMatesPhotoTwo = groupMates.filter((el) =>
-      arrIdMatesPhotoTwo.includes(el.id)
-    );
+    const filteredMatesPhotoTwo = groupMates
+      .filter((el) => arrIdMatesPhotoTwo.includes(el.id))
+      .sort((a, b) =>
+        a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1
+      );
     setIsButtonTwoToggled(!isButtonTwoToggled);
 
     return !isButtonTwoToggled
@@ -64,7 +69,11 @@ const Home = () => {
 
     return !isButtonAllToggled
       ? setMatesAll(
-          groupMates.map((el) => <MateItem element={el} key={el.id} />)
+          groupMates
+            .sort((a, b) =>
+              a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1
+            )
+            .map((el) => <MateItem element={el} key={el.id} />)
         )
       : setMatesAll([]);
   };
@@ -88,11 +97,7 @@ const Home = () => {
             років після випуску нашої групи) садочок "Березка" м. Самар (був.
             Новомосковськ) розформовано та існує тільки в наших спогадах.
           </p>
-          <p>&ensp; Наші основні виховательки:</p>
-          <ul className="ml-6">
-            <li>Валентина Василівна;</li>
-            <li>Валентина Вікторівна;</li>
-          </ul>
+
           <hr className="mt-2" />
           <p className="text-center mb-2 mt-2">
             <strong>
@@ -104,6 +109,25 @@ const Home = () => {
             </strong>
           </p>
           <hr className="mb-2" />
+          <p>&ensp; Наші основні виховательки:</p>
+          <div className="flex justify-around flex-wrap">
+            <div className="flex items-center m-1">
+              <img
+                className="h-[80px] rounded-lg"
+                src={require('../assets/faces-teachers/victorivna.jpg')}
+                alt="valentina viktorivna"
+              />
+              <div className="m-1">Валентина Вікторівна</div>
+            </div>
+            <div className="flex items-center m-1">
+              <img
+                src={require('../assets/faces-teachers/vasylivna.jpg')}
+                alt="valentina vasylivna"
+                className="h-[80px] rounded-lg"
+              />
+              <div className="m-1">Валентина Василівна</div>
+            </div>
+          </div>
           <p>
             &ensp; Протягом терміну виховання крізь групу пройшло щонайменше {}
             {groupMates.length} особистості (цифра ще не остаточна):
@@ -170,7 +194,7 @@ const Home = () => {
                 <b>Фото-02</b> - Святкування, можливо, 1 травня: в руках у
                 дівчаток - гілочки. Вишикувані за критерієм: зріст. Тобто, 2
                 невідомих хлопчики - скоріше за все хтось з невеличким зростом
-                (імовірно хтось з: Отставнов Ігор, Васильїв Сергій, Полтавець
+                (імовірно хтось з: Отставнов Ігор, Васильєв Сергій, Полтавець
                 Микола).
               </figcaption>
             </figure>
