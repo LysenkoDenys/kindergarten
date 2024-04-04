@@ -16,7 +16,7 @@ const groupMates = [
     sex: 'female',
     id: 2,
     story: '',
-    image: '',
+    image: 'berezova-02.jpg',
     url: '',
   },
   {
@@ -26,7 +26,7 @@ const groupMates = [
     sex: 'female',
     id: 3,
     story:
-      'Якось на святі ми змагалися, хто швидше прибіжить з пункту А до пункту Б (челночний біг). Так ось, Тетяна мене перемогла тоді. Я ще був дуже здивований, як так, що мене дівчина перемогла? А згодом, я дізнався, що Тетяна дуже спортивна дівчина і займалася легкою атлетикою.',
+      'Якось на святі ми змагалися, хто швидше прибіжить з пункту А до пункту Б (челночний біг). Так ось, Тетяна мене випередила тоді. Я ще був дуже здивований, як так, що мене дівуля перемогла? А згодом, я дізнався, що Тетяна займалася легкою атлетикою.',
     image: 'bila-03.jpg',
     url: 'https://www.facebook.com/profile.php?id=100022192518294',
   },
@@ -47,7 +47,7 @@ const groupMates = [
     sex: 'female',
     id: 5,
     story: '',
-    image: '',
+    image: 'bugayova-05.jpg',
     url: '',
   },
   {
@@ -67,7 +67,7 @@ const groupMates = [
     sex: 'female',
     id: 7,
     story: '',
-    image: '',
+    image: 'volkova-07.jpg',
     url: 'https://www.facebook.com/inna.volkova2',
   },
   {
@@ -77,7 +77,7 @@ const groupMates = [
     sex: 'male',
     id: 8,
     story: '',
-    image: '',
+    image: 'gorjiy-08.jpg',
     url: '',
   },
   {
@@ -117,7 +117,7 @@ const groupMates = [
     sex: 'male',
     id: 12,
     story: '',
-    image: '',
+    image: 'jovtyak-12.jpg',
     url: 'https://www.facebook.com/serstranger',
   },
   {
@@ -157,7 +157,7 @@ const groupMates = [
     sex: 'female',
     id: 16,
     story: '',
-    image: '',
+    image: 'ionko-16.jpg',
     url: 'https://www.facebook.com/profile.php?id=100009565475858',
   },
   {
@@ -197,7 +197,7 @@ const groupMates = [
     sex: 'male',
     id: 20,
     story: '',
-    image: '',
+    image: 'katlubey-20.jpg',
     url: '',
   },
   {
@@ -227,7 +227,7 @@ const groupMates = [
     sex: 'female',
     id: 23,
     story: '',
-    image: '',
+    image: 'kostuchenko-23.jpg',
     url: 'https://www.facebook.com/natali.fursova.52',
   },
   {
@@ -327,7 +327,7 @@ const groupMates = [
     sex: 'male',
     id: 33,
     story: '',
-    image: '',
+    image: 'poltavets-33.jpg',
     url: '',
   },
   {
@@ -407,7 +407,7 @@ const groupMates = [
     sex: 'male',
     id: 41,
     story: '',
-    image: '',
+    image: 'jarysh-41.jpg',
     url: '',
   },
   {
