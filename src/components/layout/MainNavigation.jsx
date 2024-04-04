@@ -61,7 +61,7 @@ const MainNavigation = () => {
             </Link>
           </li>
         </ul>
-        <div className="hamburger" onClick={toggleHamburger}>
+        <div className="hamburger cursor-pointer" onClick={toggleHamburger}>
           <Hamburger isOpen={hamburgerOpen} />
         </div>
       </nav>

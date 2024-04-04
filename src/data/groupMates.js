@@ -25,7 +25,8 @@ const groupMates = [
     dateBirth: 2495836800000,
     sex: 'female',
     id: 3,
-    story: '',
+    story:
+      'Якось на святі ми змагалися, хто швидше прибіжить з пункту А до пункту Б (челночний біг). Так ось, Тетяна мене перемогла тоді. Я ще був дуже здивований, як так, що мене дівчина перемогла? А згодом, я дізнався, що Тетяна дуже спортивна дівчина і займалася легкою атлетикою.',
     image: 'bila-03.jpg',
     url: 'https://www.facebook.com/profile.php?id=100022192518294',
   },
@@ -237,7 +238,7 @@ const groupMates = [
     id: 24,
     story: '',
     image: 'lysenko-24.jpg',
-    url: '',
+    url: 'https://www.facebook.com/profile.php?id=100001281440746',
   },
   {
     firstName: 'Олена',

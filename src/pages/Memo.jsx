@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTheme } from '../ThemeContext';
 import SearchBar from '../components/layout/SearchBar';
 import Block from '../../src/components/layout/Block';
+import BlockMemo from '../../src/components/layout/BlockMemo';
 import groupMates from '../data/groupMates';
 
 const Memo = () => {
@@ -15,13 +16,9 @@ const Memo = () => {
 
   useEffect(() => {
     setMatesAll(
-      groupMates.map((el) => (
-        <Block key={el.id}>
-          {el.lastName} {el.firstName} {el.image} {el.story} {el.url}
-        </Block>
-      ))
+      groupMates.map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
     );
-  }, [matesAll]);
+  }, []);
 
   return (
     <section className="select-none">
