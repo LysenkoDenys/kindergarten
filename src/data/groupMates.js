@@ -25,8 +25,7 @@ const groupMates = [
     dateBirth: 2495836800000,
     sex: 'female',
     id: 3,
-    story:
-      'Якось на святі ми змагалися, хто швидше прибіжить з пункту А до пункту Б (челночний біг). Так ось, Тетяна мене випередила тоді. Я ще був дуже здивований, як так, що мене дівуля перемогла? А згодом, я дізнався, що Тетяна займалася легкою атлетикою.',
+    story: `Якось на святі ми змагалися, хто швидше прибіжить з пункту А до пункту Б (челночний біг). Так ось, Тетяна мене випередила тоді. Я ще був дуже здивований, як так, що мене дівуля перемогла? А згодом, я дізнався, що Тетяна займалася легкою атлетикою.  <img src={require('../assets/stories/running.jpg')} alt="running contest" className="h-[500px]" />`,
     image: 'bila-03.jpg',
     url: 'https://www.facebook.com/profile.php?id=100022192518294',
   },
@@ -471,5 +470,22 @@ const groupMates = [
     url: '',
   },
 ];
+
+// const groupPolygon = [
+//   {
+//     firstName: 'undefined',
+//     lastName: 'undefined',
+//     dateBirth: undefined,
+//     sex: 'female',
+//     id: 1,
+//     story: [
+//       { text: '', photo: '' },
+//       { text: '', photo: '' },
+//       { text: '', photo: '' },
+//     ],
+//     image: '',
+//     url: '',
+//   },
+// ];
 
 export default groupMates;

@@ -51,7 +51,7 @@ const BlockMemo = ({ element }) => {
             </div>
           </div>
         )}
-        <div className="">Опис:</div>
+        <div className="">Спогади:</div>
         <div className=""> {`${groupMates[index].story}`}</div>
       </div>
     </div>

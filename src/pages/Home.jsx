@@ -23,6 +23,10 @@ const Home = () => {
   const currentDate = date.toISOString().split('T')[0];
   const yearsPassed = date.getFullYear() - 1986;
 
+  function uaSort(a, b) {
+    return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
+  }
+
   const handleListOfMainOne = () => {
     const arrIdMatesPhotoOne = [
       1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 29, 32, 33, 34,
@@ -30,9 +34,7 @@ const Home = () => {
     ];
     const filteredMatesPhotoOne = groupMates
       .filter((el) => arrIdMatesPhotoOne.includes(el.id))
-      .sort((a, b) =>
-        a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1
-      );
+      .sort(uaSort);
     setIsButtonOneToggled(!isButtonOneToggled);
     console.log(filteredMatesPhotoOne); //
 
@@ -50,9 +52,7 @@ const Home = () => {
     ];
     const filteredMatesPhotoTwo = groupMates
       .filter((el) => arrIdMatesPhotoTwo.includes(el.id))
-      .sort((a, b) =>
-        a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1
-      );
+      .sort(uaSort);
     setIsButtonTwoToggled(!isButtonTwoToggled);
 
     return !isButtonTwoToggled
@@ -70,9 +70,7 @@ const Home = () => {
     return !isButtonAllToggled
       ? setMatesAll(
           groupMates
-            .sort((a, b) =>
-              a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1
-            )
+            .sort(uaSort)
             .map((el) => <MateItem element={el} key={el.id} />)
         )
       : setMatesAll([]);
@@ -113,7 +111,7 @@ const Home = () => {
           <div className="flex justify-around flex-wrap">
             <div className="flex items-center m-1">
               <img
-                className="h-[80px] rounded-lg"
+                className="h-[80px] rounded-lg hover:scale-110 ease-in-out duration-300"
                 src={require('../assets/faces-teachers/victorivna.jpg')}
                 alt="valentina viktorivna"
               />
@@ -123,7 +121,7 @@ const Home = () => {
               <img
                 src={require('../assets/faces-teachers/vasylivna.jpg')}
                 alt="valentina vasylivna"
-                className="h-[80px] rounded-lg"
+                className="h-[80px] rounded-lg hover:scale-110 ease-in-out duration-300"
               />
               <div className="m-1">Валентина Василівна</div>
             </div>

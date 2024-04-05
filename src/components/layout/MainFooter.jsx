@@ -15,21 +15,21 @@ const MainFooter = () => {
       <div className="flex flex-wrap items-center justify-around ">
         <div className="flex text-[50px] cursor-pointer">
           <a href="mailto:lysenkoden@gmail.com">
-            <TiSocialAtCircular className={iconStyle} />
+            <TiSocialAtCircular className={iconStyle} title="e-mail" />
           </a>
           <a
             href="https://www.facebook.com/profile.php?id=100001281440746"
             target="_blank"
             rel="noreferrer"
           >
-            <TiSocialFacebookCircular className={iconStyle} />
+            <TiSocialFacebookCircular className={iconStyle} title="facebook" />
           </a>
           <a
             href="https://www.linkedin.com/in/lysenko-denys/"
             target="_blank"
             rel="noreferrer"
           >
-            <TiSocialLinkedinCircular className={iconStyle} />
+            <TiSocialLinkedinCircular className={iconStyle} title="linkedin" />
           </a>
         </div>
         <div className="flex">

@@ -6,6 +6,7 @@ const Author = () => {
       <a
         className="flex flex-wrap items-center"
         href="mailto:lysenkoden@gmail.com"
+        title="mail to the author"
       >
         Made with <FaRegHeart className="mx-1" /> by Lysenko Denys | 2024
         {new Date().getFullYear() === 2024

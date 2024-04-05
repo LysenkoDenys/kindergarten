@@ -15,8 +15,13 @@ const Memo = () => {
   const [matesAll, setMatesAll] = useState([]);
 
   useEffect(() => {
+    function uaSort(a, b) {
+      return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
+    }
     setMatesAll(
-      groupMates.map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
+      groupMates
+        .sort(uaSort)
+        .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
     );
   }, []);
 
@@ -26,7 +31,7 @@ const Memo = () => {
       <Block>
         <article>
           <h3 className="text-xl font-bold text-center">Загальні.</h3>
-          <h6 className="font-bold">&ensp; Від автора.</h6>
+          {/* <h6 className="font-bold">&ensp; Від автора.</h6> */}
           <a
             href="https://www.google.com/maps/d/viewer?mid=1vCF4ZZdZy4rKsdFEzFzTBVGtS94&hl=en&ll=48.62696229721938%2C35.25370555104844&z=19"
             target="_blank"
