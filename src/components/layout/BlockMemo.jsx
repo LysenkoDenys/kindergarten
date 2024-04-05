@@ -18,6 +18,7 @@ const BlockMemo = ({ element }) => {
     ? 'bg-[#221f1f] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(255,255,255,0.3)] hover:bg-[#333333] hover:shadow-[3px_3px_5px_2px_rgba(255,255,255,0.3)] select-none text-[#CCCCCC]'
     : 'bg-[#dadbde] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[3px_3px_5px_2px_rgba(0,0,0,0.3)] select-none';
 
+  console.log(groupMates[index].story.length); //
   return (
     <div id={groupMates[index].id}>
       <div className={themeBlock}>
@@ -33,7 +34,7 @@ const BlockMemo = ({ element }) => {
                 alt={`my group mate ${groupMates[index].lastName}`}
                 className={themePhoto}
               />
-              <div className="mx-1">
+              <div className="mx-1 font-bold">
                 {`${groupMates[index].lastName} ${groupMates[index].firstName}`}
               </div>
               <TiSocialFacebookCircular className="hover:scale-110 ease-in-out duration-300 mr-1" />
@@ -46,13 +47,31 @@ const BlockMemo = ({ element }) => {
               alt={`my group mate ${groupMates[index].lastName}`}
               className={themePhoto}
             />
-            <div className="mx-1">
+            <div className="mx-1 font-bold">
               {`${groupMates[index].lastName} ${groupMates[index].firstName}`}
             </div>
           </div>
         )}
-        <div className="">Спогади:</div>
-        <div className=""> {`${groupMates[index].story}`}</div>
+        <div className="font-bold">Спогади:</div>
+        {/*  */}
+        <div className="p-1">
+          {groupMates[index].story.map((el) => el.text)[0]}
+          {groupMates[index].story.length > 1 && (
+            <img
+              src={require(`../../assets/stories/${
+                groupMates[index].story.map((el) => el.img)[0]
+              }`)}
+              alt={`${groupMates[index].story.map((el) => el.img)[0]}`}
+            />
+          )}
+        </div>
+        <div className="p-1">
+          {groupMates[index].story.map((el) => el.text)[1]}
+        </div>
+        <div className="p-1">
+          {groupMates[index].story.map((el) => el.text)[2]}
+        </div>
+        {/*  */}
       </div>
     </div>
   );
