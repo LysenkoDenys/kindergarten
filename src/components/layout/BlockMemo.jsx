@@ -18,7 +18,8 @@ const BlockMemo = ({ element }) => {
     ? 'bg-[#221f1f] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(255,255,255,0.3)] hover:bg-[#333333] hover:shadow-[3px_3px_5px_2px_rgba(255,255,255,0.3)] select-none text-[#CCCCCC]'
     : 'bg-[#dadbde] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[3px_3px_5px_2px_rgba(0,0,0,0.3)] select-none';
 
-  console.log(groupMates[index].story.length); //
+  // console.log(groupMates[index].story[0].img.length); //
+
   return (
     <div id={groupMates[index].id}>
       <div className={themeBlock}>
@@ -56,7 +57,8 @@ const BlockMemo = ({ element }) => {
         {/*  */}
         <div className="p-1">
           {groupMates[index].story.map((el) => el.text)[0]}
-          {groupMates[index].story.length > 1 && (
+          {/* if there is no img - we do not see an error */}
+          {groupMates[index].story[0].img.length > 0 && (
             <img
               src={require(`../../assets/stories/${
                 groupMates[index].story.map((el) => el.img)[0]
@@ -67,9 +69,25 @@ const BlockMemo = ({ element }) => {
         </div>
         <div className="p-1">
           {groupMates[index].story.map((el) => el.text)[1]}
+          {groupMates[index].story[1].img.length > 0 && (
+            <img
+              src={require(`../../assets/stories/${
+                groupMates[index].story.map((el) => el.img)[1]
+              }`)}
+              alt={`${groupMates[index].story.map((el) => el.img)[1]}`}
+            />
+          )}
         </div>
         <div className="p-1">
           {groupMates[index].story.map((el) => el.text)[2]}
+          {groupMates[index].story[2].img.length > 0 && (
+            <img
+              src={require(`../../assets/stories/${
+                groupMates[index].story.map((el) => el.img)[2]
+              }`)}
+              alt={`${groupMates[index].story.map((el) => el.img)[2]}`}
+            />
+          )}
         </div>
         {/*  */}
       </div>
