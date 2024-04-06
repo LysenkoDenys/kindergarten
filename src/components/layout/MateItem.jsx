@@ -22,7 +22,7 @@ const MateItem = ({ element }) => {
 
   return (
     <div className="relative pr-3 py-3 mb-[2%]">
-      <Link to={`/memo`}>
+      <Link to={`/memo/#${groupMates[index].id}`}>
         <div>
           <img
             src={require(`../../assets/faces/${imageView}`)}

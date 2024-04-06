@@ -4,7 +4,7 @@ import SearchBar from '../components/layout/SearchBar';
 import Block from '../../src/components/layout/Block';
 import BlockMemo from '../../src/components/layout/BlockMemo';
 import groupMates from '../data/groupMates';
-import teachers from '../data/teachers';
+// import teachers from '../data/teachers';
 
 const Memo = () => {
   const darkTheme = useTheme();
@@ -14,24 +14,38 @@ const Memo = () => {
     : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
 
   const [matesAll, setMatesAll] = useState([]);
-  const [teachersData, setTeachersData] = useState([]);
+  // const [teachersData, setTeachersData] = useState([]);
+
+  function uaSort(a, b) {
+    return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
+  }
 
   useEffect(() => {
-    function uaSort(a, b) {
-      return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
-    }
+    // Update state
     setMatesAll(
       groupMates
         .sort(uaSort)
         .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
     );
+
+    // Scroll to element based on hash fragment after a short delay
+    setTimeout(() => {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.substring(1); // Remove the '#' character
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 100); // Adjust the delay as needed
   }, []);
 
-  useEffect(() => {
-    setTeachersData(
-      teachers.map((el) => <div element={el.firstName} key={el.id}></div>)
-    );
-  }, []);
+  // useEffect(() => {
+  //   setTeachersData(
+  //     teachers.map((el) => <div element={el.firstName} key={el.id}></div>)
+  //   );
+  // }, []);
 
   return (
     <section className="select-none">
@@ -66,7 +80,7 @@ const Memo = () => {
         <SearchBar />
       </Block>
       {matesAll}
-      <div className=""> {teachersData}</div>
+      {/* <div className=""> {teachersData}</div> */}
     </section>
   );
 };

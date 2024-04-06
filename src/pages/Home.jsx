@@ -36,7 +36,6 @@ const Home = () => {
       .filter((el) => arrIdMatesPhotoOne.includes(el.id))
       .sort(uaSort);
     setIsButtonOneToggled(!isButtonOneToggled);
-    console.log(filteredMatesPhotoOne); //
 
     return !isButtonOneToggled
       ? setMatesOne(
