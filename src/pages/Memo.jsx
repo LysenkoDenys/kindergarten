@@ -35,10 +35,10 @@ const Memo = () => {
         const id = hash.substring(1); // Remove the '#' character
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ block: 'center', behavior: 'smooth' });
         }
       }
-    }, 100); // Adjust the delay as needed
+    }, 100);
   }, []);
 
   // useEffect(() => {
