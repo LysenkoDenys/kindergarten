@@ -59,34 +59,40 @@ const BlockMemo = ({ element }) => {
           {groupMates[index].story.map((el) => el.text)[0]}
           {/* if there is no img - we do not see an error */}
           {groupMates[index].story[0].img.length > 0 && (
-            <img
-              src={require(`../../assets/stories/${
-                groupMates[index].story.map((el) => el.img)[0]
-              }`)}
-              alt={`${groupMates[index].story.map((el) => el.img)[0]}`}
-            />
+            <div className="flex justify-center items-center">
+              <img
+                src={require(`../../assets/stories/${
+                  groupMates[index].story.map((el) => el.img)[0]
+                }`)}
+                alt={`${groupMates[index].story.map((el) => el.img)[0]}`}
+              />
+            </div>
           )}
         </div>
         <div className="p-1">
           {groupMates[index].story.map((el) => el.text)[1]}
           {groupMates[index].story[1].img.length > 0 && (
-            <img
-              src={require(`../../assets/stories/${
-                groupMates[index].story.map((el) => el.img)[1]
-              }`)}
-              alt={`${groupMates[index].story.map((el) => el.img)[1]}`}
-            />
+            <div className="flex justify-center items-center">
+              <img
+                src={require(`../../assets/stories/${
+                  groupMates[index].story.map((el) => el.img)[1]
+                }`)}
+                alt={`${groupMates[index].story.map((el) => el.img)[1]}`}
+              />
+            </div>
           )}
         </div>
         <div className="p-1">
           {groupMates[index].story.map((el) => el.text)[2]}
           {groupMates[index].story[2].img.length > 0 && (
-            <img
-              src={require(`../../assets/stories/${
-                groupMates[index].story.map((el) => el.img)[2]
-              }`)}
-              alt={`${groupMates[index].story.map((el) => el.img)[2]}`}
-            />
+            <div className="flex justify-center items-center">
+              <img
+                src={require(`../../assets/stories/${
+                  groupMates[index].story.map((el) => el.img)[2]
+                }`)}
+                alt={`${groupMates[index].story.map((el) => el.img)[2]}`}
+              />
+            </div>
           )}
         </div>
         {/*  */}

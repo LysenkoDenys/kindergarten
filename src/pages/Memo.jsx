@@ -35,7 +35,7 @@ const Memo = () => {
         const id = hash.substring(1); // Remove the '#' character
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          element.scrollIntoView({ block: 'start', behavior: 'smooth' });
         }
       }
     }, 100);
