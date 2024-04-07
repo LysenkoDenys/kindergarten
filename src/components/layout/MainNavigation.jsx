@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md'; //<MdDarkMode />    <MdOutlineDarkMode />
+import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
+import { FaRegCommentDots } from 'react-icons/fa6';
 import Hamburger from './Hamburger';
 import { useTheme, useThemeUpdate } from '../../ThemeContext';
 
@@ -47,6 +48,11 @@ const MainNavigation = () => {
             className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300 hover:text-black"
           />
         )}
+      </div>
+      <div className="">
+        <Link to={`/memo/#comments`}>
+          <FaRegCommentDots className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
+        </Link>
       </div>
       <nav className="navigation">
         <ul className="list-none flex flex-wrap items-baseline m-0 p-0 md:hidden ">

@@ -35,7 +35,10 @@ const Memo = () => {
         const id = hash.substring(1); // Remove the '#' character
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ block: 'start', behavior: 'smooth' });
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
         }
       }
     }, 100);
@@ -49,7 +52,7 @@ const Memo = () => {
 
   return (
     <section className="select-none">
-      <h1 className={themeHeaderOne}>Спогади.</h1>
+      <h1 className={themeHeaderOne}>Спогади:</h1>
       <Block>
         <article>
           <h3 className="text-xl font-bold text-center">Загальні.</h3>
@@ -73,6 +76,11 @@ const Memo = () => {
           <p>
             &ensp; В садочку яслях "Берізка" приймали на виховання з 1 року (я
             прийшов з 1,5). Перший клас також був організований на його базі.
+            Сама будівля дуже тепла, за рахунок товстих стін. Більшість часу ми
+            проводили на другому поверсі - на першому були службові приміщення і
+            актовий зал. Спали на дерев'яних ліжках з фанерною основою, через що
+            були випадки провалів або з'їзду діточок. Туалети були оршанізовані
+            за принципом "unisex".
           </p>
         </article>
       </Block>
