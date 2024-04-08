@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '../ThemeContext';
+import { IoLocationOutline } from 'react-icons/io5';
 import SearchBar from '../components/layout/SearchBar';
 import Block from '../../src/components/layout/Block';
 import BlockMemo from '../../src/components/layout/BlockMemo';
@@ -61,7 +62,10 @@ const Memo = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p>&ensp; Розташування: м. Самар, вул. Шевченка, 39.</p>
+            <p>
+              &ensp; <IoLocationOutline className="inline text-[20px]" />{' '}
+              Розташування: м. Самар, вул. Шевченка, 39.
+            </p>
           </a>
           <figure className="flex items-center flex-col">
             <img
@@ -74,13 +78,13 @@ const Memo = () => {
             </figcaption>
           </figure>
           <p>
-            &ensp; В садочку яслях "Берізка" приймали на виховання з 1 року (я
+            &ensp; В садочку-яслах "Берізка" приймали на виховання з 1 року (я
             прийшов з 1,5). Перший клас також був організований на його базі.
             Сама будівля дуже тепла, за рахунок товстих стін. Більшість часу ми
             проводили на другому поверсі - на першому були службові приміщення і
             актовий зал. Спали на дерев'яних ліжках з фанерною основою, через що
-            були випадки провалів або з'їзду діточок. Туалети були оршанізовані
-            за принципом "unisex".
+            були випадки провалів або з'їзду діточок. Туалети були сплановані за
+            принципом "unisex".
           </p>
         </article>
       </Block>

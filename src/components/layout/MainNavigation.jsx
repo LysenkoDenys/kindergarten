@@ -26,6 +26,20 @@ const MainNavigation = () => {
     ? 'no-underline text-2xl hover:text-gray-400'
     : 'no-underline text-2xl hover:text-black';
 
+  const toTheComments = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.substring(1); // Remove the '#' character
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }
+    }
+  };
+
   return (
     <header className={themeHeader}>
       <div
@@ -33,7 +47,7 @@ const MainNavigation = () => {
         onClick={closeHamburger}
       >
         <Link className={themeLink} to="/">
-          Berezka
+          Berizka
         </Link>
       </div>
       <div className="">
@@ -49,10 +63,12 @@ const MainNavigation = () => {
           />
         )}
       </div>
-      <div className="">
-        <Link to={`/memo/#comments`}>
+      {/* ============================== */}
+      <div className="" onClick={toTheComments}>
+        <Link to={'/#comments'}>
           <FaRegCommentDots className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
         </Link>
+        {/* ============================== */}
       </div>
       <nav className="navigation">
         <ul className="list-none flex flex-wrap items-baseline m-0 p-0 md:hidden ">
