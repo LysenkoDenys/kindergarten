@@ -18,7 +18,17 @@ const BlockMemo = ({ element }) => {
     ? 'bg-[#221f1f] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(255,255,255,0.3)] hover:bg-[#333333] hover:shadow-[3px_3px_5px_2px_rgba(255,255,255,0.3)] select-none text-[#CCCCCC]'
     : 'bg-[#dadbde] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[3px_3px_5px_2px_rgba(0,0,0,0.3)] select-none';
 
-  // console.log(groupMates[index].story[0].img.length); //
+  // refactoring:
+  function showStories() {
+    const storiesToShow = groupMates.filter(
+      (el) => el.story[0].text.length > 0
+    );
+    const imagesToShow = groupMates.filter((el) => el.story[0].img.length > 0);
+    return storiesToShow && imagesToShow ? 'text and image' : 'imageS';
+  }
+  console.log(showStories()); //;
+
+  // console.log(groupMates[2].story[0].text); //
 
   return (
     <div id={groupMates[index].id}>

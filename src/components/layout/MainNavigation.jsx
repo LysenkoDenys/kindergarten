@@ -40,6 +40,8 @@ const MainNavigation = () => {
     }
   };
 
+  const linkToComments = window.location.href;
+
   return (
     <header className={themeHeader}>
       <div
@@ -63,12 +65,14 @@ const MainNavigation = () => {
           />
         )}
       </div>
-      {/* ============================== */}
       <div className="" onClick={toTheComments}>
-        <Link to={'/#comments'}>
+        <Link
+          to={
+            linkToComments.includes('/memo') ? 'memo/#comments' : '/#comments'
+          }
+        >
           <FaRegCommentDots className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
         </Link>
-        {/* ============================== */}
       </div>
       <nav className="navigation">
         <ul className="list-none flex flex-wrap items-baseline m-0 p-0 md:hidden ">

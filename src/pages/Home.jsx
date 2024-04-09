@@ -244,5 +244,3 @@ const Home = () => {
 };
 
 export default Home;
-
-//shadows

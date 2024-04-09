@@ -40,5 +40,3 @@ const MateItem = ({ element }) => {
 };
 
 export default MateItem;
-
-// ${groupMates[index].id}
