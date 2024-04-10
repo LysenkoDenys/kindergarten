@@ -1,6 +1,7 @@
+import { TiSocialFacebookCircular } from 'react-icons/ti';
+import { v4 as uuidv4 } from 'uuid';
 import groupMates from '../../data/groupMates';
 import { useTheme } from '../../ThemeContext';
-import { TiSocialFacebookCircular } from 'react-icons/ti';
 
 const BlockMemo = ({ element }) => {
   const index = groupMates.findIndex((el) => el.id === element.id);
@@ -17,30 +18,6 @@ const BlockMemo = ({ element }) => {
   const themeBlock = darkTheme
     ? 'bg-[#221f1f] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(255,255,255,0.3)] hover:bg-[#333333] hover:shadow-[3px_3px_5px_2px_rgba(255,255,255,0.3)] select-none text-[#CCCCCC]'
     : 'bg-[#dadbde] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[3px_3px_5px_2px_rgba(0,0,0,0.3)] select-none';
-
-  // refactoring:
-  function showStories() {
-    const storiesToShow = groupMates.filter(
-      (el) => el.story[0].text.length > 0
-    );
-    const imagesToShow = groupMates.filter((el) => el.story[0].img.length > 0);
-    return (
-      <div
-        className="flex justify-center items-center"
-        key={groupMates[index].id}
-      >
-        {/* <img
-          src={require(`../../assets/stories/${
-            groupMates[index].story.map((el) => el.img)[0]
-          }`)}
-          alt={`${groupMates[index].story.map((el) => el.img)[0]}`}
-        /> */}
-      </div>
-    );
-  }
-  console.log(showStories()); //;
-
-  // console.log(groupMates[2].story[0].text); //
 
   return (
     <div id={groupMates[index].id}>
@@ -76,49 +53,24 @@ const BlockMemo = ({ element }) => {
           </div>
         )}
         <div className="font-bold">Спогади:</div>
-        {/*  */}
+
         <div className="p-1">
-          {groupMates[index].story.map((el) => el.text)[0]}
-          {/* if there is no img - we do not see an error */}
-          {groupMates[index].story[0].img.length > 0 && (
-            <div className="flex justify-center items-center">
-              <img
-                src={require(`../../assets/stories/${
-                  groupMates[index].story.map((el) => el.img)[0]
-                }`)}
-                alt={`${groupMates[index].story.map((el) => el.img)[0]}`}
-              />
+          {groupMates[index].story.map((el) => (
+            <div key={uuidv4()}>
+              <p>&ensp;{el.text}</p>
+              <div className="flex justify-center items-center">
+                <img
+                  src={
+                    el.img.length > 0
+                      ? require(`../../assets/stories/${el.img}`)
+                      : ''
+                  }
+                  alt={el.img}
+                />
+              </div>
             </div>
-          )}
+          ))}
         </div>
-        {/* ==================================== */}
-        <div className="p-1">
-          {groupMates[index].story.map((el) => el.text)[1]}
-          {groupMates[index].story[1].img.length > 0 && (
-            <div className="flex justify-center items-center">
-              <img
-                src={require(`../../assets/stories/${
-                  groupMates[index].story.map((el) => el.img)[1]
-                }`)}
-                alt={`${groupMates[index].story.map((el) => el.img)[1]}`}
-              />
-            </div>
-          )}
-        </div>
-        <div className="p-1">
-          {groupMates[index].story.map((el) => el.text)[2]}
-          {groupMates[index].story[2].img.length > 0 && (
-            <div className="flex justify-center items-center">
-              <img
-                src={require(`../../assets/stories/${
-                  groupMates[index].story.map((el) => el.img)[2]
-                }`)}
-                alt={`${groupMates[index].story.map((el) => el.img)[2]}`}
-              />
-            </div>
-          )}
-        </div>
-        {/*  */}
       </div>
     </div>
   );
