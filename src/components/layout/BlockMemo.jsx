@@ -24,7 +24,19 @@ const BlockMemo = ({ element }) => {
       (el) => el.story[0].text.length > 0
     );
     const imagesToShow = groupMates.filter((el) => el.story[0].img.length > 0);
-    return storiesToShow && imagesToShow ? 'text and image' : 'imageS';
+    return (
+      <div
+        className="flex justify-center items-center"
+        key={groupMates[index].id}
+      >
+        {/* <img
+          src={require(`../../assets/stories/${
+            groupMates[index].story.map((el) => el.img)[0]
+          }`)}
+          alt={`${groupMates[index].story.map((el) => el.img)[0]}`}
+        /> */}
+      </div>
+    );
   }
   console.log(showStories()); //;
 
@@ -79,6 +91,7 @@ const BlockMemo = ({ element }) => {
             </div>
           )}
         </div>
+        {/* ==================================== */}
         <div className="p-1">
           {groupMates[index].story.map((el) => el.text)[1]}
           {groupMates[index].story[1].img.length > 0 && (
