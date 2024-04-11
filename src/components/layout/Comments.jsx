@@ -17,7 +17,7 @@ const Comments = () => {
       <div className="flex justify-center items-center" id="comments">
         <textarea
           className={themeComment}
-          placeholder="Here might be your comment..."
+          placeholder="Коментувати..."
           value={text}
           onChange={handleChange}
         />

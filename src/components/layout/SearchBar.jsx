@@ -36,7 +36,7 @@ const SearchBar = ({ sendDataToParent }) => {
     <div className="flex justify-center items-center">
       <input
         type="text"
-        placeholder="Ім'я або прізвище"
+        placeholder="Пошук..."
         className={themeInput}
         value={textToSearch}
         onChange={handleChange}
