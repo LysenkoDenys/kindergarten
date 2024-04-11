@@ -15,16 +15,26 @@ const Memo = () => {
     : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
 
   const [matesAll, setMatesAll] = useState([]);
+  const [dataFromChild, setDataFromChild] = useState(groupMates);
   // const [teachersData, setTeachersData] = useState([]);
 
   function uaSort(a, b) {
     return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
   }
 
+  function handleDataFromChild(textToSearch) {
+    const groupMatesFiltered = groupMates.filter((item) =>
+      (item.lastName + item.firstName + JSON.stringify(item.story))
+        .toLowerCase()
+        .includes(textToSearch.toLowerCase())
+    );
+    setDataFromChild(groupMatesFiltered);
+  }
+
   useEffect(() => {
     // Update state
     setMatesAll(
-      groupMates
+      dataFromChild
         .sort(uaSort)
         .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
     );
@@ -43,7 +53,7 @@ const Memo = () => {
         }
       }
     }, 100);
-  }, []);
+  }, [dataFromChild]);
 
   // useEffect(() => {
   //   setTeachersData(
@@ -111,7 +121,7 @@ const Memo = () => {
         </article>
       </Block>
       <Block>
-        <SearchBar />
+        <SearchBar sendDataToParent={handleDataFromChild} />
       </Block>
       {matesAll}
       {/* <div className=""> {teachersData}</div> */}

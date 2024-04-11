@@ -1,11 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from './Button';
 import { useTheme } from '../../ThemeContext';
 
-const SearchBar = () => {
-  const [text, setText] = useState('');
+const SearchBar = ({ sendDataToParent }) => {
+  const [textToSearch, setTextToSearch] = useState('');
 
-  const handleChange = (event) => setText(event.target.value);
+  const handleChange = (event) => setTextToSearch(event.target.value);
+
+  function handleClick() {
+    sendDataToParent(textToSearch);
+  }
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleClick();
+    }
+  };
+
+  useEffect(() => {
+    // Add event listener for key press on component mount
+    document.addEventListener('keydown', handleKeyPress);
+    // Remove event listener on component unmount
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [textToSearch]); // Empty dependency array to ensure effect only runs once on mount
 
   const darkTheme = useTheme();
   const themeInput = darkTheme
@@ -18,17 +38,10 @@ const SearchBar = () => {
         type="text"
         placeholder="Ім'я або прізвище"
         className={themeInput}
-        value={text}
+        value={textToSearch}
         onChange={handleChange}
       />
-      <Button
-        className=""
-        label={'Знайти'}
-        actionOnClick={() => {
-          text && alert(text);
-          setText('');
-        }}
-      />
+      <Button className="" label={'Знайти'} actionOnClick={handleClick} />
     </div>
   );
 };
