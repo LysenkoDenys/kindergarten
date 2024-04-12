@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { FiSearch } from 'react-icons/fi';
 import Button from './Button';
 import { useTheme } from '../../ThemeContext';
 
@@ -28,19 +29,23 @@ const SearchBar = ({ sendDataToParent }) => {
   }, [textToSearch]); // Empty dependency array to ensure effect only runs once on mount
 
   const darkTheme = useTheme();
+
   const themeInput = darkTheme
-    ? 'p-3 rounded-[15px] w-[30%] mr-1 my-3 shadow-[2px_2px_2px_2px_rgba(255,255,255,0.8)] text-black'
-    : 'p-3 rounded-[15px] w-[30%] mr-1 my-3 shadow-[5px_5px_5px_5px_rgba(0,0,0,0.4)]';
+    ? 'flex p-3 bg-white rounded-[10px] w-[50%] mr-1 my-3 shadow-[2px_2px_2px_2px_rgba(255,255,255,0.8)] text-black'
+    : 'flex p-3 bg-white rounded-[10px] w-[50%] mr-1 my-3 shadow-[5px_5px_5px_5px_rgba(0,0,0,0.4)]';
 
   return (
     <div className="flex justify-center items-center">
-      <input
-        type="text"
-        placeholder="Пошук..."
-        className={themeInput}
-        value={textToSearch}
-        onChange={handleChange}
-      />
+      <div className={themeInput}>
+        <FiSearch className="text-[25px]" />
+        <input
+          type="text"
+          placeholder="Пошук..."
+          className="w-[90%] px-1 outline-none"
+          value={textToSearch}
+          onChange={handleChange}
+        />
+      </div>
       <Button className="" label={'Знайти'} actionOnClick={handleClick} />
     </div>
   );
