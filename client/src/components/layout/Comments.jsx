@@ -17,12 +17,12 @@ const Comments = () => {
       <div className="flex justify-center items-center" id="comments">
         <textarea
           className={themeComment}
-          placeholder="Коментувати..."
+          placeholder="Текст коментаря..."
           value={text}
           onChange={handleChange}
         />
         <Button
-          label="Post"
+          label="Коментувати"
           actionOnClick={() => {
             text && alert(text);
             setText('');
