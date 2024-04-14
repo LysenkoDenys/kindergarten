@@ -10,6 +10,7 @@ const SearchBar = ({ sendDataToParent }) => {
 
   function handleClick() {
     sendDataToParent(textToSearch);
+    setTextToSearch('');
   }
 
   const handleKeyPress = (event) => {
