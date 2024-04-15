@@ -36,7 +36,7 @@ const SearchBar = ({ sendDataToParent }) => {
     : 'flex p-3 bg-white rounded-[10px] w-[50%] mr-1 my-3 shadow-[5px_5px_5px_5px_rgba(0,0,0,0.4)]';
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center" id="search">
       <div className={themeInput}>
         <FiSearch className="text-[25px]" />
         <input

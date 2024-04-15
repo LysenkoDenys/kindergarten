@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiSearch } from 'react-icons/fi';
 import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
 import { FaRegCommentDots } from 'react-icons/fa6';
 import Hamburger from './Hamburger';
@@ -40,7 +41,23 @@ const MainNavigation = () => {
     }
   };
 
+  const toTheSearchBar = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.substring(1); // Remove the '#' character
+      console.log(id); //
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }
+    }
+  };
+
   const linkToComments = window.location.href;
+  const linkToSearchBar = window.location.href;
 
   return (
     <header className={themeHeader}>
@@ -65,7 +82,12 @@ const MainNavigation = () => {
           />
         )}
       </div>
-      <div className="" onClick={toTheComments}>
+      <div onClick={toTheSearchBar}>
+        <Link to="memo/#search">
+          <FiSearch className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
+        </Link>
+      </div>
+      <div onClick={toTheComments}>
         <Link
           to={
             linkToComments.includes('/memo') ? 'memo/#comments' : '/#comments'
