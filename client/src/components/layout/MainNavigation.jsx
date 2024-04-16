@@ -27,21 +27,7 @@ const MainNavigation = () => {
     ? 'no-underline text-2xl hover:text-gray-400'
     : 'no-underline text-2xl hover:text-black';
 
-  const toTheComments = () => {
-    const hash = window.location.hash;
-    if (hash) {
-      const id = hash.substring(1); // Remove the '#' character
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-      }
-    }
-  };
-
-  const toTheSearchBar = () => {
+  const getUrl = () => {
     const hash = window.location.hash;
     if (hash) {
       const id = hash.substring(1); // Remove the '#' character
@@ -57,7 +43,6 @@ const MainNavigation = () => {
   };
 
   const linkToComments = window.location.href;
-  const linkToSearchBar = window.location.href;
 
   return (
     <header className={themeHeader}>
@@ -69,7 +54,7 @@ const MainNavigation = () => {
           Berizka
         </Link>
       </div>
-      <div className="">
+      <div title="змінити тему">
         {darkTheme ? (
           <MdOutlineLightMode
             onClick={toggleTheme}
@@ -82,12 +67,12 @@ const MainNavigation = () => {
           />
         )}
       </div>
-      <div onClick={toTheSearchBar}>
+      <div onClick={getUrl} title="шукати спогади">
         <Link to="memo/#search">
           <FiSearch className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
         </Link>
       </div>
-      <div onClick={toTheComments}>
+      <div onClick={getUrl} title="коментувати">
         <Link
           to={
             linkToComments.includes('/memo') ? 'memo/#comments' : '/#comments'
