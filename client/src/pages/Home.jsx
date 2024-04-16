@@ -82,11 +82,11 @@ const Home = () => {
     : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
 
   return (
-    <section className="select-none">
+    <section className="select-none lg:text-[24px]">
       <h1 className={themeHeaderOne}>Група 1979-1980 років народження.</h1>
       <Block>
         <article>
-          <h3 className="text-xl font-bold text-center">
+          <h3 className="text-xl font-bold text-center lg:text-[36px] lg:mb-3">
             Загальна інформація.
           </h3>
           <p>
@@ -106,7 +106,7 @@ const Home = () => {
             </strong>
           </p>
           <hr className="mb-2" />
-          <p>&ensp; Наші основні виховательки:</p>
+          <p>&ensp; Наші основні виховательки (досвідчені педагоги):</p>
           <div className="flex justify-around flex-wrap">
             <div className="flex items-center m-1">
               <img
