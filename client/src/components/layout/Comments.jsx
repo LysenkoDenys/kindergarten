@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTheme } from '../../ThemeContext';
 import Block from './Block';
 import Button from './Button';
+import { PostList } from './PostList';
 
 const Comments = () => {
   const [text, setText] = useState('');
@@ -14,6 +15,7 @@ const Comments = () => {
 
   return (
     <Block>
+      <PostList />
       <h3 className="text-xl font-bold text-center">Коментарі:</h3>
       <div className="flex justify-center items-center" id="comments">
         <textarea
