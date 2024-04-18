@@ -14,6 +14,9 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />}></Route>
         <Route path="/memo" element={<Memo />}></Route>
+        {/* get rid this in the future */}
+        <Route path="/posts/:id" element={<h1>Post</h1>}></Route>
+        {/* get rid this in the future */}
       </Routes>
       <Comments />
       <MainFooter />

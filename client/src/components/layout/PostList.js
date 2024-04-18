@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getPosts } from '../../services/posts';
 
@@ -7,5 +8,11 @@ export function PostList() {
   useEffect(() => {
     getPosts().then(setPosts);
   }, []);
-  return <h4>{JSON.stringify(posts)}</h4>;
+  return posts.map((post) => {
+    return (
+      <h1 key={post.id}>
+        <Link to={`/posts/${post.id}`}>{post.title}</Link>
+      </h1>
+    );
+  });
 }
