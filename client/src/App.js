@@ -5,6 +5,8 @@ import MainFooter from './components/layout/MainFooter';
 import Comments from './components/layout/Comments';
 import Home from './pages/Home';
 import Memo from './pages/Memo';
+import Post from './components/layout/Post';
+import { PostProvider } from './context/PostContext';
 import { ThemeProvider } from './ThemeContext';
 
 function App() {
@@ -15,7 +17,14 @@ function App() {
         <Route path="/" exact element={<Home />}></Route>
         <Route path="/memo" element={<Memo />}></Route>
         {/* get rid this in the future */}
-        <Route path="/posts/:id" element={<h1>Post</h1>}></Route>
+        <Route
+          path="/posts/:id"
+          element={
+            <PostProvider>
+              <Post />
+            </PostProvider>
+          }
+        ></Route>
         {/* get rid this in the future */}
       </Routes>
       <Comments />

@@ -31,7 +31,6 @@ const MainNavigation = () => {
     const hash = window.location.hash;
     if (hash) {
       const id = hash.substring(1); // Remove the '#' character
-      console.log(id); //
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({
