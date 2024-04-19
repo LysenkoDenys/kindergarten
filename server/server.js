@@ -25,7 +25,7 @@ app.get('/posts', async (req, res) => {
   );
 });
 
-app.get('/posts:id', async (req, res) => {
+app.get('/posts/:id', async (req, res) => {
   return await commitToDb(
     prisma.post.findUnique({
       where: {
