@@ -3,8 +3,8 @@ import React from 'react';
 const IconBtn = ({ Icon, isActive, color, children, ...props }) => {
   return (
     <button
-      className={`text-[white] text-[0.75em] cursor-pointer px-[1em] py-[0.5em] rounded-[0.5em] border-[none] ${
-        isActive != null ? '' : ''
+      className={`text-[0.75em] cursor-pointer px-[1em] py-[0.5em] rounded-[0.5em] border-[none] flex ${
+        isActive != null ? 'relative' : ''
       } ${color || ''}`}
       {...props}
     >
