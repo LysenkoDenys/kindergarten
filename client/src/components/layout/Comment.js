@@ -37,16 +37,16 @@ const Comment = ({ id, message, user, createdAt }) => {
           <div className={`flex ${areChildrenHidden ? 'hidden' : ''}`}>
             <button
               aria-label="Hide Replies"
-              className="w-[15px] relative cursor-pointer -translate-x-2/4 mt-2 p-0 border-[none] bg-transparent outline-none hover:bg-[hsl(235,100%,60%)] hover:before:bg-[hsl(235,100%,60%)]"
+              className="bg-transparent border-none p-0 w-15 mt-2 transform translate-x-1/2 relative cursor-pointer outline-none hover:bg-blue-500 focus-visible:bg-blue-500 before:absolute before:top-0 before:bottom-0 before:left-1/2 before:w-px before:bg-gray-300 before:transition-bg duration-100 ease-in-out"
               onClick={() => setAreChildrenHidden(true)}
             />
-            <div className="grow pl-2">
+            <div className="grow pl-4">
               <CommentList comments={childComments} />
             </div>
           </div>
           <button
-            className={`text-[white] text-[0.8em] cursor-pointer px-[1em] py-[0.5em] rounded-[0.5em] border-[none] mt-1 ${
-              areChildrenHidden ? 'hidden' : ''
+            className={`bg-blue-500 hover:bg-blue-600 focus-visible:bg-blue-600 text-white rounded-md px-2 py-0.5 cursor-pointe relative my-1 ${
+              !areChildrenHidden ? 'hidden' : ''
             }`}
             onClick={() => setAreChildrenHidden(false)}
           >
@@ -59,3 +59,5 @@ const Comment = ({ id, message, user, createdAt }) => {
 };
 
 export default Comment;
+
+// 'before:content-[""] before:absolute before:w-px before:bg-[hsl(235,50%,74%)] before:transition-[background-color] before:duration-100 before:ease-[ease-in-out] before:left-2/4 before:inset-y-0'
