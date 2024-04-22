@@ -4,6 +4,9 @@ import { FaHeart, FaReply, FaTrash } from 'react-icons/fa6';
 import { FaEdit } from 'react-icons/fa';
 import { usePost } from '../../context/PostContext';
 import CommentList from './CommentList';
+import CommentForm from './CommentForm';
+import { useAsyncFn } from '../../hooks/useAsync';
+import { createComment, updateComment } from '../../services/comments';
 
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
   dateStyle: 'short',
@@ -11,9 +14,32 @@ const dateFormatter = new Intl.DateTimeFormat(undefined, {
 });
 
 const Comment = ({ id, message, user, createdAt }) => {
-  const { getReplies } = usePost();
-  const childComments = getReplies(id);
   const [areChildrenHidden, setAreChildrenHidden] = useState(false);
+  const [isReplying, setIsReplying] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const { post, getReplies, createLocalComment } = usePost();
+  const createCommentFn = useAsyncFn(createComment);
+  const updateCommentFn = useAsyncFn(updateComment);
+  const childComments = getReplies(id);
+
+  function onCommentReply(message) {
+    return createCommentFn
+      .execute({ postId: post.id, message, parentId: id })
+      .then((comment) => {
+        setIsReplying(false);
+        // createLocalComment(comment);
+      });
+  }
+
+  function onCommentUpdate(message) {
+    return updateCommentFn
+      .execute({ postId: post.id, message, id })
+      .then((comment) => {
+        setIsEditing(false);
+        console.log(comment); //
+        // createLocalComment(comment);
+      });
+  }
 
   return (
     <>
@@ -22,16 +48,46 @@ const Comment = ({ id, message, user, createdAt }) => {
           <span className="font-[bold]">{user.name}</span>
           <span>{dateFormatter.format(Date.parse(createdAt))}</span>
         </div>
-        <div className="whitespace-pre-wrap mx-2">{message}</div>
+        {isEditing ? (
+          <CommentForm
+            autoFocus
+            initialValue={message}
+            onSubmit={onCommentUpdate}
+            loading={updateCommentFn.loading}
+            error={updateCommentFn.error}
+          />
+        ) : (
+          <div className="whitespace-pre-wrap mx-2">{message}</div>
+        )}
         <div className="flex gap-2 mt-2">
           <IconBtn Icon={FaHeart} aria-label="Like">
             2
           </IconBtn>
-          <IconBtn Icon={FaReply} aria-label="Reply" />
-          <IconBtn Icon={FaEdit} aria-label="Edit" />
+          <IconBtn
+            onClick={() => setIsReplying((prev) => !prev)}
+            isActive={isReplying}
+            Icon={FaReply}
+            aria-label={isReplying ? 'Cancel Reply' : 'Reply'}
+          />
+          <IconBtn
+            onClick={() => setIsEditing((prev) => !prev)}
+            isActive={isEditing}
+            Icon={FaEdit}
+            aria-label={isEditing ? 'Cancel Edit' : 'Edit'}
+          />
           <IconBtn Icon={FaTrash} aria-label="Delete" color="text-red-500" />
         </div>
       </div>
+      {isReplying && (
+        <div className="mt-1 ml-3">
+          <CommentForm
+            autoFocus
+            onSubmit={onCommentReply}
+            loading={createCommentFn.loading}
+            error={createCommentFn.error}
+          />
+        </div>
+      )}
       {childComments?.length > 0 && (
         <>
           <div className={`flex ${areChildrenHidden ? 'hidden' : ''}`}>
