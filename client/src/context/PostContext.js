@@ -51,6 +51,12 @@ export function PostProvider({ children }) {
     });
   }
 
+  function delateLocalComment(id) {
+    setComments((prevComments) => {
+      return prevComments.filter((comment) => comment.id !== id);
+    });
+  }
+
   return (
     <Context.Provider
       value={{
@@ -59,6 +65,7 @@ export function PostProvider({ children }) {
         getReplies,
         createLocalComment,
         updateLocalComment,
+        delateLocalComment,
       }}
     >
       {loading ? (
