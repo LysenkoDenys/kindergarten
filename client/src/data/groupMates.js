@@ -449,7 +449,7 @@ const groupMates = [
   },
   {
     firstName: 'Олексій',
-    lastName: 'Могильный',
+    lastName: 'Могильний',
     dateBirth: 2539382400000,
     sex: 'male',
     id: 27,

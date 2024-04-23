@@ -17,7 +17,8 @@ const Comment = ({ id, message, user, createdAt }) => {
   const [areChildrenHidden, setAreChildrenHidden] = useState(false);
   const [isReplying, setIsReplying] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  const { post, getReplies, createLocalComment } = usePost();
+  const { post, getReplies, createLocalComment, updateLocalComment } =
+    usePost();
   const createCommentFn = useAsyncFn(createComment);
   const updateCommentFn = useAsyncFn(updateComment);
   const childComments = getReplies(id);
@@ -27,7 +28,7 @@ const Comment = ({ id, message, user, createdAt }) => {
       .execute({ postId: post.id, message, parentId: id })
       .then((comment) => {
         setIsReplying(false);
-        // createLocalComment(comment);
+        createLocalComment(comment);
       });
   }
 
@@ -36,8 +37,7 @@ const Comment = ({ id, message, user, createdAt }) => {
       .execute({ postId: post.id, message, id })
       .then((comment) => {
         setIsEditing(false);
-        console.log(comment); //
-        // createLocalComment(comment);
+        updateLocalComment(id, comment.message);
       });
   }
 

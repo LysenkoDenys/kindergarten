@@ -94,7 +94,7 @@ app.post('/posts/:id/comments', async (req, res) => {
   );
 });
 
-app.put('/posts/:postId/comments/commentId', async (req, res) => {
+app.put('/posts/:postId/comments/:commentId', async (req, res) => {
   if (req.body.message === '' || req.body.message == null) {
     return res.send(app.httpErrors.badRequest('Message is required'));
   }
@@ -110,14 +110,27 @@ app.put('/posts/:postId/comments/commentId', async (req, res) => {
       )
     );
   }
+});
+
+app.delete('/posts/:postId/comments/:commentId', async (req, res) => {
+  const { userId } = await prisma.comment.findUnique({
+    where: { id: req.params.commentId },
+    select: { userId: true },
+  });
+  if (userId !== req.cookies.userId) {
+    return res.send(
+      app.httpErrors.unauthorized(
+        'You do not have permission to delete this message'
+      )
+    );
+  }
 
   return await commitToDb(
-    prisma.comment.update({
+    prisma.comment.delete({
       where: {
         id: req.params.commentId,
       },
-      data: { message: req.body.message },
-      select: { message: true },
+      select: { id: true },
     })
   );
 });

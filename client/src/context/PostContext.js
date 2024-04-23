@@ -39,6 +39,18 @@ export function PostProvider({ children }) {
     });
   }
 
+  function updateLocalComment(id, message) {
+    setComments((prevComments) => {
+      return prevComments.map((comment) => {
+        if (comment.id === id) {
+          return { ...comment, message };
+        } else {
+          return comment;
+        }
+      });
+    });
+  }
+
   return (
     <Context.Provider
       value={{
@@ -46,6 +58,7 @@ export function PostProvider({ children }) {
         rootComments: commentsByParentId[null],
         getReplies,
         createLocalComment,
+        updateLocalComment,
       }}
     >
       {loading ? (
