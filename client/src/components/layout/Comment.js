@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import IconBtn from './IconBtn';
 import { FaHeart, FaReply, FaTrash } from 'react-icons/fa6';
-import { FaEdit } from 'react-icons/fa';
+import { FaEdit, FaRegHeart } from 'react-icons/fa';
 import { usePost } from '../../context/PostContext';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
@@ -12,6 +12,7 @@ import {
   createComment,
   updateComment,
   deleteComment,
+  toggleCommentLike,
 } from '../../services/comments';
 
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
@@ -19,7 +20,7 @@ const dateFormatter = new Intl.DateTimeFormat(undefined, {
   timeStyle: 'short',
 });
 
-const Comment = ({ id, message, user, createdAt }) => {
+const Comment = ({ id, message, user, createdAt, likeCount, likedByMe }) => {
   const [areChildrenHidden, setAreChildrenHidden] = useState(false);
   const [isReplying, setIsReplying] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -29,10 +30,12 @@ const Comment = ({ id, message, user, createdAt }) => {
     createLocalComment,
     updateLocalComment,
     deleteLocalComment,
+    toggleLocalCommentLike,
   } = usePost();
   const createCommentFn = useAsyncFn(createComment);
   const updateCommentFn = useAsyncFn(updateComment);
   const deleteCommentFn = useAsyncFn(deleteComment);
+  const toggleCommentLikeFn = useAsyncFn(toggleCommentLike);
   const childComments = getReplies(id);
   const currentUser = useUser();
 
@@ -60,6 +63,12 @@ const Comment = ({ id, message, user, createdAt }) => {
       .then((comment) => deleteLocalComment(comment.id));
   }
 
+  function onToggleCommentLike() {
+    return toggleCommentLikeFn
+      .execute({ postId: post.id, id })
+      .then(({ addLike }) => toggleLocalCommentLike(id, addLike));
+  }
+
   return (
     <>
       <div className="border p-2 rounded-lg border-solid border-[hsl(235,100%,90%)] bg-slate-200">
@@ -72,6 +81,7 @@ const Comment = ({ id, message, user, createdAt }) => {
             autoFocus
             initialValue={message}
             onSubmit={onCommentUpdate}
+            disabled={toggleCommentLikeFn.loading}
             loading={updateCommentFn.loading}
             error={updateCommentFn.error}
           />
@@ -79,8 +89,12 @@ const Comment = ({ id, message, user, createdAt }) => {
           <div className="whitespace-pre-wrap mx-2">{message}</div>
         )}
         <div className="flex gap-2 mt-2">
-          <IconBtn Icon={FaHeart} aria-label="Like">
-            2
+          <IconBtn
+            onClick={onToggleCommentLike}
+            Icon={likedByMe ? FaHeart : FaRegHeart}
+            aria-label={likedByMe ? 'Unlike' : 'Like'}
+          >
+            {likeCount}
           </IconBtn>
           <IconBtn
             onClick={() => setIsReplying((prev) => !prev)}
