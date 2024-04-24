@@ -73,13 +73,13 @@ app.get('/posts/:id', async (req, res) => {
             },
             select: {
               ...COMMENT_SELECT_FIELDS,
-              _count: { select: { Likes: true } },
+              _count: { select: { likes: true } },
             },
           },
         },
       })
       .then(async (post) => {
-        const Likes = await prisma.like.findMany({
+        const likes = await prisma.like.findMany({
           where: {
             userId: req.cookies.userId,
             commentId: { in: post.comments.map((comment) => comment.id) },
@@ -92,8 +92,8 @@ app.get('/posts/:id', async (req, res) => {
             const { _count, ...commentFields } = comment;
             return {
               ...commentFields,
-              likedByMe: Likes.find((like) => like.commentId === comment.id),
-              likeCount: _count.Likes,
+              likedByMe: likes.find((like) => like.commentId === comment.id),
+              likeCount: _count.likes,
             };
           }),
         };

@@ -24,7 +24,7 @@ model User {
   id       String    @id @default(uuid())
   name     String
   comments Comment[]
-  Likes    Like[]
+  likes    Like[]
 }
 
 model Comment {
@@ -39,7 +39,7 @@ model Comment {
   parent    Comment?  @relation("ParentChild", fields: [parentId], references: [id], onDelete: Cascade)
   children  Comment[] @relation("ParentChild")
   parentId  String?
-  Likes     Like[]
+  likes     Like[]
 }
 
 model Like {
