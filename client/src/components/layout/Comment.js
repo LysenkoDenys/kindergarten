@@ -6,6 +6,8 @@ import { usePost } from '../../context/PostContext';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import { useAsyncFn } from '../../hooks/useAsync';
+import { useUser } from '../../hooks/useUser';
+
 import {
   createComment,
   updateComment,
@@ -32,6 +34,7 @@ const Comment = ({ id, message, user, createdAt }) => {
   const updateCommentFn = useAsyncFn(updateComment);
   const deleteCommentFn = useAsyncFn(deleteComment);
   const childComments = getReplies(id);
+  const currentUser = useUser();
 
   function onCommentReply(message) {
     return createCommentFn
@@ -85,19 +88,23 @@ const Comment = ({ id, message, user, createdAt }) => {
             Icon={FaReply}
             aria-label={isReplying ? 'Cancel Reply' : 'Reply'}
           />
-          <IconBtn
-            onClick={() => setIsEditing((prev) => !prev)}
-            isActive={isEditing}
-            Icon={FaEdit}
-            aria-label={isEditing ? 'Cancel Edit' : 'Edit'}
-          />
-          <IconBtn
-            disabled={deleteCommentFn.loading}
-            onClick={onCommentDelete}
-            Icon={FaTrash}
-            aria-label="Delete"
-            color="text-red-500"
-          />
+          {user.id === currentUser.id && (
+            <>
+              <IconBtn
+                onClick={() => setIsEditing((prev) => !prev)}
+                isActive={isEditing}
+                Icon={FaEdit}
+                aria-label={isEditing ? 'Cancel Edit' : 'Edit'}
+              />
+              <IconBtn
+                disabled={deleteCommentFn.loading}
+                onClick={onCommentDelete}
+                Icon={FaTrash}
+                aria-label="Delete"
+                color="text-red-500"
+              />
+            </>
+          )}
         </div>
         {deleteCommentFn.error && (
           <div className="text-[hsl(0,100%,67%)] mt-1">

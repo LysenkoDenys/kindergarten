@@ -51,7 +51,7 @@ export function PostProvider({ children }) {
     });
   }
 
-  function delateLocalComment(id) {
+  function deleteLocalComment(id) {
     setComments((prevComments) => {
       return prevComments.filter((comment) => comment.id !== id);
     });
@@ -65,7 +65,7 @@ export function PostProvider({ children }) {
         getReplies,
         createLocalComment,
         updateLocalComment,
-        delateLocalComment,
+        deleteLocalComment,
       }}
     >
       {loading ? (

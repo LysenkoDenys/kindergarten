@@ -127,9 +127,7 @@ app.delete('/posts/:postId/comments/:commentId', async (req, res) => {
 
   return await commitToDb(
     prisma.comment.delete({
-      where: {
-        id: req.params.commentId,
-      },
+      where: { id: req.params.commentId },
       select: { id: true },
     })
   );
