@@ -24,7 +24,7 @@ const Memo = () => {
 
   function handleDataFromChild(textToSearch) {
     const groupMatesFiltered = groupMates.filter((item) =>
-      (item.lastName + item.firstName + JSON.stringify(item.story))
+      (item.lastName + ' ' + item.firstName + ' ' + JSON.stringify(item.story))
         .toLowerCase()
         .includes(textToSearch.toLowerCase())
     );

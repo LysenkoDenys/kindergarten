@@ -5,12 +5,14 @@ import { useTheme } from '../../ThemeContext';
 
 const SearchBar = ({ sendDataToParent }) => {
   const [textToSearch, setTextToSearch] = useState('');
+  const [isFiltered, setIsFiltered] = useState(false);
 
   const handleChange = (event) => setTextToSearch(event.target.value);
 
   function handleClick() {
     sendDataToParent(textToSearch);
     setTextToSearch('');
+    setIsFiltered(!isFiltered);
   }
 
   const handleKeyPress = (event) => {
@@ -47,7 +49,11 @@ const SearchBar = ({ sendDataToParent }) => {
           onChange={handleChange}
         />
       </div>
-      <Button className="" label={'Знайти'} actionOnClick={handleClick} />
+      <Button
+        className=""
+        label={!isFiltered ? 'Знайти' : 'Очистити'}
+        actionOnClick={handleClick}
+      />
     </div>
   );
 };
