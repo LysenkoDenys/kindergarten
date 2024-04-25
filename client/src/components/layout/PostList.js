@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { getPosts } from '../../services/posts';
 import { useAsync } from '../../hooks/useAsync';
 

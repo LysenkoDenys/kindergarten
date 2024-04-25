@@ -5,7 +5,6 @@ import SearchBar from '../components/layout/SearchBar';
 import Block from '../../src/components/layout/Block';
 import BlockMemo from '../../src/components/layout/BlockMemo';
 import groupMates from '../data/groupMates';
-// import teachers from '../data/teachers';
 
 const Memo = () => {
   const darkTheme = useTheme();
@@ -16,7 +15,6 @@ const Memo = () => {
 
   const [matesAll, setMatesAll] = useState([]);
   const [dataFromChild, setDataFromChild] = useState(groupMates);
-  // const [teachersData, setTeachersData] = useState([]);
 
   function uaSort(a, b) {
     return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
@@ -54,12 +52,6 @@ const Memo = () => {
       }
     }, 100);
   }, [dataFromChild]);
-
-  // useEffect(() => {
-  //   setTeachersData(
-  //     teachers.map((el) => <div element={el.firstName} key={el.id}></div>)
-  //   );
-  // }, []);
 
   return (
     <section className="select-none lg:text-[24px]">
@@ -124,7 +116,6 @@ const Memo = () => {
         <SearchBar sendDataToParent={handleDataFromChild} />
       </Block>
       {matesAll}
-      {/* <div className=""> {teachersData}</div> */}
     </section>
   );
 };
