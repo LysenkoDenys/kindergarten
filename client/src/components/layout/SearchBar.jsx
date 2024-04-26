@@ -1,23 +1,26 @@
 import { useState, useEffect } from 'react';
 import { FiSearch } from 'react-icons/fi';
+import { IoCloseCircleOutline } from 'react-icons/io5';
 import Button from './Button';
 import { useTheme } from '../../ThemeContext';
 
 const SearchBar = ({ sendDataToParent }) => {
   const [textToSearch, setTextToSearch] = useState('');
-  const [isFiltered, setIsFiltered] = useState(false);
 
   const handleChange = (event) => setTextToSearch(event.target.value);
 
-  function handleClick() {
+  function handleFindClick() {
     sendDataToParent(textToSearch);
+  }
+
+  function handleResetClick() {
     setTextToSearch('');
-    setIsFiltered(!isFiltered);
+    sendDataToParent('');
   }
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      handleClick();
+      handleFindClick();
     }
   };
 
@@ -40,7 +43,7 @@ const SearchBar = ({ sendDataToParent }) => {
   return (
     <div className="flex justify-center items-center" id="search">
       <div className={themeInput}>
-        <FiSearch className="text-[25px]" />
+        <FiSearch className="text-[25px] text-gray-400" />
         <input
           type="text"
           placeholder="Пошук..."
@@ -48,12 +51,15 @@ const SearchBar = ({ sendDataToParent }) => {
           value={textToSearch}
           onChange={handleChange}
         />
+        {textToSearch && (
+          <IoCloseCircleOutline
+            className="text-[30px] cursor-pointer"
+            onClick={handleResetClick}
+            title="очистити поле пошуку"
+          />
+        )}
       </div>
-      <Button
-        className=""
-        label={!isFiltered ? 'Знайти' : 'Очистити'}
-        actionOnClick={handleClick}
-      />
+      <Button className="" label="Знайти" actionOnClick={handleFindClick} />
     </div>
   );
 };

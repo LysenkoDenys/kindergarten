@@ -3,7 +3,7 @@ import { useTheme } from '../../ThemeContext';
 import Block from './Block';
 import Button from './Button';
 import { PostList } from './PostList';
-import Post from './Post';
+// import Post from './Post';
 
 const Comments = () => {
   const [text, setText] = useState('');
