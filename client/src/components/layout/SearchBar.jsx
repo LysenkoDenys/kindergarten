@@ -53,7 +53,7 @@ const SearchBar = ({ sendDataToParent }) => {
         />
         {textToSearch && (
           <IoCloseCircleOutline
-            className="text-[30px] cursor-pointer"
+            className="text-[25px] cursor-pointer"
             onClick={handleResetClick}
             title="очистити поле пошуку"
           />
