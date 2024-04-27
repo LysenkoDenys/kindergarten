@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { TbGenderDemiboy, TbGenderDemigirl } from 'react-icons/tb';
 import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
 import MateItem from '../components/layout/MateItem';
 import Button from '../components/layout/Button';
 import Block from '../../src/components/layout/Block';
+import getUrl from '../data/getUrl';
 
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
@@ -98,11 +100,14 @@ const Home = () => {
           <hr className="mt-2" />
           <p className="text-center mb-2 mt-2">
             <strong>
-              &ensp; DISCLAIMER: контент даного сайту засновано на подіях, які
-              згадує автор та носить розважальний характер. В разі виникнення
-              уточнень, доповнень, коригуівань, прохання надати Ваші спогади,
-              фото, тощо для розміщення на даному сайті. Реквізити автора надано
-              нижче.
+              &ensp; <span className="text-red-400">DISCLAIMER:</span> контент
+              даного сайту засновано на подіях, які згадує автор та носить
+              розважальний характер. В разі виникнення уточнень, доповнень,
+              коригуівань, прохання надати Ваші спогади, фото, тощо для
+              розміщення на даному сайті. Реквізити автора надано
+              <span className="text-blue-500 cursor-pointer" onClick={getUrl}>
+                <Link to="/#footer"> нижче.</Link>
+              </span>
             </strong>
           </p>
           <hr className="mb-2" />
@@ -210,7 +215,10 @@ const Home = () => {
             автор, знаходяться в переліку нижче (натисни кнопку). Прохання не
             цуратися і допомогти згадати ВСІХ хлопців і дівчат. Також, Ваші
             фото, спогади , можуть бути розміщеними на даному сайті, тож
-            звертайтеся за посиланнями нижче.
+            звертайтеся за посиланнями{' '}
+            <span className="text-blue-500 cursor-pointer" onClick={getUrl}>
+              <Link to="/#footer">нижче.</Link>
+            </span>
           </p>
           <div className="flex items-center flex-col">
             <Button

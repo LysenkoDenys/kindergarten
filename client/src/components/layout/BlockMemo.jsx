@@ -34,7 +34,7 @@ const BlockMemo = ({ element }) => {
                 alt={`my group mate ${groupMates[index].lastName}`}
                 className={themePhoto}
               />
-              <div className="mx-1 font-bold">
+              <div className="mx-1 font-bold text-blue-400">
                 {`${groupMates[index].lastName} ${groupMates[index].firstName}`}
               </div>
               <TiSocialFacebookCircular className="hover:scale-110 ease-in-out duration-300 mr-1" />
@@ -47,7 +47,7 @@ const BlockMemo = ({ element }) => {
               alt={`my group mate ${groupMates[index].lastName}`}
               className={themePhoto}
             />
-            <div className="mx-1 font-bold">
+            <div className="mx-1 font-bold text-blue-400">
               {`${groupMates[index].lastName} ${groupMates[index].firstName}`}
             </div>
           </div>
