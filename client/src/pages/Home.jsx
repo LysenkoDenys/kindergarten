@@ -113,7 +113,7 @@ const Home = () => {
           <hr className="mb-2" />
           <p>&ensp; Наші основні виховательки (досвідчені педагоги):</p>
           <div className="flex justify-around flex-wrap">
-            <div className="flex items-center m-1">
+            <div className="flex items-center m-2">
               <img
                 className="h-[80px] rounded-lg hover:scale-110 ease-in-out duration-300"
                 src={require('../assets/faces-teachers/victorivna.jpg')}
@@ -121,7 +121,7 @@ const Home = () => {
               />
               <div className="m-1">Валентина Вікторівна</div>
             </div>
-            <div className="flex items-center m-1">
+            <div className="flex items-center m-2">
               <img
                 src={require('../assets/faces-teachers/vasylivna.jpg')}
                 alt="valentina vasylivna"

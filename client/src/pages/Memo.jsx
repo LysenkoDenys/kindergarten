@@ -110,6 +110,21 @@ const Memo = () => {
             майданчиками В і С була облаштована під спортивний майданчик, але
             нас туди виводили не часто.
           </p>
+          <p>&ensp; Схема приміщення представлена нижче.</p>
+          <figure className="flex items-center flex-col">
+            <img
+              src={require('../assets/scheme-2.jpg')}
+              alt="scheme-2"
+              className="rounded-sm"
+            />
+            <figcaption className="text-center">
+              <b>Фото-05</b> - Схема місця нашого перебування.
+            </figcaption>
+          </figure>
+          <p>
+            &ensp; На схемі: 1 - спальня; 2 - роздягалка; 3 - міжповерхова
+            драбина; 4 - туалет; 5- їлальня/вітальня; 6 - учбовий клас.
+          </p>
         </article>
       </Block>
       <Block>
