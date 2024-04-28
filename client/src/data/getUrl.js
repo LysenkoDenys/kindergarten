@@ -4,9 +4,10 @@ const getUrl = () => {
     const id = hash.substring(1); // Remove the '#' character
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
+      const topOffset = element.getBoundingClientRect().top;
+      window.scrollTo({
+        top: window.scrollY + topOffset - 100,
         behavior: 'smooth',
-        block: 'center',
       });
     }
   }

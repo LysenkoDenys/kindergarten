@@ -5,6 +5,7 @@ import SearchBar from '../components/layout/SearchBar';
 import Block from '../../src/components/layout/Block';
 import BlockMemo from '../../src/components/layout/BlockMemo';
 import groupMates from '../data/groupMates';
+import getUrl from '../data/getUrl';
 
 const Memo = () => {
   const darkTheme = useTheme();
@@ -29,6 +30,11 @@ const Memo = () => {
     setDataFromChild(groupMatesFiltered);
   }
 
+  // it is necessary to make link work correct for the first time:
+  useEffect(() => {
+    getUrl(); // Call getUrl function when Memo component mounts
+  }, []);
+
   useEffect(() => {
     // Update state
     setMatesAll(
@@ -39,17 +45,7 @@ const Memo = () => {
 
     // Scroll to element based on hash fragment after a short delay
     setTimeout(() => {
-      const hash = window.location.hash;
-      if (hash) {
-        const id = hash.substring(1); // Remove the '#' character
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }
-      }
+      getUrl();
     }, 100);
   }, [dataFromChild]);
 
