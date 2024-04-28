@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PiArrowFatRightBold } from 'react-icons/pi';
 import groupMates from '../../data/groupMates';
 import { useTheme } from '../../ThemeContext';
+import getUrl from '../../data/getUrl';
 
 const MateItem = ({ element }) => {
   const index = groupMates.findIndex((el) => el.id === element.id);
@@ -21,7 +22,7 @@ const MateItem = ({ element }) => {
     : 'flex items-center justify-between ease-in-out duration-300 pl-5 pr-1 ml-9 cursor-pointer bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold   rounded-[5px] shadow-[0_10px_10px_10px_rgba(0,0,0,0.4)] hover:shadow-[0_5px_5px_5px_rgba(0,0,0,0.5)] hover:translate-x-[5px] text-[18px]';
 
   return (
-    <div className="relative pr-3 py-3 mb-[2%]">
+    <div className="relative pr-3 py-3 mb-[2%]" onClick={getUrl}>
       <Link to={`/memo/#${groupMates[index].id}`}>
         <div>
           <img

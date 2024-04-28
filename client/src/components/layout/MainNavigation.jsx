@@ -28,7 +28,7 @@ const MainNavigation = () => {
     ? 'no-underline text-2xl hover:text-gray-400'
     : 'no-underline text-2xl hover:text-black';
 
-  const linkToComments = window.location.href;
+  const linkToComments = () => window.location.href;
 
   return (
     <header className={themeHeader}>
@@ -61,7 +61,7 @@ const MainNavigation = () => {
       <div onClick={getUrl} title="коментувати">
         <Link
           to={
-            linkToComments.includes('/memo') ? 'memo/#comments' : '/#comments'
+            linkToComments().includes('/memo') ? 'memo/#comments' : '/#comments'
           }
         >
           <FaRegCommentDots className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
