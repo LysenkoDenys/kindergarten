@@ -30,10 +30,10 @@ const Memo = () => {
     setDataFromChild(groupMatesFiltered);
   }
 
-  // // it is necessary to make link work correct for the first time:
-  // useEffect(() => {
-  //   getUrl(); // Call getUrl function when Memo component mounts
-  // }, []);
+  // it is necessary to make link work correct for the first time:
+  useEffect(() => {
+    getUrl(); // Call getUrl function when Memo component mounts
+  }, []);
 
   useEffect(() => {
     // Update state
