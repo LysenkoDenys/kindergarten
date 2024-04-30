@@ -14,8 +14,12 @@ const Memo = () => {
     ? 'text-3xl font-bold text-center mb-3 mt-3 text-[#CCCCCC]'
     : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
 
-  const [matesAll, setMatesAll] = useState([]);
   const [dataFromChild, setDataFromChild] = useState(groupMates);
+  const [matesAll, setMatesAll] = useState(
+    dataFromChild
+      .sort(uaSort)
+      .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
+  );
 
   function uaSort(a, b) {
     return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
@@ -129,11 +133,7 @@ const Memo = () => {
       <Block>
         <SearchBar sendDataToParent={handleDataFromChild} />
       </Block>
-      {matesAll.length
-        ? matesAll
-        : groupMates
-            .sort(uaSort)
-            .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)}
+      {matesAll}
     </section>
   );
 };
