@@ -22,7 +22,7 @@ const Post = () => {
     <>
       <h1>{post.title}</h1>
       <article>{post.body}</article>
-      <h3 className="text-[24px]">Comments</h3>
+      <h3 className="text-[24px] font-bold">Comments</h3>
       <section>
         <CommentForm
           loading={loading}
