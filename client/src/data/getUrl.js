@@ -11,8 +11,6 @@ const getUrl = () => {
           behavior: 'smooth',
         });
       }
-    } else {
-      alert(`The element ${hash} does not found`);
     }
   }, 100);
 };
