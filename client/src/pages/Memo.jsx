@@ -5,7 +5,7 @@ import SearchBar from '../components/layout/SearchBar';
 import Block from '../../src/components/layout/Block';
 import BlockMemo from '../../src/components/layout/BlockMemo';
 import groupMates from '../data/groupMates';
-import getUrl from '../data/getUrl';
+// import getUrl from '../data/getUrl';
 
 const Memo = () => {
   const darkTheme = useTheme();
@@ -31,9 +31,9 @@ const Memo = () => {
   }
 
   // it is necessary to make link work correct for the first time:
-  useEffect(() => {
-    getUrl(); // Call getUrl function when Memo component mounts
-  }, []);
+  // useEffect(() => {
+  //   getUrl(); // Call getUrl function when Memo component mounts
+  // }, []);
 
   useEffect(() => {
     // Update state
@@ -44,9 +44,9 @@ const Memo = () => {
     );
 
     // Scroll to element based on hash fragment after a short delay
-    setTimeout(() => {
-      getUrl();
-    }, 100);
+    // setTimeout(() => {
+    //   getUrl();
+    // }, 100);
   }, [dataFromChild]);
 
   return (
@@ -129,7 +129,11 @@ const Memo = () => {
       <Block>
         <SearchBar sendDataToParent={handleDataFromChild} />
       </Block>
-      {matesAll}
+      {matesAll.length
+        ? matesAll
+        : groupMates
+            .sort(uaSort)
+            .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)}
     </section>
   );
 };

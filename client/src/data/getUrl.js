@@ -1,5 +1,6 @@
 const getUrl = () => {
   const hash = window.location.hash;
+  console.log(hash);
   setTimeout(() => {
     if (hash) {
       const id = hash.substring(1); // Remove the '#' character
