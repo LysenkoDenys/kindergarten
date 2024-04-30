@@ -7,7 +7,7 @@ export function PostList() {
 
   if (loading) return <h1>Loading</h1>;
   if (error)
-    return <h1>{`$Comments are coming soon: for now it is an {error}`}</h1>;
+    return <h1>{`Comments are coming soon: for now it is an ${error}`}</h1>;
 
   return posts.map((post) => {
     return (
