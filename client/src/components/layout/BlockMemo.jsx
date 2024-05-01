@@ -1,7 +1,9 @@
+import React, { useEffect } from 'react';
 import { TiSocialFacebookCircular } from 'react-icons/ti';
 import { v4 as uuidv4 } from 'uuid';
 import groupMates from '../../data/groupMates';
 import { useTheme } from '../../ThemeContext';
+import getUrl from '../../data/getUrl';
 
 const BlockMemo = ({ element }) => {
   const index = groupMates.findIndex((el) => el.id === element.id);
@@ -18,6 +20,12 @@ const BlockMemo = ({ element }) => {
   const themeBlock = darkTheme
     ? 'bg-[#221f1f] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(255,255,255,0.3)] hover:bg-[#333333] hover:shadow-[3px_3px_5px_2px_rgba(255,255,255,0.3)] select-none text-[#CCCCCC]'
     : 'bg-[#dadbde] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[3px_3px_5px_2px_rgba(0,0,0,0.3)] select-none';
+
+  //it is necessary to make link work correct for the first time:
+  useEffect(() => {
+    console.log('I am rendered'); //
+    getUrl(); // Call getUrl function when Memo component mounts
+  }, []);
 
   return (
     <div id={groupMates[index].id}>
