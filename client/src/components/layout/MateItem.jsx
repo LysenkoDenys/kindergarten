@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PiArrowFatRightBold } from 'react-icons/pi';
 import groupMates from '../../data/groupMates';
@@ -20,6 +20,12 @@ const MateItem = ({ element }) => {
   const themeBlock = darkTheme
     ? 'flex items-center justify-between ease-in-out duration-300 pl-5 pr-1 ml-9 cursor-pointer bg-gray-700 hover:bg-gray-800 hover:text-white font-bold rounded-[5px] shadow-[0_3px_3px_3px_rgba(255,255,255,0.8)] hover:shadow-[0_2px_2px_2px_rgba(255,255,255,1)] hover:translate-x-[5px] text-[18px]'
     : 'flex items-center justify-between ease-in-out duration-300 pl-5 pr-1 ml-9 cursor-pointer bg-gray-400 hover:bg-gray-500 hover:text-white  font-bold   rounded-[5px] shadow-[0_10px_10px_10px_rgba(0,0,0,0.4)] hover:shadow-[0_5px_5px_5px_rgba(0,0,0,0.5)] hover:translate-x-[5px] text-[18px]';
+
+  //it is necessary to make link work correct for the first time:
+  useEffect(() => {
+    console.log('I am rendered'); //
+    getUrl(); // Call getUrl function when Memo component mounts
+  }, []);
 
   return (
     <div className="relative pr-3 py-3 mb-[2%]" onClick={getUrl}>
