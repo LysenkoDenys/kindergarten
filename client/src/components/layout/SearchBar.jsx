@@ -3,7 +3,6 @@ import { FiSearch } from 'react-icons/fi';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import Button from './Button';
 import { useTheme } from '../../ThemeContext';
-import getUrl from '../../data/getUrl';
 
 const SearchBar = ({ sendDataToParent }) => {
   const [textToSearch, setTextToSearch] = useState('');
@@ -34,12 +33,6 @@ const SearchBar = ({ sendDataToParent }) => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [textToSearch]); // Empty dependency array to ensure effect only runs once on mount
-
-  //it is necessary to make link work correct for the first time:
-  useEffect(() => {
-    console.log('I am rendered'); //
-    getUrl(); // Call getUrl function when Memo component mounts
-  }, []);
 
   const darkTheme = useTheme();
 
