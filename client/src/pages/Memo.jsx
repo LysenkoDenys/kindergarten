@@ -16,7 +16,7 @@ const Memo = () => {
 
   const [dataFromChild, setDataFromChild] = useState(groupMates);
   const [matesAll, setMatesAll] = useState(
-    dataFromChild
+    groupMates
       .sort(uaSort)
       .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
   );
