@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useTheme } from '../ThemeContext';
 import { IoLocationOutline } from 'react-icons/io5';
 import SearchBar from '../components/layout/SearchBar';
-import Block from '../../src/components/layout/Block';
 import BlockMemo from '../../src/components/layout/BlockMemo';
+import Block from '../../src/components/layout/Block';
 import groupMates from '../data/groupMates';
 import getUrl from '../data/getUrl';
 
@@ -14,12 +14,12 @@ const Memo = () => {
     ? 'text-3xl font-bold text-center mb-3 mt-3 text-[#CCCCCC]'
     : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
 
-  const [dataFromChild, setDataFromChild] = useState(groupMates);
-  const [matesAll, setMatesAll] = useState(
-    groupMates
-      .sort(uaSort)
-      .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
-  );
+  // const [dataFromChild, setDataFromChild] = useState(groupMates);
+  const [matesAll, setMatesAll] = useState(groupMates);
+
+  const renderMates = matesAll
+    .sort(uaSort)
+    .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>);
 
   function uaSort(a, b) {
     return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
@@ -31,7 +31,7 @@ const Memo = () => {
         .toLowerCase()
         .includes(textToSearch.toLowerCase())
     );
-    setDataFromChild(groupMatesFiltered);
+    setMatesAll(groupMatesFiltered);
   }
 
   //it is necessary to make link work correct for the first time:
@@ -39,19 +39,19 @@ const Memo = () => {
     getUrl(); // Call getUrl function when Memo component mounts
   }, []);
 
-  useEffect(() => {
-    // Update state
-    setMatesAll(
-      dataFromChild
-        .sort(uaSort)
-        .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
-    );
+  // useEffect(() => {
+  //   // Update state
+  //   setMatesAll(
+  //     dataFromChild
+  //       .sort(uaSort)
+  //       .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
+  //   );
 
-    // Scroll to element based on hash fragment after a short delay
-    // setTimeout(() => {
-    //   getUrl();
-    // }, 100);
-  }, [dataFromChild]);
+  //   // Scroll to element based on hash fragment after a short delay
+  //   // setTimeout(() => {
+  //   //   getUrl();
+  //   // }, 100);
+  // }, [dataFromChild]);
 
   return (
     <section className="select-none lg:text-[24px]">
@@ -133,7 +133,7 @@ const Memo = () => {
       <Block>
         <SearchBar sendDataToParent={handleDataFromChild} />
       </Block>
-      {matesAll}
+      {renderMates}
     </section>
   );
 };

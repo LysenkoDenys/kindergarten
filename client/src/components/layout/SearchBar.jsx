@@ -4,18 +4,18 @@ import { IoCloseCircleOutline } from 'react-icons/io5';
 import Button from './Button';
 import { useTheme } from '../../ThemeContext';
 
-const SearchBar = ({ sendDataToParent }) => {
+const SearchBar = (props) => {
   const [textToSearch, setTextToSearch] = useState('');
 
   const handleChange = (event) => setTextToSearch(event.target.value);
 
   function handleFindClick() {
-    sendDataToParent(textToSearch);
+    props.sendDataToParent(textToSearch);
   }
 
   function handleResetClick() {
     setTextToSearch('');
-    sendDataToParent('');
+    props.sendDataToParent('');
   }
 
   const handleKeyPress = (event) => {
@@ -32,7 +32,7 @@ const SearchBar = ({ sendDataToParent }) => {
       document.removeEventListener('keydown', handleKeyPress);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [textToSearch]); // Empty dependency array to ensure effect only runs once on mount
+  }, [textToSearch]);
 
   const darkTheme = useTheme();
 
