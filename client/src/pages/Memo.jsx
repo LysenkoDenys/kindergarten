@@ -14,7 +14,6 @@ const Memo = () => {
     ? 'text-3xl font-bold text-center mb-3 mt-3 text-[#CCCCCC]'
     : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
 
-  // const [dataFromChild, setDataFromChild] = useState(groupMates);
   const [matesAll, setMatesAll] = useState(groupMates);
 
   const renderMates = matesAll
@@ -39,19 +38,7 @@ const Memo = () => {
     getUrl(); // Call getUrl function when Memo component mounts
   }, []);
 
-  // useEffect(() => {
-  //   // Update state
-  //   setMatesAll(
-  //     dataFromChild
-  //       .sort(uaSort)
-  //       .map((el) => <BlockMemo element={el} key={el.id}></BlockMemo>)
-  //   );
-
-  //   // Scroll to element based on hash fragment after a short delay
-  //   // setTimeout(() => {
-  //   //   getUrl();
-  //   // }, 100);
-  // }, [dataFromChild]);
+  console.log('rendered'); //
 
   return (
     <section className="select-none lg:text-[24px]">
