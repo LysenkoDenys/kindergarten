@@ -38,8 +38,6 @@ const Memo = () => {
     getUrl(); // Call getUrl function when Memo component mounts
   }, []);
 
-  console.log('rendered'); //
-
   return (
     <section className="select-none lg:text-[24px]">
       <h1 className={themeHeaderOne}>Спогади:</h1>
