@@ -17,14 +17,14 @@ function App() {
         <Route path="/" exact element={<Home />}></Route>
         <Route path="/memo" element={<Memo />}></Route>
         {/* get rid this in the future */}
-        {/* <Route
+        <Route
           path="/posts/:id"
           element={
             <PostProvider>
               <Post />
             </PostProvider>
           }
-        ></Route> */}
+        ></Route>
         {/* get rid this in the future */}
       </Routes>
       <Comments />

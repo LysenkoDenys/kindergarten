@@ -6,8 +6,9 @@ const getUrl = () => {
       const element = document.getElementById(id);
       if (element) {
         const topOffset = element.getBoundingClientRect().top;
+        const yOffset = window.scrollY; // Current scroll position
         window.scrollTo({
-          top: window.scrollY + topOffset - 100,
+          top: yOffset + topOffset - 100, // Adjust the scroll position as needed
           behavior: 'smooth',
         });
       }
