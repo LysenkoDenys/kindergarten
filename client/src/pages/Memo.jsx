@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useTheme } from '../ThemeContext';
 import { IoLocationOutline } from 'react-icons/io5';
 import SearchBar from '../components/layout/SearchBar';
@@ -35,11 +34,9 @@ const Memo = () => {
   }
 
   //it is necessary to make link work correct for the first time:
-
-  const location = useLocation();
   useEffect(() => {
     getUrl(); // Call getUrl function when Memo component mounts
-  }, [location]);
+  }, []);
 
   return (
     <section className="select-none lg:text-[24px]">
