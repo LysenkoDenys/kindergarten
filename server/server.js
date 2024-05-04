@@ -11,7 +11,8 @@ const app = fastify();
 app.register(sensible);
 app.register(cookie, { secret: process.env.COOKIE_SECRET });
 app.register(cors, {
-  origin: process.env.CLIENT_URL,
+  // origin: process.env.CLIENT_URL,
+  origin: 'https://berizka.vercel.app',
   credentials: true,
 });
 
