@@ -46,6 +46,8 @@ const COMMENT_SELECT_FIELDS = {
 };
 //==============================================
 
+// we do not need it in our project============================
+//it is just returns posts
 app.get('/posts', async (req, res) => {
   return await commitToDb(
     prisma.post.findMany({
@@ -56,6 +58,7 @@ app.get('/posts', async (req, res) => {
     })
   );
 });
+// we do not need it in our project============================
 
 app.get('/posts/:id', async (req, res) => {
   return await commitToDb(
@@ -65,8 +68,8 @@ app.get('/posts/:id', async (req, res) => {
           id: req.params.id,
         },
         select: {
-          body: true,
-          title: true,
+          // body: true,
+          // title: true,
           comments: {
             orderBy: {
               createdAt: 'desc',

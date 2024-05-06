@@ -96,7 +96,7 @@ export function PostProvider({ children }) {
       {loading ? (
         <h1>Loading</h1>
       ) : error ? (
-        <h1 className="text-[hsl(0,100%,67%)]">{error}</h1>
+        <h1 className="text-[hsl(0,100%,67%)]">{`migration: ${error}`}</h1>
       ) : (
         children
       )}

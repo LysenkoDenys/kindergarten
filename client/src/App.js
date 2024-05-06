@@ -27,7 +27,9 @@ function App() {
         ></Route>
         {/* get rid this in the future */}
       </Routes>
+      {/* <PostProvider> */}
       <Comments />
+      {/* </PostProvider> */}
       <MainFooter />
     </ThemeProvider>
   );
