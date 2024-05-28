@@ -32,6 +32,7 @@ const CURRENT_USER_ID = (
     where: { name: 'Kyle' },
   })
 ).id;
+
 const COMMENT_SELECT_FIELDS = {
   id: true,
   message: true,

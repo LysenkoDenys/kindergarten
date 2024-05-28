@@ -5,6 +5,7 @@ import MainFooter from './components/layout/MainFooter';
 import Comments from './components/layout/Comments';
 import Home from './pages/Home';
 import Memo from './pages/Memo';
+import NotFound from './pages/NotFound';
 import Post from './components/layout/Post';
 import { PostProvider } from './context/PostContext';
 import { ThemeProvider } from './ThemeContext';
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />}></Route>
         <Route path="/memo" element={<Memo />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
         {/* get rid this in the future */}
         <Route
           path="/posts/:id"
