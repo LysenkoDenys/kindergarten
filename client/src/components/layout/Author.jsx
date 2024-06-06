@@ -1,4 +1,4 @@
-import { FaRegHeart } from 'react-icons/fa6';
+import { FaHeart } from 'react-icons/fa6';
 
 const Author = () => {
   return (
@@ -8,7 +8,8 @@ const Author = () => {
         href="mailto:lysenkoden@gmail.com"
         title="mail to the author"
       >
-        Made with <FaRegHeart className="mx-1" /> by Lysenko Denys | 2024
+        Made with <FaHeart className="mx-1 text-red-500" /> by Lysenko Denys |
+        2024
         {new Date().getFullYear() === 2024
           ? ''
           : '-' + new Date().getFullYear()}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TbGenderDemiboy, TbGenderDemigirl } from 'react-icons/tb';
 import groupMates from '../data/groupMates';
@@ -7,6 +7,7 @@ import MateItem from '../components/layout/MateItem';
 import Button from '../components/layout/Button';
 import Block from '../../src/components/layout/Block';
 import getUrl from '../data/getUrl';
+import anime from 'animejs/lib/anime.es.js';
 
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
@@ -24,10 +25,89 @@ const Home = () => {
   const date = new Date();
   const currentDate = date.toISOString().split('T')[0];
   const yearsPassed = date.getFullYear() - 1986;
+  const durationAnime = 1000;
 
   function uaSort(a, b) {
     return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
   }
+
+  useEffect(() => {
+    if (matesOne) {
+      const elements = document.querySelectorAll('.mate-item');
+      const screenWidth = window.screen.width;
+      if (elements.length > 0 && isButtonOneToggled) {
+        anime({
+          targets: elements,
+          translateX: [
+            { value: -screenWidth, duration: 0 },
+            { value: 0, duration: durationAnime },
+          ],
+          delay: (el, i) => i * 100,
+        });
+      } else {
+        anime({
+          targets: elements,
+          translateX: [
+            { value: 0, duration: 0 },
+            { value: screenWidth, duration: durationAnime },
+          ],
+          delay: (el, i) => i * 100,
+        });
+      }
+    }
+  }, [matesOne, isButtonOneToggled]);
+
+  useEffect(() => {
+    if (matesTwo) {
+      const elements = document.querySelectorAll('.mate-item2');
+      const screenWidth = window.screen.width;
+      if (elements.length > 0 && isButtonTwoToggled) {
+        anime({
+          targets: elements,
+          translateX: [
+            { value: -screenWidth, duration: 0 },
+            { value: 0, duration: durationAnime },
+          ],
+          delay: (el, i) => i * 100,
+        });
+      } else {
+        anime({
+          targets: elements,
+          translateX: [
+            { value: 0, duration: 0 },
+            { value: screenWidth, duration: durationAnime },
+          ],
+          delay: (el, i) => i * 100,
+        });
+      }
+    }
+  }, [matesTwo, isButtonTwoToggled]);
+
+  useEffect(() => {
+    if (matesAll) {
+      const elements = document.querySelectorAll('.mate-item3');
+      const screenWidth = window.screen.width;
+      if (elements.length > 0 && isButtonAllToggled) {
+        anime({
+          targets: elements,
+          translateX: [
+            { value: -screenWidth, duration: 0 },
+            { value: 0, duration: durationAnime },
+          ],
+          delay: (el, i) => i * 100,
+        });
+      } else {
+        anime({
+          targets: elements,
+          translateX: [
+            { value: 0, duration: 0 },
+            { value: screenWidth, duration: durationAnime },
+          ],
+          delay: (el, i) => i * 100,
+        });
+      }
+    }
+  }, [matesAll, isButtonAllToggled]);
 
   const handleListOfMainOne = () => {
     const arrIdMatesPhotoOne = [
@@ -39,14 +119,24 @@ const Home = () => {
       .sort(uaSort);
     setIsButtonOneToggled(!isButtonOneToggled);
 
-    return !isButtonOneToggled
-      ? setMatesOne(
-          filteredMatesPhotoOne.map((el) => (
-            <MateItem element={el} key={el.id} />
-          ))
-        )
-      : setMatesOne([]);
+    if (!isButtonOneToggled) {
+      setMatesOne(
+        filteredMatesPhotoOne.map((el) => (
+          <MateItem element={el} key={el.id} className="mate-item" />
+        ))
+      );
+    } else {
+      setMatesOne(
+        filteredMatesPhotoOne.map((el) => (
+          <MateItem element={el} key={el.id} className="mate-item" />
+        ))
+      );
+      setTimeout(() => {
+        setMatesOne([]);
+      }, durationAnime);
+    }
   };
+
   const handleListOfMainTwo = () => {
     const arrIdMatesPhotoTwo = [
       2, 3, 5, 9, 10, 12, 15, 16, 19, 20, 23, 24, 29, 35, 36, 37, 38, 47,
@@ -56,25 +146,47 @@ const Home = () => {
       .sort(uaSort);
     setIsButtonTwoToggled(!isButtonTwoToggled);
 
-    return !isButtonTwoToggled
-      ? setMatesTwo(
-          filteredMatesPhotoTwo.map((el) => (
-            <MateItem element={el} key={el.id} />
-          ))
-        )
-      : setMatesTwo([]);
+    if (!isButtonTwoToggled) {
+      setMatesTwo(
+        filteredMatesPhotoTwo.map((el) => (
+          <MateItem element={el} key={el.id} className="mate-item2" />
+        ))
+      );
+    } else {
+      setMatesTwo(
+        filteredMatesPhotoTwo.map((el) => (
+          <MateItem element={el} key={el.id} className="mate-item2" />
+        ))
+      );
+      setTimeout(() => {
+        setMatesTwo([]);
+      }, durationAnime);
+    }
   };
 
   const handleListOfMainAll = () => {
     setIsButtonAllToggled(!isButtonAllToggled);
 
-    return !isButtonAllToggled
-      ? setMatesAll(
-          groupMates
-            .sort(uaSort)
-            .map((el) => <MateItem element={el} key={el.id} />)
-        )
-      : setMatesAll([]);
+    if (!isButtonAllToggled) {
+      setMatesAll(
+        groupMates
+          .sort(uaSort)
+          .map((el) => (
+            <MateItem element={el} key={el.id} className="mate-item3" />
+          ))
+      );
+    } else {
+      setMatesAll(
+        groupMates
+          .sort(uaSort)
+          .map((el) => (
+            <MateItem element={el} key={el.id} className="mate-item3" />
+          ))
+      );
+      setTimeout(() => {
+        setMatesAll([]);
+      }, durationAnime);
+    }
   };
 
   const darkTheme = useTheme();

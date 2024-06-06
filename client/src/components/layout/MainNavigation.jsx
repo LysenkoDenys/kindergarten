@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiMoon } from 'react-icons/fi';
 import { MdOutlineLightMode } from 'react-icons/md';
 import { FaRegCommentDots } from 'react-icons/fa6';
+import { GiBirchTrees } from 'react-icons/gi';
 import Hamburger from './Hamburger';
 import { useTheme, useThemeUpdate } from '../../ThemeContext';
 import getUrl from '../../data/getUrl';
 
 const MainNavigation = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.screen.width);
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
@@ -19,6 +21,18 @@ const MainNavigation = () => {
 
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenWidth(window.screen.width);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const themeHeader = darkTheme
     ? 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0 select-none bg-[rgba(0,0,0,0.5)] text-[#CCCCCC] shadow-[5px_5px_10px_rgba(255,255,255,0.9)]'
@@ -37,7 +51,11 @@ const MainNavigation = () => {
         onClick={closeHamburger}
       >
         <Link className={themeLink} to="/">
-          Berizka
+          {screenWidth < 600 ? (
+            <GiBirchTrees className="text-[4rem]" />
+          ) : (
+            `Berizka`
+          )}
         </Link>
       </div>
       <div title="змінити тему">

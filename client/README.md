@@ -17,6 +17,7 @@
 <p>This React JS project uses next plug-ns:</p>
 <ul>
 <li>⭐https://www.npmjs.com/package/rehype-raw</li>
+<li>⭐https://animejs.com/</li>
 </ul>
 
 <p>Build with TailwindCSS and totally adaptive to most popular devices.</p>
