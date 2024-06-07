@@ -7,14 +7,14 @@
 <li>⭐recall some forgotten names of kindergarten`s mates</li>
 <li>⭐recall some actions and stories</li>
 <li>⭐add your own memories and stories</li>
-<li>⭐add your comments (comming soon)</li>
+<li>⭐add your comments</li>
 </ul>
 
 <p>Sample:</p>
 
-![1586](https://github.com/LysenkoDenys/kindergarten/assets/105970854/1bac93c3-953c-4524-9e79-18272733376a)
+!
 
-<p>This React JS project uses next plug-ns, API, libraries:</p>
+<p>This React JS project uses next plug-ns:</p>
 <ul>
 <li>⭐https://www.npmjs.com/package/rehype-raw</li>
 <li>⭐https://animejs.com/</li>

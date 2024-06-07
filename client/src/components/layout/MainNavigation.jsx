@@ -51,8 +51,8 @@ const MainNavigation = () => {
         onClick={closeHamburger}
       >
         <Link className={themeLink} to="/">
-          {screenWidth < 600 ? (
-            <GiBirchTrees className="text-[4rem]" />
+          {screenWidth < 479 ? (
+            <GiBirchTrees className="text-[2rem]" />
           ) : (
             `Berizka`
           )}
