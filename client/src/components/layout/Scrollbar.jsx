@@ -14,7 +14,7 @@ const Scrollbar = () => {
   return (
     <>
       <motion.div
-        className="sticky top-0 w-full h-2 origin-left rounded-md"
+        className="sticky top-0 w-full h-1 origin-left rounded-md"
         style={{ scaleX, background }}
       ></motion.div>
     </>

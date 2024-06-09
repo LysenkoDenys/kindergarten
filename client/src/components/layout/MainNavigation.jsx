@@ -36,8 +36,8 @@ const MainNavigation = () => {
   }, []);
 
   const themeHeader = darkTheme
-    ? 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0 select-none bg-[rgba(0,0,0,0.5)] text-[#CCCCCC] shadow-[5px_5px_10px_rgba(255,255,255,0.9)]'
-    : 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] py-0 top-0 select-none bg-[rgba(204,204,204,0.5)] text-[#333333] shadow-[5px_5px_10px_rgba(0,0,0,0.5)]';
+    ? 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] pb-2 top-0 select-none bg-[rgba(0,0,0,0.5)] text-[#CCCCCC] shadow-[5px_5px_10px_rgba(255,255,255,0.9)]'
+    : 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] pb-2 top-0 select-none bg-[rgba(204,204,204,0.5)] text-[#333333] shadow-[5px_5px_10px_rgba(0,0,0,0.5)]';
 
   const themeLink = darkTheme
     ? 'no-underline text-2xl hover:text-gray-400'
