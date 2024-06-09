@@ -7,6 +7,7 @@ import { GiBirchTrees } from 'react-icons/gi';
 import Hamburger from './Hamburger';
 import { useTheme, useThemeUpdate } from '../../ThemeContext';
 import getUrl from '../../data/getUrl';
+import Scrollbar from './Scrollbar';
 
 const MainNavigation = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -46,6 +47,7 @@ const MainNavigation = () => {
 
   return (
     <header className={themeHeader}>
+      <Scrollbar />
       <div
         className="text-[2rem] font-bold hover:scale-110 ease-in-out duration-300"
         onClick={closeHamburger}

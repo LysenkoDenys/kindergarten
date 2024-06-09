@@ -17,7 +17,8 @@
 <p>This React JS project uses next plug-ns, API, libraries:</p>
 <ul>
 <li>⭐https://www.npmjs.com/package/rehype-raw</li>
-<li>⭐https://animejs.com/</li>
+<li>⭐https://www.npmjs.com/package/animejs/</li>
+<li>⭐https://www.npmjs.com/package/framer-motion/</li>
 </ul>
 
 <p>Build with TailwindCSS and totally adaptive to most popular devices.</p>
