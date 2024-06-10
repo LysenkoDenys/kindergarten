@@ -20,6 +20,11 @@ const Hamburger = ({ isOpen }) => {
           flex-flow: column nowrap;
           z-index: 10;
         }
+        .hamburger:hover {
+          scale: 1.1;
+          transition-timing-function: ease-in-out;
+          duration: 300;
+        }
         .burger {
           width: 1.75rem;
           height: 0.2rem;
