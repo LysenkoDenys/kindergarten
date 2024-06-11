@@ -3,7 +3,7 @@ import { TiSocialFacebookCircular } from 'react-icons/ti';
 import { v4 as uuidv4 } from 'uuid';
 import groupMates from '../../data/groupMates';
 import { useTheme } from '../../ThemeContext';
-import { motion, useScroll, useTransform } from 'framer-motion';
+// import { motion, useScroll, useTransform } from 'framer-motion';
 
 const BlockMemo = ({ element }) => {
   const index = groupMates.findIndex((el) => el.id === element.id);
@@ -21,15 +21,16 @@ const BlockMemo = ({ element }) => {
     ? 'bg-[#221f1f] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(255,255,255,0.3)] hover:bg-[#333333] hover:shadow-[3px_3px_5px_2px_rgba(255,255,255,0.3)] select-none text-[#CCCCCC]'
     : 'bg-[#dadbde] rounded-[5px] p-3 mb-4 text-[1em] shadow-[5px_5px_10px_5px_rgba(0,0,0,0.3)] hover:bg-[#e7e8e9] hover:shadow-[3px_3px_5px_2px_rgba(0,0,0,0.3)] select-none';
 
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start end', 'center'],
-  });
-  const opacity = useTransform(scrollYProgress, [0, 1], ['0.3', '1']);
+  // const targetRef = useRef(null);
+  // const { scrollYProgress } = useScroll({
+  //   target: targetRef,
+  //   offset: ['start end', 'center'],
+  // });
+  // const opacity = useTransform(scrollYProgress, [0, 1], ['0.3', '1']);
 
   return (
-    <motion.div id={groupMates[index].id} ref={targetRef} style={{ opacity }}>
+    <div id={groupMates[index].id}>
+      {/* <motion.div id={groupMates[index].id} ref={targetRef} style={{ opacity }}> */}
       <div className={themeBlock}>
         {groupMates[index].url ? (
           <a
@@ -81,7 +82,8 @@ const BlockMemo = ({ element }) => {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
+    // </motion.div>
   );
 };
 
