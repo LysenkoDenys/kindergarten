@@ -28,6 +28,30 @@ const BlockMemo = ({ element }) => {
   // });
   // const opacity = useTransform(scrollYProgress, [0, 1], ['0.3', '1']);
 
+  //================================
+
+  const wordsToHighlight = ['Згадує Васильєв Сергій'];
+
+  function highlightText(text, words) {
+    // Create a regex pattern to match any of the words in the array
+    const pattern = new RegExp(`(${words.join('|')})`, 'gi');
+    const parts = text.split(pattern);
+
+    return parts.map((part, index) =>
+      words.some((word) => word.toLowerCase() === part.toLowerCase()) ? (
+        <span
+          key={index}
+          style={{ textDecoration: 'underline', fontWeight: 'bold' }}
+        >
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  }
+  //================================
+
   return (
     <div id={groupMates[index].id}>
       {/* <motion.div id={groupMates[index].id} ref={targetRef} style={{ opacity }}> */}
@@ -67,7 +91,7 @@ const BlockMemo = ({ element }) => {
         <div className="p-1">
           {groupMates[index].story.map((el) => (
             <div key={uuidv4()}>
-              <p>&ensp;{el.text}</p>
+              <p>&ensp;{highlightText(el.text, wordsToHighlight)}</p>
               <div className="flex justify-center items-center">
                 <img
                   src={
