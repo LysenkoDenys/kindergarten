@@ -359,6 +359,25 @@ const Home = () => {
           </ul>
         </article>
       </Block>
+      <Block>
+        <article>
+          <h3 className="text-xl font-bold text-center">Окрема подяка:</h3>
+          <ul className="ml-6">
+            <li>
+              Васильєв Сергій - за надані спогади та натхнення (
+              <span className="text-blue-500 cursor-pointer">
+                <Link
+                  to="https://www.youtube.com/watch?v=zMRVM0cD-FI"
+                  target="_blank"
+                >
+                  відео випускного CШ№2 1997
+                </Link>
+              </span>
+              );
+            </li>
+          </ul>
+        </article>
+      </Block>
     </section>
   );
 };
