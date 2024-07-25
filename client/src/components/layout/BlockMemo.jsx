@@ -37,10 +37,10 @@ const BlockMemo = ({ element }) => {
     const pattern = new RegExp(`(${words.join('|')})`, 'gi');
     const parts = text.split(pattern);
 
-    return parts.map((part, index) =>
+    return parts.map((part) =>
       words.some((word) => word.toLowerCase() === part.toLowerCase()) ? (
         <span
-          key={index}
+          key={uuidv4()}
           style={{ textDecoration: 'underline', fontWeight: 'bold' }}
         >
           {part}
