@@ -227,7 +227,10 @@ const Home = () => {
           <div className="flex justify-around flex-wrap">
             <div className="flex items-center m-2">
               <img
-                className="h-[80px] rounded-lg hover:scale-110 ease-in-out duration-300"
+                loading="lazy"
+                width="80"
+                height="80"
+                className="rounded-lg hover:scale-110 ease-in-out duration-300"
                 src={require('../assets/faces-teachers/victorivna.jpg')}
                 alt="valentina viktorivna"
               />
@@ -235,9 +238,12 @@ const Home = () => {
             </div>
             <div className="flex items-center m-2">
               <img
+                loading="lazy"
+                width="80"
+                height="80"
                 src={require('../assets/faces-teachers/vasylivna.jpg')}
                 alt="valentina vasylivna"
-                className="h-[80px] rounded-lg hover:scale-110 ease-in-out duration-300"
+                className="rounded-lg hover:scale-110 ease-in-out duration-300"
               />
               <div className="m-1">Валентина Василівна</div>
             </div>
@@ -264,6 +270,7 @@ const Home = () => {
           <div className="flex items-center flex-col">
             <figure>
               <img
+                loading="lazy"
                 src={require('../assets/main-01.jpg')}
                 alt="my group mates 01"
               />
@@ -301,6 +308,7 @@ const Home = () => {
           <div className="flex items-center flex-col">
             <figure>
               <img
+                loading="lazy"
                 src={require('../assets/main-02.jpg')}
                 alt="my group mates 02"
               />
@@ -364,7 +372,7 @@ const Home = () => {
           <h3 className="text-xl font-bold text-center">Окрема подяка:</h3>
           <ul className="ml-6">
             <li>
-              Васильєв Сергій - за надані спогади та натхнення (
+              Васильєв Сергій - за надані спогади, уточнення та натхнення (
               <span className="text-blue-500 cursor-pointer">
                 <Link
                   to="https://www.youtube.com/watch?v=zMRVM0cD-FI"
