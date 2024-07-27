@@ -231,7 +231,7 @@ const Home = () => {
                 width="80"
                 height="80"
                 className="rounded-lg hover:scale-110 ease-in-out duration-300"
-                src={require('../assets/faces-teachers/victorivna.jpg')}
+                src={require('../assets/faces-teachers/victorivna.avif')}
                 alt="valentina viktorivna"
               />
               <div className="m-1">Валентина Вікторівна</div>
@@ -241,7 +241,7 @@ const Home = () => {
                 loading="lazy"
                 width="80"
                 height="80"
-                src={require('../assets/faces-teachers/vasylivna.jpg')}
+                src={require('../assets/faces-teachers/vasylivna.avif')}
                 alt="valentina vasylivna"
                 className="rounded-lg hover:scale-110 ease-in-out duration-300"
               />
@@ -271,7 +271,7 @@ const Home = () => {
             <figure>
               <img
                 loading="lazy"
-                src={require('../assets/main-01.jpg')}
+                src={require('../assets/main-01.avif')}
                 alt="my group mates 01"
               />
               <figcaption className="text-center">
@@ -309,7 +309,7 @@ const Home = () => {
             <figure>
               <img
                 loading="lazy"
-                src={require('../assets/main-02.jpg')}
+                src={require('../assets/main-02.avif')}
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
