@@ -15,7 +15,7 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('./assets/texture.png');
+  background: url('./assets/texture.avif');
 }
 @media (max-width: 992px) {
   body {

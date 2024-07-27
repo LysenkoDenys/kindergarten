@@ -8,7 +8,7 @@ const MateItem = ({ element, className }) => {
   const index = groupMates.findIndex((el) => el.id === element.id);
   const imageView = groupMates[index].image
     ? groupMates[index].image
-    : `undefined.jpg`;
+    : `undefined.avif`;
 
   const darkTheme = useTheme();
 

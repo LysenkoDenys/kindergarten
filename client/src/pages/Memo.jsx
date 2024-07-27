@@ -58,7 +58,7 @@ const Memo = () => {
           </a>
           <figure className="flex items-center flex-col">
             <img
-              src={require('../assets/building.jpg')}
+              src={require('../assets/building.avif')}
               alt="building of berezka"
               className="h-[100px] rounded-sm"
             />
@@ -81,7 +81,7 @@ const Memo = () => {
           </p>
           <figure className="flex items-center flex-col">
             <img
-              src={require('../assets/scheme.jpg')}
+              src={require('../assets/scheme.avif')}
               alt="scheme"
               className="rounded-sm"
             />
@@ -101,7 +101,7 @@ const Memo = () => {
           </p>
           <figure className="flex items-center flex-col">
             <img
-              src={require('../assets/scheme-2.jpg')}
+              src={require('../assets/scheme-2.avif')}
               alt="scheme-2"
               className="rounded-sm"
             />

@@ -9,6 +9,11 @@ import Block from '../../src/components/layout/Block';
 import getUrl from '../data/getUrl';
 import anime from 'animejs/lib/anime.es.js';
 
+import largeImage1 from '../assets/main-01.avif';
+import smallImage1 from '../assets/main-01-small.avif';
+import largeImage2 from '../assets/main-02.avif';
+import smallImage2 from '../assets/main-02-small.avif';
+
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
   const [matesTwo, setMatesTwo] = useState([]);
@@ -271,7 +276,9 @@ const Home = () => {
             <figure>
               <img
                 loading="lazy"
-                src={require('../assets/main-01.avif')}
+                src={largeImage1}
+                srcSet={`${smallImage1} 480w, ${largeImage1} 1080w`}
+                sizes="80vw"
                 alt="my group mates 01"
               />
               <figcaption className="text-center">
@@ -309,7 +316,9 @@ const Home = () => {
             <figure>
               <img
                 loading="lazy"
-                src={require('../assets/main-02.avif')}
+                src={largeImage2}
+                srcSet={`${smallImage2} 480w, ${largeImage2} 1080w`}
+                sizes="80vw"
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
