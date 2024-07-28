@@ -18,6 +18,7 @@
 <ul>
 <li>⭐https://www.npmjs.com/package/rehype-raw</li>
 <li>⭐https://animejs.com/</li>
+<li>⭐https://mhnpd.github.io/react-loader-spinner/</li>
 </ul>
 
 <p>Build with TailwindCSS and totally adaptive to most popular devices.</p>

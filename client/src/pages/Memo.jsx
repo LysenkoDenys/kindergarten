@@ -59,8 +59,8 @@ const Memo = () => {
           <figure className="flex items-center flex-col">
             <img
               src={require('../assets/building.avif')}
-              alt="building of berezka"
-              className="h-[100px] rounded-sm"
+              alt="building of berizka"
+              className="rounded-sm"
             />
             <figcaption className="text-center">
               <b>Фото-03</b> - Фасад будівлі станом на 2016-2017 рік.
