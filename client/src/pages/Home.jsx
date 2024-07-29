@@ -205,9 +205,9 @@ const Home = () => {
       <h1 className={themeHeaderOne}>Група 1979-1980 років народження.</h1>
       <Block>
         <article>
-          <h3 className="text-xl font-bold text-center lg:text-[36px] lg:mb-3">
+          <h2 className="text-xl font-bold text-center lg:text-[36px] lg:mb-3">
             Загальна інформація.
-          </h3>
+          </h2>
           <p>
             &ensp; Станом на {currentDate} (через <strong>{yearsPassed}</strong>{' '}
             років після випуску нашої групи) садочок "Берізка" м. Самар (був.
@@ -228,7 +228,7 @@ const Home = () => {
             </strong>
           </p>
           <hr className="mb-2" />
-          <p>&ensp; Наші основні виховательки (досвідчені педагоги):</p>
+          <p>&ensp; Наші виховательки/вчительки:</p>
           <div className="flex justify-around flex-wrap">
             <div className="flex items-center m-2">
               <img
@@ -239,7 +239,7 @@ const Home = () => {
                 src={require('../assets/faces-teachers/victorivna.avif')}
                 alt="valentina viktorivna"
               />
-              <div className="m-1">Валентина Вікторівна</div>
+              <div className="m-1">Валентина Вікторівна undefined</div>
             </div>
             <div className="flex items-center m-2">
               <img
@@ -250,7 +250,18 @@ const Home = () => {
                 alt="valentina vasylivna"
                 className="rounded-lg hover:scale-110 ease-in-out duration-300"
               />
-              <div className="m-1">Валентина Василівна</div>
+              <div className="m-1">Валентина Василівна undefined</div>
+            </div>
+            <div className="flex items-center m-2">
+              <img
+                loading="lazy"
+                width="80"
+                height="80"
+                src={require('../assets/faces-teachers/andriivna.avif')}
+                alt="valentina andriivna tsareva"
+                className="rounded-lg hover:scale-110 ease-in-out duration-300"
+              />
+              <div className="m-1">Валентина Андріївна Царьова</div>
             </div>
           </div>
           <p>
@@ -381,7 +392,7 @@ const Home = () => {
           <h3 className="text-xl font-bold text-center">Окрема подяка:</h3>
           <ul className="ml-6">
             <li>
-              Васильєв Сергій - за надані спогади, уточнення та натхнення (
+              Васильєв Сергій - надані спогади, уточнення та натхнення (
               <span className="text-blue-500 cursor-pointer">
                 <Link
                   to="https://www.youtube.com/watch?v=zMRVM0cD-FI"
@@ -392,6 +403,7 @@ const Home = () => {
               </span>
               );
             </li>
+            <li>Іонко Ольга - надані спогади та уточнення;</li>
           </ul>
         </article>
       </Block>

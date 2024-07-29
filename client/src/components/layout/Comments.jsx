@@ -36,9 +36,9 @@ const Comments = () => {
     <Block>
       <PostList />
       {/* <Post /> */}
-      <h3 className="text-xl font-bold text-center">
+      <p className="text-xl font-bold text-center">
         Коментарі (поки що в розробці...):
-      </h3>
+      </p>
       <div className="flex justify-center items-center" id="comments">
         <textarea
           className={themeComment}

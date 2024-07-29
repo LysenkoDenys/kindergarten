@@ -52,7 +52,7 @@ const MainNavigation = () => {
         className="text-[2rem] font-bold hover:scale-110 ease-in-out duration-300"
         onClick={closeHamburger}
       >
-        <Link className={themeLink} to="/">
+        <Link className={themeLink} to="/" aria-label="go to the main page">
           {screenWidth < 479 ? (
             <GiBirchTrees className="text-[2rem]" />
           ) : (
@@ -74,7 +74,10 @@ const MainNavigation = () => {
         )}
       </div>
       <div onClick={getUrl} title="шукати спогади">
-        <Link to="memo/#search">
+        <Link
+          to="memo/#search"
+          aria-label="search for memories about group mates"
+        >
           <FiSearch className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
         </Link>
       </div>
@@ -83,6 +86,7 @@ const MainNavigation = () => {
           to={
             linkToComments().includes('/memo') ? 'memo/#comments' : '/#comments'
           }
+          aria-label="goto comments block"
         >
           <FaRegCommentDots className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
         </Link>
