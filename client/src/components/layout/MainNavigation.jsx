@@ -12,6 +12,7 @@ import Scrollbar from './Scrollbar';
 const MainNavigation = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.screen.width);
+  const [loading, setLoading] = useState(true);
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
@@ -35,6 +36,12 @@ const MainNavigation = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setLoading(false);
+    // Simulate an async operation, such as fetching data
+    setTimeout(() => setLoading(true), 2000);
+  }, []);
+
   const themeHeader = darkTheme
     ? 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] pb-2 top-0 select-none bg-[rgba(0,0,0,0.5)] text-[#CCCCCC] shadow-[5px_5px_10px_rgba(255,255,255,0.9)]'
     : 'w-full h-20 flex flex-wrap items-center justify-between sticky z-50 px-[5%] pb-2 top-0 select-none bg-[rgba(204,204,204,0.5)] text-[#333333] shadow-[5px_5px_10px_rgba(0,0,0,0.5)]';
@@ -47,7 +54,7 @@ const MainNavigation = () => {
 
   return (
     <header className={themeHeader}>
-      <Scrollbar />
+      {loading && <Scrollbar />}
       <div
         className="text-[2rem] font-bold hover:scale-110 ease-in-out duration-300"
         onClick={closeHamburger}
