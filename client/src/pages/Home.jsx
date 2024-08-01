@@ -330,7 +330,7 @@ const Home = () => {
                 loading="lazy"
                 src={largeImage2}
                 srcSet={`${smallImage2} 480w, ${mediumImage2} 960w, ${largeImage2} 1920w`}
-                sizes="(max-width: 480px) 100vw, (max-width: 960px) 50vw, 33vw"
+                sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px"
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
