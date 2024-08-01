@@ -12,6 +12,7 @@ import anime from 'animejs/lib/anime.es.js';
 import largeImage1 from '../assets/main-01.avif';
 import smallImage1 from '../assets/main-01-small.avif';
 import largeImage2 from '../assets/main-02.avif';
+import mediumImage2 from '../assets/main-02-medium.avif';
 import smallImage2 from '../assets/main-02-small.avif';
 
 const Home = () => {
@@ -328,8 +329,8 @@ const Home = () => {
               <img
                 loading="lazy"
                 src={largeImage2}
-                srcSet={`${smallImage2} 480w, ${largeImage2} 1080w`}
-                sizes="80vw"
+                srcSet={`${smallImage2} 480w, ${mediumImage2} 960w, ${largeImage2} 1920w`}
+                sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px"
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
