@@ -290,7 +290,7 @@ const Home = () => {
                 loading="lazy"
                 src={largeImage1}
                 srcSet={`${smallImage1} 480w, ${largeImage1} 1080w`}
-                sizes="(min-width: 1000px) 80vw, (min-width: 480px) 80.2vw, calc(93.75vw - 23px)"
+                sizes="(max-width: 480px) 480px, 1080px"
                 alt="my group mates 01"
               />
               <figcaption className="text-center">
@@ -330,7 +330,7 @@ const Home = () => {
                 loading="lazy"
                 src={largeImage2}
                 srcSet={`${smallImage2} 480w, ${mediumImage2} 960w, ${largeImage2} 1920w`}
-                sizes="(min-width: 1460px) 32.99vw, (min-width: 980px) 59.78vw, (min-width: 480px) 80vw, calc(93.75vw - 23px)"
+                sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px"
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
