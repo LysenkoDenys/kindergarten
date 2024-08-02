@@ -300,10 +300,7 @@ const Home = () => {
                   ${mediumImage1} 1024w,
                   ${largeImage1} 1920w
                 `}
-                sizes="(max-width: 320px) 280px,
-                       (max-width: 768px) 720px,
-                       (max-width: 1024px) 960px,
-                       1920px"
+                sizes="(min-width: 2580px) 1920px, (min-width: 1000px) calc(73.33vw + 43px), (min-width: 480px) 80.2vw, calc(93.75vw - 23px)"
                 alt="my group mates 01"
               />
               <figcaption className="text-center">
@@ -348,10 +345,7 @@ const Home = () => {
                   ${mediumImage2} 1024w,
                   ${largeImage2} 1920w
                 `}
-                sizes="(max-width: 320px) 280px,
-                       (max-width: 768px) 720px,
-                       (max-width: 1024px) 960px,
-                       1920px"
+                sizes="(min-width: 2580px) 1920px, (min-width: 1000px) calc(73.33vw + 43px), (min-width: 480px) 80.2vw, calc(93.75vw - 23px)"
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
