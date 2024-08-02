@@ -14,6 +14,11 @@ import largeImage1 from '../assets/main-01-1920.avif';
 import mediumImage1 from '../assets/main-01-1024.avif';
 import smallImage1 from '../assets/main-01-768.avif';
 import extraSmallImage1 from '../assets/main-01-320.avif';
+import extraExtraSmallImage1 from '../assets/main-01-260.avif';
+import SmallMediumImage1 from '../assets/main-01-990.avif';
+import mediumMediumImage1 from '../assets/main-01-1370.avif';
+import mediumLargeImage1 from '../assets/main-01-1670.avif';
+import extraLargeImage1 from '../assets/main-01-2048.avif';
 
 import largeImage2 from '../assets/main-02-1920.avif';
 import mediumImage2 from '../assets/main-02-1024.avif';
@@ -295,12 +300,25 @@ const Home = () => {
                 loading="lazy"
                 src={largeImage1}
                 srcSet={`
+                  ${extraExtraSmallImage1} 260w,
                   ${extraSmallImage1} 320w,
                   ${smallImage1} 768w,
+                  ${SmallMediumImage1} 990w,
+                  ${mediumMediumImage1} 1370w,
+                  ${mediumLargeImage1} 1670w,
                   ${mediumImage1} 1024w,
                   ${largeImage1} 1920w
+                  ${extraLargeImage1} 2040w
                 `}
-                sizes="(min-width: 2580px) 1920px, (min-width: 1000px) calc(73.33vw + 43px), (min-width: 480px) 80.2vw, calc(93.75vw - 23px)"
+                sizes="
+                (min-width: 2580px) 1920px,
+                (min-width: 1920px) 1670px,
+                (min-width: 1600px) 1370px,
+                (min-width: 1200px) 990px,
+                (min-width: 768px) 768px,
+                (min-width: 480px) 320px,
+                260px
+              "
                 alt="my group mates 01"
               />
               <figcaption className="text-center">
