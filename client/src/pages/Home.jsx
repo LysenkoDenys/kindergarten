@@ -9,11 +9,16 @@ import Block from '../../src/components/layout/Block';
 import getUrl from '../data/getUrl';
 import anime from 'animejs/lib/anime.es.js';
 
-import largeImage1 from '../assets/main-01.avif';
-import smallImage1 from '../assets/main-01-small.avif';
-import largeImage2 from '../assets/main-02.avif';
-import mediumImage2 from '../assets/main-02-medium.avif';
-import smallImage2 from '../assets/main-02-small.avif';
+//images:
+import largeImage1 from '../assets/main-01-1920.avif';
+import mediumImage1 from '../assets/main-01-1024.avif';
+import smallImage1 from '../assets/main-01-768.avif';
+import extraSmallImage1 from '../assets/main-01-320.avif';
+
+import largeImage2 from '../assets/main-02-1920.avif';
+import mediumImage2 from '../assets/main-02-1024.avif';
+import smallImage2 from '../assets/main-02-768.avif';
+import extraSmallImage2 from '../assets/main-02-320.avif';
 
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
@@ -218,7 +223,7 @@ const Home = () => {
           <hr className="mt-2" />
           <p className="text-center mb-2 mt-2">
             <strong>
-              &ensp; <span className="text-red-400">DISCLAIMER:</span> контент
+              &ensp; <span className="text-red-500">DISCLAIMER:</span> контент
               даного сайту засновано на подіях, які згадує автор та носить
               розважальний характер. В разі виникнення уточнень, доповнень,
               коригувань, прохання надати Ваші спогади, фото, тощо для
@@ -289,8 +294,16 @@ const Home = () => {
               <img
                 loading="lazy"
                 src={largeImage1}
-                srcSet={`${smallImage1} 480w, ${largeImage1} 1080w`}
-                sizes="(max-width: 480px) 480px, 1080px"
+                srcSet={`
+                  ${extraSmallImage1} 320w,
+                  ${smallImage1} 768w,
+                  ${mediumImage1} 1024w,
+                  ${largeImage1} 1920w
+                `}
+                sizes="(max-width: 320px) 280px,
+                       (max-width: 768px) 720px,
+                       (max-width: 1024px) 960px,
+                       1920px"
                 alt="my group mates 01"
               />
               <figcaption className="text-center">
@@ -329,8 +342,16 @@ const Home = () => {
               <img
                 loading="lazy"
                 src={largeImage2}
-                srcSet={`${smallImage2} 480w, ${mediumImage2} 960w, ${largeImage2} 1920w`}
-                sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px"
+                srcSet={`
+                  ${extraSmallImage2} 320w,
+                  ${smallImage2} 768w,
+                  ${mediumImage2} 1024w,
+                  ${largeImage2} 1920w
+                `}
+                sizes="(max-width: 320px) 280px,
+                       (max-width: 768px) 720px,
+                       (max-width: 1024px) 960px,
+                       1920px"
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
