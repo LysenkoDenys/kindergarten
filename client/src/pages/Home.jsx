@@ -307,20 +307,19 @@ const Home = () => {
                   ${mediumMediumImage1} 1370w,
                   ${mediumLargeImage1} 1670w,
                   ${mediumImage1} 1024w,
-                  ${largeImage1} 1920w
+                  ${largeImage1} 1920w,
                   ${extraLargeImage1} 2048w
                 `}
                 sizes="
-                (min-width: 2580px) 1920px,
-                (min-width: 2360px) 1670px,
-                (min-width: 1920px) calc(37.62vw + 790px),
-                (min-width: 1600px) calc(38vw + 648px),
-                (min-width: 1200px) calc(14.21vw + 765px),
-                (min-width: 1020px) 768px,
-                (min-width: 780px) calc(62.27vw + 145px),
-                (min-width: 480px) 320px,
-                254px
-              "
+                  (min-width: 2580px) 1920px,
+                  (min-width: 1920px) calc(24.69vw + 1038px),
+                  (min-width: 1600px) calc(38vw + 648px),
+                  (min-width: 1200px) calc(14.21vw + 765px),
+                  (min-width: 1100px) 768px,
+                  (min-width: 780px) calc(45.67vw + 275px),
+                  (min-width: 480px) 320px,
+                  254px
+                "
                 alt="my group mates 01"
               />
               <figcaption className="text-center">
