@@ -308,7 +308,7 @@ const Home = () => {
                   ${mediumLargeImage1} 1670w,
                   ${mediumImage1} 1024w,
                   ${largeImage1} 1920w
-                  ${extraLargeImage1} 2040w
+                  ${extraLargeImage1} 2048w
                 `}
                 sizes="
                 (min-width: 2580px) 1920px,
