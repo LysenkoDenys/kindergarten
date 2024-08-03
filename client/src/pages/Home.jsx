@@ -324,6 +324,8 @@ const Home = () => {
                   (min-width: 480px) 320px,
                   254px
                 "
+                width="1920"
+                height="1254"
                 alt="my group mates 01"
               />
               <figcaption className="text-center">
@@ -383,6 +385,8 @@ const Home = () => {
                   (min-width: 480px) 320px,
                   254px
                 "
+                width="1920"
+                height="1061"
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
