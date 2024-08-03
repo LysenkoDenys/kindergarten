@@ -10,20 +10,24 @@ import getUrl from '../data/getUrl';
 import anime from 'animejs/lib/anime.es.js';
 
 //images:
-import largeImage1 from '../assets/main-01-1920.avif';
-import mediumImage1 from '../assets/main-01-1024.avif';
-import smallImage1 from '../assets/main-01-768.avif';
-import extraSmallImage1 from '../assets/main-01-320.avif';
 import extraExtraSmallImage1 from '../assets/main-01-260.avif';
+import extraSmallImage1 from '../assets/main-01-320.avif';
+import smallImage1 from '../assets/main-01-768.avif';
 import SmallMediumImage1 from '../assets/main-01-990.avif';
+import mediumImage1 from '../assets/main-01-1024.avif';
 import mediumMediumImage1 from '../assets/main-01-1370.avif';
 import mediumLargeImage1 from '../assets/main-01-1670.avif';
+import largeImage1 from '../assets/main-01-1920.avif';
 import extraLargeImage1 from '../assets/main-01-2048.avif';
 
-import largeImage2 from '../assets/main-02-1920.avif';
-import mediumImage2 from '../assets/main-02-1024.avif';
-import smallImage2 from '../assets/main-02-768.avif';
+import extraExtraSmallImage2 from '../assets/main-02-260.avif';
 import extraSmallImage2 from '../assets/main-02-320.avif';
+import smallImage2 from '../assets/main-02-768.avif';
+import mediumImage2 from '../assets/main-02-1024.avif';
+import smallMediumImage2 from '../assets/main-02-1130.avif';
+import mediumMediumImage2 from '../assets/main-02-1580.avif';
+import largeImage2 from '../assets/main-02-1920.avif';
+import extraLargeImage2 from '../assets/main-02-2048.avif';
 
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
@@ -359,12 +363,26 @@ const Home = () => {
                 loading="lazy"
                 src={largeImage2}
                 srcSet={`
+                  ${extraExtraSmallImage2} 260w,
                   ${extraSmallImage2} 320w,
                   ${smallImage2} 768w,
+                  ${smallMediumImage2} 1130w,
+                  ${mediumMediumImage2} 1580w,
                   ${mediumImage2} 1024w,
-                  ${largeImage2} 1920w
+                  ${largeImage2} 1920w,
+                  ${extraLargeImage2} 2048w
                 `}
-                sizes="(min-width: 2580px) 1920px, (min-width: 1000px) calc(73.33vw + 43px), (min-width: 480px) 80.2vw, calc(93.75vw - 23px)"
+                sizes="
+                  (min-width: 2580px) 1920px,
+                  (min-width: 2360px) 1580px,
+                  (min-width: 1920px) calc(37.62vw + 790px),
+                  (min-width: 1600px) calc(38vw + 648px),
+                  (min-width: 1200px) calc(14.21vw + 765px),
+                  (min-width: 1020px) 768px,
+                  (min-width: 780px) calc(62.27vw + 145px),
+                  (min-width: 480px) 320px,
+                  254px
+                "
                 alt="my group mates 02"
               />
               <figcaption className="text-center">
