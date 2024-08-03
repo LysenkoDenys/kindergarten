@@ -312,12 +312,14 @@ const Home = () => {
                 `}
                 sizes="
                 (min-width: 2580px) 1920px,
-                (min-width: 1920px) 1670px,
-                (min-width: 1600px) 1370px,
-                (min-width: 1200px) 990px,
-                (min-width: 768px) 768px,
+                (min-width: 2360px) 1670px,
+                (min-width: 1920px) calc(37.62vw + 790px),
+                (min-width: 1600px) calc(38vw + 648px),
+                (min-width: 1200px) calc(14.21vw + 765px),
+                (min-width: 1020px) 768px,
+                (min-width: 780px) calc(62.27vw + 145px),
                 (min-width: 480px) 320px,
-                260px
+                254px
               "
                 alt="my group mates 01"
               />
