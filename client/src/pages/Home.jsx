@@ -299,7 +299,7 @@ const Home = () => {
             нижче:
           </p>
           <div className="flex items-center flex-col">
-            <figure>
+            <figure className="flex items-center flex-col">
               <img
                 loading="lazy"
                 src={largeImage1}
@@ -358,7 +358,7 @@ const Home = () => {
             може хтось по оселедцю впізнає) представлено на фото-02 нижче:
           </p>
           <div className="flex items-center flex-col">
-            <figure>
+            <figure className="flex items-center flex-col">
               <img
                 loading="lazy"
                 src={largeImage2}
