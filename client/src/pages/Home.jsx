@@ -232,12 +232,18 @@ const Home = () => {
           <hr className="mt-2" />
           <p className="text-center mb-2 mt-2">
             <strong>
-              &ensp; <span className="text-red-500">DISCLAIMER:</span> контент
-              даного сайту засновано на подіях, які згадує автор та носить
-              розважальний характер. В разі виникнення уточнень, доповнень,
-              коригувань, прохання надати Ваші спогади, фото, тощо для
-              розміщення на даному сайті. Реквізити автора надано
-              <span className="text-blue-500 cursor-pointer" onClick={getUrl}>
+              &ensp;{' '}
+              <span className={darkTheme ? 'text-[#f48d85]' : 'text-[#c11010]'}>
+                DISCLAIMER:
+              </span>{' '}
+              контент даного сайту засновано на подіях, які згадує автор та
+              носить розважальний характер. В разі виникнення уточнень,
+              доповнень, коригувань, прохання надати Ваші спогади, фото, тощо
+              для розміщення на даному сайті. Реквізити автора надано
+              <span
+                className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}
+                onClick={getUrl}
+              >
                 <Link to="/#footer"> нижче.</Link>
               </span>
             </strong>
@@ -413,7 +419,10 @@ const Home = () => {
             цуратися і допомогти згадати ВСІХ хлопців і дівчат. Також, Ваші
             фото, спогади , можуть бути розміщеними на даному сайті, тож
             звертайтеся за посиланнями{' '}
-            <span className="text-blue-500 cursor-pointer" onClick={getUrl}>
+            <span
+              className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}
+              onClick={getUrl}
+            >
               <Link to="/#footer">нижче.</Link>
             </span>
           </p>
@@ -450,7 +459,7 @@ const Home = () => {
           <ul className="ml-6">
             <li>
               Васильєв Сергій - надані спогади, уточнення та натхнення (
-              <span className="text-blue-500 cursor-pointer">
+              <span className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}>
                 <Link
                   to="https://www.youtube.com/watch?v=zMRVM0cD-FI"
                   target="_blank"
@@ -469,3 +478,11 @@ const Home = () => {
 };
 
 export default Home;
+
+// links:
+// pass bg-#221f1f text-#59b3f3
+// pass bg-#dadbde text-#0c5ca1
+
+// disclaimer:
+// pass bg-#221f1f text-#f48d85
+// pass bg-#dadbde text-#c11010

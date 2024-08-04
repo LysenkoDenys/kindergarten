@@ -51,7 +51,13 @@ const Memo = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p className="text-[20px] text-blue-500 mb-2">
+            <p
+              className={
+                darkTheme
+                  ? 'text-[#59b3f3] text-[20px] mb-2'
+                  : 'text-[#0c5ca1] text-[20px] mb-2'
+              }
+            >
               &ensp; <IoLocationOutline className="inline text-[20px]" />{' '}
               Розташування: м. Самар, вул. Шевченка, 39.
             </p>
