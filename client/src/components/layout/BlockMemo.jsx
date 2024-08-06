@@ -98,16 +98,14 @@ const BlockMemo = ({ element }) => {
           {groupMates[index].story.map((el) => (
             <div key={uuidv4()}>
               <p>&ensp;{highlightText(el.text, wordsToHighlight)}</p>
-              <div className="flex justify-center items-center">
-                <img
-                  src={
-                    el.img.length > 0
-                      ? require(`../../assets/stories/${el.img}`)
-                      : ''
-                  }
-                  alt={el.img}
-                />
-              </div>
+              {el.img.length > 0 && (
+                <div className="flex justify-center items-center">
+                  <img
+                    src={require(`../../assets/stories/${el.img}`)}
+                    alt={el.img}
+                  />
+                </div>
+              )}
             </div>
           ))}
         </div>

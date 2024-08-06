@@ -7,6 +7,21 @@ import Block from '../../src/components/layout/Block';
 import groupMates from '../data/groupMates';
 import getUrl from '../data/getUrl';
 
+//images:
+import extraSmallScheme01 from '../assets/scheme-01-260.avif';
+import smallMediumScheme01 from '../assets/scheme-01-990.avif';
+import mediumMediumScheme01 from '../assets/scheme-01-1370.avif';
+import mediumLargeScheme01 from '../assets/scheme-01-1670.avif';
+import largeScheme01 from '../assets/scheme-01-1920.avif';
+import extraLargeScheme01 from '../assets/scheme-01-2048.avif';
+
+import extraSmallScheme02 from '../assets/scheme-02-260.avif';
+import smallMediumScheme02 from '../assets/scheme-02-990.avif';
+import mediumMediumScheme02 from '../assets/scheme-02-1370.avif';
+import mediumLargeScheme02 from '../assets/scheme-02-1670.avif';
+import largeScheme02 from '../assets/scheme-02-1920.avif';
+import extraLargeScheme02 from '../assets/scheme-02-2048.avif';
+
 const Memo = () => {
   const darkTheme = useTheme();
 
@@ -88,8 +103,20 @@ const Memo = () => {
           </p>
           <figure className="flex items-center flex-col">
             <img
-              src={require('../assets/scheme.avif')}
-              alt="scheme"
+              loading="lazy"
+              src={largeScheme01}
+              srcSet={`
+                  ${extraSmallScheme01} 260w,
+                  ${smallMediumScheme01} 990w,
+                  ${mediumMediumScheme01} 1370w,
+                  ${mediumLargeScheme01} 1670w,
+                  ${largeScheme01} 1920w,
+                  ${extraLargeScheme01} 2048w
+                `}
+              sizes="(min-width: 2580px) 1920px, (min-width: 1000px) calc(73.33vw + 43px), (min-width: 480px) 80.2vw, calc(93.75vw - 23px)"
+              width="1920"
+              height="1284"
+              alt="scheme-01"
               className="rounded-sm"
             />
             <figcaption className="text-center">
@@ -108,10 +135,23 @@ const Memo = () => {
           </p>
           <figure className="flex items-center flex-col">
             <img
-              src={require('../assets/scheme-2.avif')}
-              alt="scheme-2"
+              loading="lazy"
+              src={largeScheme02}
+              srcSet={`
+                  ${extraSmallScheme02} 260w,
+                  ${smallMediumScheme02} 990w,
+                  ${mediumMediumScheme02} 1370w,
+                  ${mediumLargeScheme02} 1670w,
+                  ${largeScheme02} 1920w,
+                  ${extraLargeScheme02} 2048w
+                `}
+              sizes="(min-width: 2580px) 1920px, (min-width: 1000px) calc(73.33vw + 43px), (min-width: 480px) 80.2vw, calc(93.75vw - 23px)"
+              width="1920"
+              height="1155"
+              alt="scheme-02"
               className="rounded-sm"
             />
+
             <figcaption className="text-center">
               <b>Фото-05</b> - Схема місця нашого перебування.
             </figcaption>
