@@ -43,9 +43,9 @@ const Memo = () => {
       <h1 className={themeHeaderOne}>Спогади:</h1>
       <Block>
         <article>
-          <h3 className="text-xl font-bold text-center lg:text-[36px] lg:mb-3">
+          <h2 className="text-xl font-bold text-center lg:text-[36px] lg:mb-3">
             Загальні.
-          </h3>
+          </h2>
           <a
             href="https://www.google.com/maps/d/viewer?mid=1vCF4ZZdZy4rKsdFEzFzTBVGtS94&hl=en&ll=48.62696229721938%2C35.25370555104844&z=19"
             target="_blank"
