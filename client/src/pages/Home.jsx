@@ -478,11 +478,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// links:
-// pass bg-#221f1f text-#59b3f3
-// pass bg-#dadbde text-#0c5ca1
-
-// disclaimer:
-// pass bg-#221f1f text-#f48d85
-// pass bg-#dadbde text-#c11010
