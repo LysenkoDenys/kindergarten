@@ -87,7 +87,13 @@ const BlockMemo = ({ element }) => {
               alt={`my group mate ${groupMates[index].lastName}`}
               className={themePhoto}
             />
-            <div className="mx-1 font-bold text-blue-400">
+            <div
+              className={
+                darkTheme
+                  ? 'text-[#59b3f3] mx-1 font-bold'
+                  : 'text-[#0c5ca1] mx-1 font-bold'
+              }
+            >
               {`${groupMates[index].lastName} ${groupMates[index].firstName}`}
             </div>
           </div>
