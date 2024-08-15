@@ -22,3 +22,10 @@
 </ul>
 
 <p>Build with TailwindCSS and totally adaptive to most popular devices.</p>
+
+issues of performance:
+
+<ul>
+<li>⭐Reduce unused JavaScript Potential savings of 50 KiB</li>
+<li>⭐Serve static assets with an efficient cache policy 11 resources found</li>
+</ul>

@@ -61,7 +61,7 @@ const MainNavigation = () => {
       >
         <Link className={themeLink} to="/" aria-label="go to the main page">
           {screenWidth < 479 ? (
-            <GiBirchTrees className="text-[2rem]" />
+            <GiBirchTrees className="text-[2rem] w-[2rem] h-[2rem]" />
           ) : (
             `Berizka`
           )}
@@ -99,7 +99,11 @@ const MainNavigation = () => {
         </Link>
       </div>
       <nav className="navigation">
-        <ul className="list-none flex flex-wrap items-baseline m-0 p-0 md:hidden ">
+        <ul
+          className={`list-none flex flex-wrap items-baseline m-0 p-0 md:hidden ${
+            hamburgerOpen ? 'show' : ''
+          }`}
+        >
           <li className="ml-8 hover:scale-110 ease-in-out duration-300">
             <Link className={themeLink} to="/" onClick={toggleHamburger}>
               Home
@@ -117,25 +121,24 @@ const MainNavigation = () => {
       </nav>
       <style jsx="true">{`
         .navigation ul {
-          display: flex;
-          flex-wrap: wrap;
-          float: right;
-          margin: 0px;
-          padding: 0px;
-          overflow: hidden;
-          top: -100%;
-          gap: 0;
+          transition: transform 0.3s ease-in-out;
+          transform: translateX(100%);
+          opacity: 0; /* Change: Start hidden */
+          pointer-events: none;
+          flex-direction: column;
         }
+
         .navigation ul li {
           list-style-type: none;
-          padding-right: 10px;
-          margin: 20px 0px 20px 10px;
+          margin: 10px 0;
+          padding-right: 0;
         }
 
         .hamburger {
           display: none;
           z-index: 6;
         }
+
         @media (max-width: 768px) {
           .hamburger {
             display: block;
@@ -145,21 +148,29 @@ const MainNavigation = () => {
           }
 
           .navigation ul {
-            display: ${hamburgerOpen ? 'inline' : 'none'};
             background-color: ${darkTheme
               ? 'rgba(0, 0, 0, 0.8)'
               : 'rgba(204, 204, 204, 0.8)'};
             border-radius: 3px;
-            padding-right: 20px;
+            padding: 0 10px;
             position: fixed;
-            height: auto;
-            width: auto;
             top: 90px;
             right: 6%;
             overflow: auto;
-            box-shadow: 2px 2px 2px #333333;
+            box-shadow: ${darkTheme
+              ? '5px 5px 10px rgba(225,225,225, 0.9)'
+              : '5px 5px 10px rgba(0,0,0, 0.5)'};
+
+            transform: ${hamburgerOpen ? 'translateX(0)' : 'translateX(100%)'};
+            opacity: ${hamburgerOpen
+              ? '1'
+              : '0'}; /* Change: Fades in when open */
+            pointer-events: ${hamburgerOpen ? 'auto' : 'none'};
+            display: flex;
+            flex-direction: column;
           }
         }
+
         @media (max-width: 479px) {
           .navigation ul {
             right: 3%;
