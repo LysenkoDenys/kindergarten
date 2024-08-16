@@ -72,11 +72,13 @@ const MainNavigation = () => {
           <MdOutlineLightMode
             onClick={toggleTheme}
             className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300 hover:text-gray-400"
+            aria-label="Switch to light mode"
           />
         ) : (
           <FiMoon
             onClick={toggleTheme}
             className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300 hover:text-black"
+            aria-label="Switch to dark mode"
           />
         )}
       </div>
@@ -93,25 +95,44 @@ const MainNavigation = () => {
           to={
             linkToComments().includes('/memo') ? 'memo/#comments' : '/#comments'
           }
-          aria-label="goto comments block"
+          aria-label="Go to comments section"
         >
           <FaRegCommentDots className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
         </Link>
       </div>
       <nav className="navigation">
-        <ul className="list-none flex flex-wrap items-baseline m-0 p-0 md:hidden ">
+        <ul
+          className={`list-none flex items-baseline m-0 p-0 md:hidden transition-transform duration-300 ease-in-out ${
+            hamburgerOpen ? 'translate-y-0' : '-translate-y-full'
+          }`}
+          aria-label="Main navigation"
+        >
           <li className="ml-8 hover:scale-110 ease-in-out duration-300">
-            <Link className={themeLink} to="/" onClick={toggleHamburger}>
+            <Link
+              className={themeLink}
+              to="/"
+              onClick={toggleHamburger}
+              aria-label="Home page"
+            >
               Home
             </Link>
           </li>
           <li className="ml-8 hover:scale-110 ease-in-out duration-300">
-            <Link className={themeLink} to="/memo" onClick={toggleHamburger}>
+            <Link
+              className={themeLink}
+              to="/memo"
+              onClick={toggleHamburger}
+              aria-label="Memo page"
+            >
               Memo
             </Link>
           </li>
         </ul>
-        <div className="hamburger cursor-pointer" onClick={toggleHamburger}>
+        <div
+          className="hamburger cursor-pointer"
+          onClick={toggleHamburger}
+          aria-label="Toggle navigation menu"
+        >
           <Hamburger isOpen={hamburgerOpen} />
         </div>
       </nav>
@@ -129,8 +150,7 @@ const MainNavigation = () => {
 
         .navigation ul li {
           list-style-type: none;
-          padding-right: 10px;
-          margin: 20px 0px 20px 10px;
+          margin: 6px 0;
         }
 
         .hamburger {
@@ -162,6 +182,8 @@ const MainNavigation = () => {
             box-shadow: ${darkTheme
               ? '5px 5px 10px rgba(225,225,225, 0.9)'
               : '5px 5px 10px rgba(0,0,0, 0.5)'};
+            transform: ${hamburgerOpen ? 'translateY(0)' : 'translateY(-100%)'};
+            transition: transform 0.3s ease-in-out;
           }
         }
 
