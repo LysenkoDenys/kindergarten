@@ -103,7 +103,7 @@ const MainNavigation = () => {
       <nav className="navigation">
         <ul
           className={`list-none flex items-baseline m-0 p-0 md:hidden transition-transform duration-300 ease-in-out ${
-            hamburgerOpen ? 'translate-y-0' : '-translate-y-full'
+            hamburgerOpen ? 'translate-y-0' : ''
           }`}
           aria-label="Main navigation"
         >
@@ -145,12 +145,12 @@ const MainNavigation = () => {
           padding: 0px;
           overflow: hidden;
           top: -100%;
-          gap: 0;
+          gap: 20px;
         }
 
         .navigation ul li {
           list-style-type: none;
-          margin: 6px 0;
+          margin: 6px 2px;
         }
 
         .hamburger {
