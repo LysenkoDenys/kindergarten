@@ -30,7 +30,7 @@ const BlockMemo = ({ element }) => {
 
   //================================
 
-  const wordsToHighlight = ['Згадує Васильєв Сергій'];
+  const wordsToHighlight = ['Згадує Васильєв Сергій', 'Згадує Іонко Ольга'];
 
   function highlightText(text, words) {
     // Create a regex pattern to match any of the words in the array
