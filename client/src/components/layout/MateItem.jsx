@@ -26,6 +26,8 @@ const MateItem = ({ element, className }) => {
         <div>
           <img
             src={require(`../../assets/faces/${imageView}`)}
+            height="50px"
+            width="50px"
             alt={`my group mate ${groupMates[index].lastName}`}
             className={themePhoto}
           />
