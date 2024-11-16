@@ -2,6 +2,10 @@
 
 ### The app to remember young years by the memories and images.
 
+### The application is deployed here:
+
+https://berizka.vercel.app
+
 <p>This app allows you:</p>
 <ul>
 <li>⭐recall some forgotten names of kindergarten`s mates</li>
