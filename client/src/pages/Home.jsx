@@ -29,6 +29,8 @@ import mediumMediumImage2 from '../assets/main-02-1580.avif';
 import largeImage2 from '../assets/main-02-1920.avif';
 import extraLargeImage2 from '../assets/main-02-2048.avif';
 
+import largeImage3 from '../assets/main-03-1920.avif';
+
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
   const [matesTwo, setMatesTwo] = useState([]);
@@ -413,6 +415,45 @@ const Home = () => {
             />
             <div>{matesTwo}</div>
           </div>
+          {/* wirking */}
+          <p>
+            &ensp; Частину одногрупників (в складі 31 особи, які пішли в перший
+            клас на базі садочку), а також окрім виховательок і вчительки
+            завідуючу садочком і вчительку музики по класу фортепіано
+            представлено на фото-03 нижче:
+          </p>
+          <div className="flex items-center flex-col">
+            <figure className="flex items-center flex-col">
+              <img
+                loading="lazy"
+                src={largeImage3}
+                srcSet={`
+                  ${largeImage3} 1920w,
+                `}
+                sizes="
+                  (min-width: 1920px) calc(37.62vw + 790px),
+                "
+                width="1920"
+                height="1251"
+                alt="my group mates 03"
+              />
+              <figcaption className="text-center">
+                <b>Фото-03</b> - Святкування дня знань. Ми в районі майданчику
+                “В” між під`їздом до нашої групи і господарською будівлею (там
+                тоді росли кущі сирені).
+              </figcaption>
+            </figure>
+            <Button
+              label={
+                isButtonTwoToggled
+                  ? ' Сховати перелік групи на Фото-03'
+                  : 'Показати перелік групи на Фото-03'
+              }
+              actionOnClick={handleListOfMainTwo}
+            />
+            <div>{matesTwo}</div>
+          </div>
+          {/* wirking */}
           <p>
             &ensp; Всі одногрупники, яких згадав (але не всіх ідентифікував)
             автор, знаходяться в переліку нижче (натисни кнопку). Прохання не
@@ -471,10 +512,7 @@ const Home = () => {
             </li>
             <li>Іонко Ольга - надані спогади, уточнення;</li>
             <li>Костюченко Наталія - надані спогади, фото та уточнення;</li>
-            <li>
-              Плужник Наталія - наданий відгук і обіцянку щось згадати і додати
-              фото;
-            </li>
+            <li>Плужник Наталія - надані спогади та фото;</li>
           </ul>
         </article>
       </Block>
