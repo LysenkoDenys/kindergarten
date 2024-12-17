@@ -34,9 +34,11 @@ import largeImage3 from '../assets/main-03-1920.avif';
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
   const [matesTwo, setMatesTwo] = useState([]);
+  const [matesThree, setMatesThree] = useState([]);
   const [matesAll, setMatesAll] = useState([]);
   const [isButtonOneToggled, setIsButtonOneToggled] = useState(false);
   const [isButtonTwoToggled, setIsButtonTwoToggled] = useState(false);
+  const [isButtonThreeToggled, setIsButtonThreeToggled] = useState(false);
   const [isButtonAllToggled, setIsButtonAllToggled] = useState(false);
 
   const malesQty = groupMates.filter((el) => el.sex === 'male').length;
@@ -104,6 +106,32 @@ const Home = () => {
       }
     }
   }, [matesTwo, isButtonTwoToggled]);
+
+  useEffect(() => {
+    if (matesThree) {
+      const elements = document.querySelectorAll('.mate-item4');
+      const screenWidth = window.screen.width;
+      if (elements.length > 0 && isButtonThreeToggled) {
+        anime({
+          targets: elements,
+          translateX: [
+            { value: -screenWidth, duration: 0 },
+            { value: 0, duration: durationAnime },
+          ],
+          delay: (el, i) => i * 100,
+        });
+      } else {
+        anime({
+          targets: elements,
+          translateX: [
+            { value: 0, duration: 0 },
+            { value: screenWidth, duration: durationAnime },
+          ],
+          delay: (el, i) => i * 100,
+        });
+      }
+    }
+  }, [matesThree, isButtonThreeToggled]);
 
   useEffect(() => {
     if (matesAll) {
@@ -182,6 +210,34 @@ const Home = () => {
       );
       setTimeout(() => {
         setMatesTwo([]);
+      }, durationAnime);
+    }
+  };
+
+  const handleListOfMainThree = () => {
+    const arrIdMatesPhotoThree = [
+      1, 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 22, 23, 24, 26, 27, 28,
+      29, 30, 31, 32, 33, 36, 37, 38, 39, 40, 42,
+    ];
+    const filteredMatesPhotoThree = groupMates
+      .filter((el) => arrIdMatesPhotoThree.includes(el.id))
+      .sort(uaSort);
+    setIsButtonThreeToggled(!isButtonThreeToggled);
+
+    if (!isButtonThreeToggled) {
+      setMatesThree(
+        filteredMatesPhotoThree.map((el) => (
+          <MateItem element={el} key={el.id} className="mate-item4" />
+        ))
+      );
+    } else {
+      setMatesThree(
+        filteredMatesPhotoThree.map((el) => (
+          <MateItem element={el} key={el.id} className="mate-item4" />
+        ))
+      );
+      setTimeout(() => {
+        setMatesThree([]);
       }, durationAnime);
     }
   };
@@ -415,7 +471,7 @@ const Home = () => {
             />
             <div>{matesTwo}</div>
           </div>
-          {/* wirking */}
+          {/* working */}
           <p>
             &ensp; Частину одногрупників (в складі 31 особи, які пішли в перший
             клас на базі садочку), а також окрім виховательок і вчительки
@@ -440,20 +496,25 @@ const Home = () => {
               <figcaption className="text-center">
                 <b>Фото-03</b> - Святкування дня знань. Ми в районі майданчику
                 “В” між під`їздом до нашої групи і господарською будівлею (там
-                тоді росли кущі сирені).
+                тоді росли кущі сирені). Щонайменше, знаю, що ми з Андрієм
+                Д’ячковим не просто так на фото поряд стоїмо – “друзями були не
+                розлий вода”. Припускаю, що Дмитро Горжий з Ольгою Іонко теж не
+                просто так разом сидить, а Олексій Могильний з Тетяною Білою.
+                Жовтяк Сергій теж з Олександром Петінитм дружили в школі. Тут є
+                про що подумати…
               </figcaption>
             </figure>
             <Button
               label={
-                isButtonTwoToggled
+                isButtonThreeToggled
                   ? ' Сховати перелік групи на Фото-03'
                   : 'Показати перелік групи на Фото-03'
               }
-              actionOnClick={handleListOfMainTwo}
+              actionOnClick={handleListOfMainThree}
             />
-            <div>{matesTwo}</div>
+            <div>{matesThree}</div>
           </div>
-          {/* wirking */}
+          {/* working */}
           <p>
             &ensp; Всі одногрупники, яких згадав (але не всіх ідентифікував)
             автор, знаходяться в переліку нижче (натисни кнопку). Прохання не

@@ -278,7 +278,7 @@ const groupMates = [
         img: '',
       },
     ],
-    image: '',
+    image: 'juravel-14.avif',
     url: '',
   },
   {
@@ -366,11 +366,11 @@ const groupMates = [
     id: 18,
     story: [
       {
-        text: 'Віталік до нас приєднався наприкінці останньої групи, тому згадати щось про нього важко. Спокійний, щирий хлопець. Жив на краю провулку Прогонний, його хатинка була біля самих так званих “пісків”. На фото ніде не засвітився, тож в кого є фото тих часів за його участю - надсилайте. ',
+        text: 'Віталік до нас приєднався наприкінці останньої групи, тому згадати щось про нього важко. Спокійний, щирий хлопець. Жив на краю провулку Прогонний, його хатинка була біля самих так званих “пісків”. ',
         img: '',
       },
     ],
-    image: '',
+    image: 'kapustov-18.avif',
     url: 'https://www.facebook.com/profile.php?id=100058241961662',
   },
   {
@@ -535,7 +535,7 @@ const groupMates = [
         img: '',
       },
     ],
-    image: '',
+    image: 'madyka-26.avif',
     url: 'https://www.facebook.com/profile.php?id=100068305741834',
   },
   {
@@ -573,7 +573,7 @@ const groupMates = [
         img: '',
       },
     ],
-    image: '',
+    image: 'nakonechna-28.avif',
     url: '',
   },
   {
@@ -782,7 +782,7 @@ const groupMates = [
         img: '',
       },
     ],
-    image: '',
+    image: 'harlan-39.avif',
     url: 'https://www.facebook.com/profile.php?id=100015537973540',
   },
   {
@@ -797,7 +797,7 @@ const groupMates = [
         img: '',
       },
     ],
-    image: 'cabanenko-40.avif',
+    image: 'chabanenko-40.avif',
     url: '',
   },
   {
