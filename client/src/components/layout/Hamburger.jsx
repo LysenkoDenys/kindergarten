@@ -5,11 +5,11 @@ const Hamburger = ({ isOpen }) => {
   const themeStyles = () => (darkTheme ? '#CCC' : '#333');
   return (
     <>
-      <div className="hamburger">
+      <button className="hamburger" aria-label="Toggle navigation menu">
         <div className="burger burger1" />
         <div className="burger burger2" />
         <div className="burger burger3" />
-      </div>
+      </button>
 
       <style jsx="true">{`
         .hamburger {
