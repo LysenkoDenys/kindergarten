@@ -13,7 +13,10 @@ const MainFooter = () => {
 
   return (
     <Block>
-      <div className="flex flex-wrap items-center justify-around " id="footer">
+      <div
+        className="flex flex-wrap items-center justify-around min-h-[80px]"
+        id="footer"
+      >
         <div className="flex text-[50px] cursor-pointer">
           <a href="mailto:lysenkoden@gmail.com" aria-label="Email Link">
             <TiSocialAtCircular
