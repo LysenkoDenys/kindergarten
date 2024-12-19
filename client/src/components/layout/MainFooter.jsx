@@ -8,7 +8,8 @@ import Block from './Block';
 import Author from './Author';
 
 const MainFooter = () => {
-  const iconStyle = 'hover:scale-110 ease-in-out duration-300 mr-1';
+  const iconStyle =
+    'hover:scale-110 ease-in-out duration-300 mr-1 w-[50px] h-[50px]';
 
   return (
     <Block>
