@@ -54,14 +54,18 @@ const MainNavigation = () => {
 
   return (
     <header className={themeHeader}>
-      {loading && <Scrollbar />}
+      {loading && (
+        <div style={{ height: '20px' }}>
+          <Scrollbar />
+        </div>
+      )}
       <div
         className="text-[2rem] font-bold hover:scale-110 ease-in-out duration-300"
         onClick={closeHamburger}
       >
         <Link className={themeLink} to="/" aria-label="go to the main page">
           {screenWidth < 479 ? (
-            <GiBirchTrees className="text-[2rem] w-[2rem] h-[2rem]" />
+            <GiBirchTrees className="text-[2rem] w-[32px] h-[32px]" />
           ) : (
             `Berizka`
           )}

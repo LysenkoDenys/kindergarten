@@ -84,7 +84,7 @@ const Memo = () => {
               className="rounded-sm"
             />
             <figcaption className="text-center">
-              <b>Фото-03</b> - Фасад будівлі станом на 2016-2017 рік.
+              <b>Фото-04</b> - Фасад будівлі станом на 2016-2017 рік.
             </figcaption>
           </figure>
           <p>
@@ -120,7 +120,7 @@ const Memo = () => {
               className="rounded-sm"
             />
             <figcaption className="text-center">
-              <b>Фото-04</b> - Схема садочку.
+              <b>Фото-05</b> - Схема садочку.
             </figcaption>
           </figure>
           <p>
@@ -153,7 +153,7 @@ const Memo = () => {
             />
 
             <figcaption className="text-center">
-              <b>Фото-05</b> - Схема місця нашого перебування.
+              <b>Фото-06</b> - Схема місця нашого перебування.
             </figcaption>
           </figure>
           <p>
