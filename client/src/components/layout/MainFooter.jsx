@@ -14,7 +14,7 @@ const MainFooter = () => {
   return (
     <Block>
       <div
-        className="flex flex-wrap items-center justify-around min-h-[80px]"
+        className="flex flex-wrap items-center justify-around min-h-[100px]"
         id="footer"
       >
         <div className="flex text-[50px] cursor-pointer">
@@ -22,6 +22,7 @@ const MainFooter = () => {
             <TiSocialAtCircular
               className={iconStyle}
               title="Email Lysenko Denys"
+              style={{ width: 50, height: 50 }}
             />
           </a>
           <a
@@ -33,6 +34,7 @@ const MainFooter = () => {
             <TiSocialFacebookCircular
               className={iconStyle}
               title="Facebook Profile"
+              style={{ width: 50, height: 50 }}
             />
           </a>
           <a
@@ -44,11 +46,12 @@ const MainFooter = () => {
             <TiSocialLinkedinCircular
               className={iconStyle}
               title="LinkedIn Profile"
+              style={{ width: 50, height: 50 }}
             />
           </a>
         </div>
         <div className="flex">
-          <Author />
+          <Author className="h-[20px]" />
         </div>
       </div>
     </Block>
