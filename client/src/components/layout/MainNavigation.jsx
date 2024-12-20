@@ -54,7 +54,7 @@ const MainNavigation = () => {
 
   return (
     <header className={themeHeader}>
-      {loading && <Scrollbar />}
+      <div style={{ height: '20px' }}>{loading && <Scrollbar />}</div>
       <div
         className="text-[2rem] font-bold hover:scale-110 ease-in-out duration-300"
         onClick={closeHamburger}
