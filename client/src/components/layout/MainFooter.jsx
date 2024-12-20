@@ -17,7 +17,7 @@ const MainFooter = () => {
         className="flex flex-wrap items-center justify-around min-h-[100px]"
         id="footer"
       >
-        <div className="flex text-[50px] cursor-pointer">
+        <div className="flex text-[50px] leading-[50px] cursor-pointer">
           <a href="mailto:lysenkoden@gmail.com" aria-label="Email Link">
             <TiSocialAtCircular
               className={iconStyle}
