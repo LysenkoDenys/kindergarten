@@ -161,7 +161,6 @@ const MainNavigation = () => {
         @media (max-width: 768px) {
           .hamburger {
             display: block;
-            padding-top: 8px;
             margin-left: 10px;
             z-index: 6;
           }
@@ -198,3 +197,7 @@ const MainNavigation = () => {
 };
 
 export default MainNavigation;
+
+// @media (max-width: 768px) {
+// padding-top: 8px;
+// }
