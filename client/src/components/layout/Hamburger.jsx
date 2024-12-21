@@ -13,7 +13,6 @@ const Hamburger = ({ isOpen }) => {
 
       <style jsx="true">{`
         .hamburger {
-          width: 2.5rem;
           height: 4rem;
           display: flex;
           justify-content: space-around;
