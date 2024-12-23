@@ -57,7 +57,7 @@ const MainNavigation = () => {
       <div style={{ height: '0.5rem' }}>{loading && <Scrollbar />}</div>
       <div className="flex w-full items-center justify-between">
         <div
-          className="text-[2rem] font-bold hover:scale-110 ease-in-out duration-300"
+          className="font-bold hover:scale-110 ease-in-out duration-300"
           onClick={closeHamburger}
         >
           <Link className={themeLink} to="/" aria-label="go to the main page">
