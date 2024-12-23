@@ -50,7 +50,8 @@ const Comments = () => {
           label="Коментувати"
           className="min-w-[20%]"
           actionOnClick={() => {
-            text && alert(text);
+            text &&
+              alert(`Коментарі поки що не доступні, дякую за спробу: ${text}`);
             setText('');
           }}
         />

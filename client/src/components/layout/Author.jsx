@@ -4,7 +4,7 @@ const Author = () => {
   const currentYear = new Date().getFullYear() || 2024;
   const yearText = currentYear === 2024 ? '' : ` - ${currentYear}`;
   return (
-    <div className="text-[0.8em] my-1 hover:scale-110 ease-in-out duration-300">
+    <div className="text-[0.8em] my-1 hover:scale-105 ease-in-out duration-300">
       <a
         className="flex flex-wrap items-center"
         href="mailto:lysenkoden@gmail.com"

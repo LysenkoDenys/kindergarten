@@ -21,7 +21,7 @@
 <li>⭐https://mhnpd.github.io/react-loader-spinner/</li>
 </ul>
 
-<p>Build with TailwindCSS and totally adaptive to most popular devices.</p>
+<p>Build with TailwindCSS and totally responsive to most popular devices.</p>
 
 issues of performance:
 
