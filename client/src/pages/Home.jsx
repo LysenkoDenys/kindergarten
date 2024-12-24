@@ -298,7 +298,11 @@ const Home = () => {
           <p className="text-center mb-2 mt-2">
             <strong>
               &ensp;{' '}
-              <span className={darkTheme ? 'text-[#f48d85]' : 'text-[#c11010]'}>
+              <span
+                style={{
+                  color: darkTheme ? '#f48d85' : '#c11010',
+                }}
+              >
                 DISCLAIMER:
               </span>{' '}
               контент даного сайту засновано на подіях, які згадує автор та
@@ -306,7 +310,10 @@ const Home = () => {
               доповнень, коригувань, прохання надати Ваші спогади, фото, тощо
               для розміщення на даному сайті. Реквізити автора надано
               <span
-                className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}
+                style={{
+                  color: darkTheme ? '#59b3f3' : '#0c5ca1',
+                  cursor: 'pointer',
+                }}
                 onClick={getUrl}
               >
                 <Link to="/#footer"> нижче.</Link>
