@@ -48,14 +48,6 @@ const Home = () => {
   const [isButtonThreeToggled, setIsButtonThreeToggled] = useState(false);
   const [isButtonAllToggled, setIsButtonAllToggled] = useState(false);
 
-  // working:---------------------------------------------------
-  // const [matesState, setMatesState] = useState({
-  //   matesOne: [],
-  //   isButtonOneToggled: false,
-
-  // });
-  // working:---------------------------------------------------
-
   const malesQty = groupMates.filter((el) => el.sex === 'male').length;
   const malesQtyDeg = Math.round((malesQty / groupMates.length) * 100);
   const femalesQty = groupMates.filter((el) => el.sex === 'female').length;
@@ -70,7 +62,6 @@ const Home = () => {
     return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
   }
 
-  // working:---------------------------------------------------
   const animateMates = (selector, isToggled, duration = 1000) => {
     const elements = document.querySelectorAll(selector);
     const screenWidth = window.screen.width;
@@ -108,115 +99,81 @@ const Home = () => {
   useEffect(() => {
     animateMates('.mate-item4', isButtonAllToggled, 1000);
   }, [matesAll, isButtonAllToggled]);
-  // working:---------------------------------------------------
 
-  const handleListOfMainOne = () => {
-    const arrIdMatesPhotoOne = [
-      1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 29, 32, 33, 34,
-      36, 37, 38, 41, 42, 16, 45,
-    ];
-    const filteredMatesPhotoOne = groupMates
-      .filter((el) => arrIdMatesPhotoOne.includes(el.id))
+  const handleList = ({
+    arrIdMatesPhoto,
+    isButtonToggled,
+    setIsButtonToggled,
+    setMates,
+    className,
+  }) => {
+    const filteredMatesPhoto = groupMates
+      .filter((el) => arrIdMatesPhoto.includes(el.id))
       .sort(uaSort);
-    setIsButtonOneToggled(!isButtonOneToggled);
 
-    if (!isButtonOneToggled) {
-      setMatesOne(
-        filteredMatesPhotoOne.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item" />
+    setIsButtonToggled(!isButtonToggled);
+
+    if (!isButtonToggled) {
+      setMates(
+        filteredMatesPhoto.map((el) => (
+          <MateItem element={el} key={el.id} className={className} />
         ))
       );
     } else {
-      setMatesOne(
-        filteredMatesPhotoOne.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item" />
+      setMates(
+        filteredMatesPhoto.map((el) => (
+          <MateItem element={el} key={el.id} className={className} />
         ))
       );
       setTimeout(() => {
-        setMatesOne([]);
+        setMates([]);
       }, durationAnime);
     }
   };
 
-  const handleListOfMainTwo = () => {
-    const arrIdMatesPhotoTwo = [
-      2, 3, 5, 9, 10, 12, 15, 16, 19, 20, 23, 24, 29, 35, 36, 37, 38, 47,
-    ];
-    const filteredMatesPhotoTwo = groupMates
-      .filter((el) => arrIdMatesPhotoTwo.includes(el.id))
-      .sort(uaSort);
-    setIsButtonTwoToggled(!isButtonTwoToggled);
+  const handleListOfMainOne = () =>
+    handleList({
+      arrIdMatesPhoto: [
+        1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 29, 32, 33,
+        34, 36, 37, 38, 41, 42, 16, 45,
+      ],
+      isButtonToggled: isButtonOneToggled,
+      setIsButtonToggled: setIsButtonOneToggled,
+      setMates: setMatesOne,
+      className: 'mate-item',
+    });
 
-    if (!isButtonTwoToggled) {
-      setMatesTwo(
-        filteredMatesPhotoTwo.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item2" />
-        ))
-      );
-    } else {
-      setMatesTwo(
-        filteredMatesPhotoTwo.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item2" />
-        ))
-      );
-      setTimeout(() => {
-        setMatesTwo([]);
-      }, durationAnime);
-    }
-  };
+  const handleListOfMainTwo = () =>
+    handleList({
+      arrIdMatesPhoto: [
+        2, 3, 5, 9, 10, 12, 15, 16, 19, 20, 23, 24, 29, 35, 36, 37, 38, 47,
+      ],
+      isButtonToggled: isButtonTwoToggled,
+      setIsButtonToggled: setIsButtonTwoToggled,
+      setMates: setMatesTwo,
+      className: 'mate-item2',
+    });
 
-  const handleListOfMainThree = () => {
-    const arrIdMatesPhotoThree = [
-      1, 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 22, 23, 24, 26, 27, 28,
-      29, 30, 31, 32, 33, 36, 37, 38, 39, 40, 42,
-    ];
-    const filteredMatesPhotoThree = groupMates
-      .filter((el) => arrIdMatesPhotoThree.includes(el.id))
-      .sort(uaSort);
-    setIsButtonThreeToggled(!isButtonThreeToggled);
+  const handleListOfMainThree = () =>
+    handleList({
+      arrIdMatesPhoto: [
+        1, 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 22, 23, 24, 26, 27, 28,
+        29, 30, 31, 32, 33, 36, 37, 38, 39, 40, 42,
+      ],
+      isButtonToggled: isButtonThreeToggled,
+      setIsButtonToggled: setIsButtonThreeToggled,
+      setMates: setMatesThree,
+      className: 'mate-item3',
+    });
 
-    if (!isButtonThreeToggled) {
-      setMatesThree(
-        filteredMatesPhotoThree.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item3" />
-        ))
-      );
-    } else {
-      setMatesThree(
-        filteredMatesPhotoThree.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item3" />
-        ))
-      );
-      setTimeout(() => {
-        setMatesThree([]);
-      }, durationAnime);
-    }
-  };
-
-  const handleListOfMainAll = () => {
-    setIsButtonAllToggled(!isButtonAllToggled);
-
-    if (!isButtonAllToggled) {
-      setMatesAll(
-        groupMates
-          .sort(uaSort)
-          .map((el) => (
-            <MateItem element={el} key={el.id} className="mate-item4" />
-          ))
-      );
-    } else {
-      setMatesAll(
-        groupMates
-          .sort(uaSort)
-          .map((el) => (
-            <MateItem element={el} key={el.id} className="mate-item4" />
-          ))
-      );
-      setTimeout(() => {
-        setMatesAll([]);
-      }, durationAnime);
-    }
-  };
+  const handleListOfMainAll = () =>
+    handleList({
+      arrIdMatesPhoto: groupMates.map((el) => el.id),
+      isButtonToggled: isButtonAllToggled,
+      setIsButtonToggled: setIsButtonAllToggled,
+      setMates: setMatesAll,
+      className: 'mate-item4',
+    });
 
   const darkTheme = useTheme();
 
