@@ -6,7 +6,6 @@
 
 https://berizka.vercel.app
 
-<p>This app allows you:</p>
 <ul>
 <li>⭐recall some forgotten names of kindergarten`s mates</li>
 <li>⭐recall some actions and stories</li>
@@ -25,4 +24,4 @@ https://berizka.vercel.app
 <li>⭐https://www.npmjs.com/package/framer-motion/</li>
 </ul>
 
-<p>Build with TailwindCSS and totally adaptive to most popular devices.</p>
+<p>Built with Tailwind CSS (responsive designed), and suitable for most popular devices.</p>

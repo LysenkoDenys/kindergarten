@@ -13,7 +13,7 @@ import anime from 'animejs/lib/anime.es.js';
 import extraExtraSmallImage1 from '../assets/main-01-260.avif';
 import extraSmallImage1 from '../assets/main-01-320.avif';
 import smallImage1 from '../assets/main-01-768.avif';
-import SmallMediumImage1 from '../assets/main-01-990.avif';
+import smallMediumImage1 from '../assets/main-01-990.avif';
 import mediumImage1 from '../assets/main-01-1024.avif';
 import mediumMediumImage1 from '../assets/main-01-1370.avif';
 import mediumLargeImage1 from '../assets/main-01-1670.avif';
@@ -279,7 +279,7 @@ const Home = () => {
                   ${extraExtraSmallImage1} 260w,
                   ${extraSmallImage1} 320w,
                   ${smallImage1} 768w,
-                  ${SmallMediumImage1} 990w,
+                  ${smallMediumImage1} 990w,
                   ${mediumMediumImage1} 1370w,
                   ${mediumLargeImage1} 1670w,
                   ${mediumImage1} 1024w,
