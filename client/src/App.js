@@ -25,8 +25,8 @@ function App() {
           <div className="flex justify-center items-center">
             <DNA
               visible={true}
-              height="180"
-              width="180"
+              height="70"
+              width="70"
               ariaLabel="dna-loading"
             />
           </div>
