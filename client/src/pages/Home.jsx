@@ -48,6 +48,14 @@ const Home = () => {
   const [isButtonThreeToggled, setIsButtonThreeToggled] = useState(false);
   const [isButtonAllToggled, setIsButtonAllToggled] = useState(false);
 
+  // working:---------------------------------------------------
+  // const [matesState, setMatesState] = useState({
+  //   matesOne: [],
+  //   isButtonOneToggled: false,
+
+  // });
+  // working:---------------------------------------------------
+
   const malesQty = groupMates.filter((el) => el.sex === 'male').length;
   const malesQtyDeg = Math.round((malesQty / groupMates.length) * 100);
   const femalesQty = groupMates.filter((el) => el.sex === 'female').length;
@@ -62,109 +70,45 @@ const Home = () => {
     return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
   }
 
-  useEffect(() => {
-    if (matesOne) {
-      const elements = document.querySelectorAll('.mate-item');
-      const screenWidth = window.screen.width;
-      if (elements.length > 0 && isButtonOneToggled) {
-        anime({
-          targets: elements,
-          translateX: [
-            { value: -screenWidth, duration: 0 },
-            { value: 0, duration: durationAnime },
-          ],
-          delay: (el, i) => i * 100,
-        });
-      } else {
-        anime({
-          targets: elements,
-          translateX: [
-            { value: 0, duration: 0 },
-            { value: screenWidth, duration: durationAnime },
-          ],
-          delay: (el, i) => i * 100,
-        });
-      }
+  // working:---------------------------------------------------
+  const animateMates = (selector, isToggled, duration = 1000) => {
+    const elements = document.querySelectorAll(selector);
+    const screenWidth = window.screen.width;
+
+    if (elements.length > 0 && isToggled) {
+      anime({
+        targets: elements,
+        translateX: [
+          { value: -screenWidth, duration: 0 },
+          { value: 0, duration },
+        ],
+        delay: (el, i) => i * 100,
+      });
+    } else {
+      anime({
+        targets: elements,
+        translateX: [
+          { value: 0, duration: 0 },
+          { value: screenWidth, duration },
+        ],
+        delay: (el, i) => i * 100,
+      });
     }
+  };
+
+  useEffect(() => {
+    animateMates('.mate-item', isButtonOneToggled, 1000);
   }, [matesOne, isButtonOneToggled]);
-
   useEffect(() => {
-    if (matesTwo) {
-      const elements = document.querySelectorAll('.mate-item2');
-      const screenWidth = window.screen.width;
-      if (elements.length > 0 && isButtonTwoToggled) {
-        anime({
-          targets: elements,
-          translateX: [
-            { value: -screenWidth, duration: 0 },
-            { value: 0, duration: durationAnime },
-          ],
-          delay: (el, i) => i * 100,
-        });
-      } else {
-        anime({
-          targets: elements,
-          translateX: [
-            { value: 0, duration: 0 },
-            { value: screenWidth, duration: durationAnime },
-          ],
-          delay: (el, i) => i * 100,
-        });
-      }
-    }
+    animateMates('.mate-item2', isButtonTwoToggled, 1000);
   }, [matesTwo, isButtonTwoToggled]);
-
   useEffect(() => {
-    if (matesThree) {
-      const elements = document.querySelectorAll('.mate-item4');
-      const screenWidth = window.screen.width;
-      if (elements.length > 0 && isButtonThreeToggled) {
-        anime({
-          targets: elements,
-          translateX: [
-            { value: -screenWidth, duration: 0 },
-            { value: 0, duration: durationAnime },
-          ],
-          delay: (el, i) => i * 100,
-        });
-      } else {
-        anime({
-          targets: elements,
-          translateX: [
-            { value: 0, duration: 0 },
-            { value: screenWidth, duration: durationAnime },
-          ],
-          delay: (el, i) => i * 100,
-        });
-      }
-    }
+    animateMates('.mate-item3', isButtonThreeToggled, 1000);
   }, [matesThree, isButtonThreeToggled]);
-
   useEffect(() => {
-    if (matesAll) {
-      const elements = document.querySelectorAll('.mate-item3');
-      const screenWidth = window.screen.width;
-      if (elements.length > 0 && isButtonAllToggled) {
-        anime({
-          targets: elements,
-          translateX: [
-            { value: -screenWidth, duration: 0 },
-            { value: 0, duration: durationAnime },
-          ],
-          delay: (el, i) => i * 100,
-        });
-      } else {
-        anime({
-          targets: elements,
-          translateX: [
-            { value: 0, duration: 0 },
-            { value: screenWidth, duration: durationAnime },
-          ],
-          delay: (el, i) => i * 100,
-        });
-      }
-    }
+    animateMates('.mate-item4', isButtonAllToggled, 1000);
   }, [matesAll, isButtonAllToggled]);
+  // working:---------------------------------------------------
 
   const handleListOfMainOne = () => {
     const arrIdMatesPhotoOne = [
@@ -206,13 +150,13 @@ const Home = () => {
     if (!isButtonTwoToggled) {
       setMatesTwo(
         filteredMatesPhotoTwo.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item" />
+          <MateItem element={el} key={el.id} className="mate-item2" />
         ))
       );
     } else {
       setMatesTwo(
         filteredMatesPhotoTwo.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item" />
+          <MateItem element={el} key={el.id} className="mate-item2" />
         ))
       );
       setTimeout(() => {
@@ -234,13 +178,13 @@ const Home = () => {
     if (!isButtonThreeToggled) {
       setMatesThree(
         filteredMatesPhotoThree.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item" />
+          <MateItem element={el} key={el.id} className="mate-item3" />
         ))
       );
     } else {
       setMatesThree(
         filteredMatesPhotoThree.map((el) => (
-          <MateItem element={el} key={el.id} className="mate-item" />
+          <MateItem element={el} key={el.id} className="mate-item3" />
         ))
       );
       setTimeout(() => {
@@ -257,7 +201,7 @@ const Home = () => {
         groupMates
           .sort(uaSort)
           .map((el) => (
-            <MateItem element={el} key={el.id} className="mate-item" />
+            <MateItem element={el} key={el.id} className="mate-item4" />
           ))
       );
     } else {
@@ -265,7 +209,7 @@ const Home = () => {
         groupMates
           .sort(uaSort)
           .map((el) => (
-            <MateItem element={el} key={el.id} className="mate-item" />
+            <MateItem element={el} key={el.id} className="mate-item4" />
           ))
       );
       setTimeout(() => {
@@ -298,11 +242,7 @@ const Home = () => {
           <p className="text-center mb-2 mt-2">
             <strong>
               &ensp;{' '}
-              <span
-                style={{
-                  color: darkTheme ? '#f48d85' : '#c11010',
-                }}
-              >
+              <span className={darkTheme ? 'text-[#f48d85]' : 'text-[#c11010]'}>
                 DISCLAIMER:
               </span>{' '}
               контент даного сайту засновано на подіях, які згадує автор та
@@ -310,10 +250,7 @@ const Home = () => {
               доповнень, коригувань, прохання надати Ваші спогади, фото, тощо
               для розміщення на даному сайті. Реквізити автора надано
               <span
-                style={{
-                  color: darkTheme ? '#59b3f3' : '#0c5ca1',
-                  cursor: 'pointer',
-                }}
+                className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}
                 onClick={getUrl}
               >
                 <Link to="/#footer"> нижче.</Link>
@@ -596,7 +533,7 @@ const Home = () => {
                   to="https://www.youtube.com/watch?v=zMRVM0cD-FI"
                   target="_blank"
                 >
-                  відео випускного CШ№2 1997
+                  відео випускного 11-А CШ№2 1997
                 </Link>
               </span>
               );
