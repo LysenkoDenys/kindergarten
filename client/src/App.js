@@ -19,40 +19,48 @@ const Post = React.lazy(() => import('./components/layout/Post'));
 function App() {
   return (
     <ThemeProvider>
-      <MainNavigation />
-      <Suspense
-        fallback={
-          <div className="flex justify-center items-center">
-            <DNA
-              visible={true}
-              height="70"
-              width="70"
-              ariaLabel="dna-loading"
-            />
-          </div>
-        }
-      >
-        <Routes>
-          <Route path="/" exact element={<Home />}></Route>
-          <Route path="/memo" element={<Memo />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-          {/* get rid this in the future */}
-          <Route
-            path="/posts/:id"
-            element={
-              <PostProvider>
-                <Post />
-              </PostProvider>
+      <div className="flex flex-col min-h-screen">
+        {' '}
+        {/* Контейнер для структури */}
+        <MainNavigation />
+        <main className="flex-grow min-h-[calc(100vh-150px)]">
+          {' '}
+          {/* Основний контент */}
+          <Suspense
+            fallback={
+              <div className="flex justify-center items-center">
+                <DNA
+                  visible={true}
+                  height="70"
+                  width="70"
+                  ariaLabel="dna-loading"
+                />
+              </div>
             }
-          ></Route>
-          {/* get rid this in the future */}
-        </Routes>
+          >
+            <Routes>
+              <Route path="/" exact element={<Home />}></Route>
+              <Route path="/memo" element={<Memo />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
+              {/* get rid this in the future */}
+              <Route
+                path="/posts/:id"
+                element={
+                  <PostProvider>
+                    <Post />
+                  </PostProvider>
+                }
+              ></Route>
+              {/* get rid this in the future */}
+            </Routes>
 
-        {/* <PostProvider> */}
-        <Comments />
-        {/* </PostProvider> */}
-      </Suspense>
-      <MainFooter />
+            {/* <PostProvider> */}
+            <Comments />
+            {/* </PostProvider> */}
+          </Suspense>
+        </main>
+        <MainFooter />
+      </div>
     </ThemeProvider>
   );
 }
