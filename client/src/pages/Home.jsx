@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { TbGenderDemiboy, TbGenderDemigirl } from 'react-icons/tb';
 import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
-import MateItem from '../components/layout/MateItem';
+// import MateItem from '../components/layout/MateItem';
 import Button from '../components/layout/Button';
 import Block from '../../src/components/layout/Block';
 import getUrl from '../data/getUrl';
@@ -101,6 +101,20 @@ const Home = () => {
   useEffect(() => {
     animateMates('.mate-item4', isButtonAllToggled, 1000);
   }, [matesAll, isButtonAllToggled]);
+
+  const [MateItem, setMateItem] = useState(null);
+
+  //-------------------------------------------------------
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      import('../components/layout/MateItem').then((module) =>
+        setMateItem(() => module.default)
+      );
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  //-------------------------------------------------------
 
   const handleList = ({
     arrIdMatesPhoto,
