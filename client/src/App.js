@@ -23,7 +23,7 @@ function App() {
         {' '}
         {/* Контейнер для структури */}
         <MainNavigation />
-        <main className="flex-grow min-h-[calc(100vh-150px)]">
+        <main className="flex-grow min-h-[calc(100dvh-150px)]">
           {' '}
           {/* Основний контент */}
           <Suspense

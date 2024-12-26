@@ -7,7 +7,6 @@ import MateItem from '../components/layout/MateItem';
 import Button from '../components/layout/Button';
 import Block from '../../src/components/layout/Block';
 import getUrl from '../data/getUrl';
-import anime from 'animejs/lib/anime.es.js';
 
 //images:
 import extraExtraSmallImage1 from '../assets/main-01-260.avif';
@@ -62,11 +61,13 @@ const Home = () => {
     return a.lastName.toLowerCase().localeCompare(b.lastName.toLowerCase());
   }
 
-  const animateMates = (selector, isToggled, duration = 1000) => {
+  // use async function to implement lazy import of anime.js:
+  const animateMates = async (selector, isToggled, duration = 1000) => {
     const elements = document.querySelectorAll(selector);
     const screenWidth = window.screen.width;
 
     if (elements.length > 0 && isToggled) {
+      const { default: anime } = await import('animejs/lib/anime.es.js');
       anime({
         targets: elements,
         translateX: [
@@ -76,6 +77,7 @@ const Home = () => {
         delay: (el, i) => i * 100,
       });
     } else {
+      const { default: anime } = await import('animejs/lib/anime.es.js');
       anime({
         targets: elements,
         translateX: [
