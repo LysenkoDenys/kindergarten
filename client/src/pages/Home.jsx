@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { TbGenderDemiboy, TbGenderDemigirl } from 'react-icons/tb';
 import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
-// import MateItem from '../components/layout/MateItem';
 import Button from '../components/layout/Button';
 import Block from '../../src/components/layout/Block';
 import getUrl from '../data/getUrl';
@@ -89,32 +88,58 @@ const Home = () => {
     }
   };
 
-  useEffect(() => {
-    animateMates('.mate-item', isButtonOneToggled, 1000);
-  }, [matesOne, isButtonOneToggled]);
-  useEffect(() => {
-    animateMates('.mate-item2', isButtonTwoToggled, 1000);
-  }, [matesTwo, isButtonTwoToggled]);
-  useEffect(() => {
-    animateMates('.mate-item3', isButtonThreeToggled, 1000);
-  }, [matesThree, isButtonThreeToggled]);
-  useEffect(() => {
-    animateMates('.mate-item4', isButtonAllToggled, 1000);
-  }, [matesAll, isButtonAllToggled]);
-
+  // lazy import of MateItem:
   const [MateItem, setMateItem] = useState(null);
 
-  //-------------------------------------------------------
   useEffect(() => {
     const timer = setTimeout(() => {
       import('../components/layout/MateItem').then((module) =>
         setMateItem(() => module.default)
       );
-    }, 1000);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);
-  //-------------------------------------------------------
+
+  useEffect(() => {
+    const animationConfigs = [
+      {
+        selector: '.mate-item',
+        isToggled: isButtonOneToggled,
+        mates: matesOne,
+      },
+      {
+        selector: '.mate-item2',
+        isToggled: isButtonTwoToggled,
+        mates: matesTwo,
+      },
+      {
+        selector: '.mate-item3',
+        isToggled: isButtonThreeToggled,
+        mates: matesThree,
+      },
+      {
+        selector: '.mate-item4',
+        isToggled: isButtonAllToggled,
+        mates: matesAll,
+      },
+    ];
+
+    animationConfigs.forEach(({ selector, isToggled, mates }) => {
+      if (mates.length) {
+        animateMates(selector, isToggled, 1000);
+      }
+    });
+  }, [
+    matesOne,
+    matesTwo,
+    matesThree,
+    matesAll,
+    isButtonOneToggled,
+    isButtonTwoToggled,
+    isButtonThreeToggled,
+    isButtonAllToggled,
+  ]);
 
   const handleList = ({
     arrIdMatesPhoto,
