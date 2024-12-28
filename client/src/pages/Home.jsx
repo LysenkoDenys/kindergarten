@@ -172,49 +172,106 @@ const Home = () => {
     }
   };
 
-  const handleListOfMainOne = () =>
-    handleList({
-      arrIdMatesPhoto: [
-        1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 29, 32, 33,
-        34, 36, 37, 38, 41, 42, 16, 45,
-      ],
-      isButtonToggled: isButtonOneToggled,
-      setIsButtonToggled: setIsButtonOneToggled,
-      setMates: setMatesOne,
-      className: 'mate-item',
-    });
+  // const handleListOfMainOne = () =>
+  //   handleList({
+  //     arrIdMatesPhoto: [
+  //       1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 29, 32, 33,
+  //       34, 36, 37, 38, 41, 42, 16, 45,
+  //     ],
+  //     isButtonToggled: isButtonOneToggled,
+  //     setIsButtonToggled: setIsButtonOneToggled,
+  //     setMates: setMatesOne,
+  //     className: 'mate-item',
+  //   });
 
-  const handleListOfMainTwo = () =>
-    handleList({
-      arrIdMatesPhoto: [
-        2, 3, 5, 9, 10, 12, 15, 16, 19, 20, 23, 24, 29, 35, 36, 37, 38, 47,
-      ],
-      isButtonToggled: isButtonTwoToggled,
-      setIsButtonToggled: setIsButtonTwoToggled,
-      setMates: setMatesTwo,
-      className: 'mate-item2',
-    });
+  // const handleListOfMainTwo = () =>
+  //   handleList({
+  //     arrIdMatesPhoto: [
+  //       2, 3, 5, 9, 10, 12, 15, 16, 19, 20, 23, 24, 29, 35, 36, 37, 38, 47,
+  //     ],
+  //     isButtonToggled: isButtonTwoToggled,
+  //     setIsButtonToggled: setIsButtonTwoToggled,
+  //     setMates: setMatesTwo,
+  //     className: 'mate-item2',
+  //   });
 
-  const handleListOfMainThree = () =>
-    handleList({
-      arrIdMatesPhoto: [
-        1, 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 22, 23, 24, 26, 27, 28,
-        29, 30, 31, 32, 33, 36, 37, 38, 39, 40, 42,
-      ],
-      isButtonToggled: isButtonThreeToggled,
-      setIsButtonToggled: setIsButtonThreeToggled,
-      setMates: setMatesThree,
-      className: 'mate-item3',
-    });
+  // const handleListOfMainThree = () =>
+  //   handleList({
+  //     arrIdMatesPhoto: [
+  //       1, 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 22, 23, 24, 26, 27, 28,
+  //       29, 30, 31, 32, 33, 36, 37, 38, 39, 40, 42,
+  //     ],
+  //     isButtonToggled: isButtonThreeToggled,
+  //     setIsButtonToggled: setIsButtonThreeToggled,
+  //     setMates: setMatesThree,
+  //     className: 'mate-item3',
+  //   });
 
-  const handleListOfMainAll = () =>
-    handleList({
-      arrIdMatesPhoto: groupMates.map((el) => el.id),
-      isButtonToggled: isButtonAllToggled,
-      setIsButtonToggled: setIsButtonAllToggled,
-      setMates: setMatesAll,
-      className: 'mate-item4',
-    });
+  // const handleListOfMainAll = () =>
+  //   handleList({
+  //     arrIdMatesPhoto: groupMates.map((el) => el.id),
+  //     isButtonToggled: isButtonAllToggled,
+  //     setIsButtonToggled: setIsButtonAllToggled,
+  //     setMates: setMatesAll,
+  //     className: 'mate-item4',
+  //   });
+
+  const createHandleListFunction =
+    ({
+      arrIdMatesPhoto,
+      isButtonToggled,
+      setIsButtonToggled,
+      setMates,
+      className,
+    }) =>
+    () =>
+      handleList({
+        arrIdMatesPhoto,
+        isButtonToggled,
+        setIsButtonToggled,
+        setMates,
+        className,
+      });
+
+  const handleListOfMainOne = createHandleListFunction({
+    arrIdMatesPhoto: [
+      1, 2, 4, 5, 6, 7, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 29, 32, 33, 34,
+      36, 37, 38, 41, 42, 16, 45,
+    ],
+    isButtonToggled: isButtonOneToggled,
+    setIsButtonToggled: setIsButtonOneToggled,
+    setMates: setMatesOne,
+    className: 'mate-item',
+  });
+
+  const handleListOfMainTwo = createHandleListFunction({
+    arrIdMatesPhoto: [
+      2, 3, 5, 9, 10, 12, 15, 16, 19, 20, 23, 24, 29, 35, 36, 37, 38, 47,
+    ],
+    isButtonToggled: isButtonTwoToggled,
+    setIsButtonToggled: setIsButtonTwoToggled,
+    setMates: setMatesTwo,
+    className: 'mate-item2',
+  });
+
+  const handleListOfMainThree = createHandleListFunction({
+    arrIdMatesPhoto: [
+      1, 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 22, 23, 24, 26, 27, 28,
+      29, 30, 31, 32, 33, 36, 37, 38, 39, 40, 42,
+    ],
+    isButtonToggled: isButtonThreeToggled,
+    setIsButtonToggled: setIsButtonThreeToggled,
+    setMates: setMatesThree,
+    className: 'mate-item3',
+  });
+
+  const handleListOfMainAll = createHandleListFunction({
+    arrIdMatesPhoto: groupMates.map((el) => el.id),
+    isButtonToggled: isButtonAllToggled,
+    setIsButtonToggled: setIsButtonAllToggled,
+    setMates: setMatesAll,
+    className: 'mate-item4',
+  });
 
   const darkTheme = useTheme();
 
@@ -457,9 +514,9 @@ const Home = () => {
                 alt="my group mates 03"
               />
               <figcaption className="text-center">
-                <b>Фото-03</b> - Святкування дня знань. Ми в районі майданчику
-                “В” між під`їздом до нашої групи і господарською будівлею (там
-                тоді росли кущі сирені).
+                <b>Фото-03</b> - Урочисте відкриття/закриття нашого навчання на
+                базі садочку. Ми в районі майданчику “В” між під`їздом до нашої
+                групи і господарською будівлею (там тоді росли кущі сирені).
               </figcaption>
             </figure>
             <Button
