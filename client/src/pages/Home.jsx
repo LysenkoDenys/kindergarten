@@ -599,6 +599,21 @@ const Home = () => {
           </ul>
         </article>
       </Block>
+      <Block>
+        <article className=" flex items-center flex-col">
+          <p>Якщо душа просить продовження банкету, то Вам сюди: </p>
+          <p>
+            <span className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}>
+              <Link
+                to="https://lysenko-blog.onrender.com/post/school-2-grade-4-a"
+                target="_blank"
+              >
+                наш 4 клас станом на 1989/1990 роки
+              </Link>
+            </span>
+          </p>
+        </article>
+      </Block>
     </section>
   );
 };
