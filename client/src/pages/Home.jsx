@@ -577,8 +577,8 @@ const Home = () => {
           </ul>
           <p>
             <hr />
-            &ensp; Ось посилання фото деяких (вже дорослих) одногрупників, яких
-            я не знайшов в соціальній мережі:&nbsp;
+            &ensp; Ось фото деяких (вже дорослих) одногрупників, яких я не
+            знайшов в соціальній мережі:&nbsp;
             <span className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}>
               <Link
                 to="https://photos.app.goo.gl/H3kwVZiTDuQkMzUW8"
