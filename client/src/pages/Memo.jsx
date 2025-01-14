@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '../ThemeContext';
+import { TiSocialFacebookCircular } from 'react-icons/ti';
 import { IoLocationOutline } from 'react-icons/io5';
 import SearchBar from '../components/layout/SearchBar';
 import BlockMemo from '../../src/components/layout/BlockMemo';
@@ -159,6 +160,16 @@ const Memo = () => {
           <p>
             &ensp; На схемі: 1 - спальня; 2 - роздягалка; 3 - сходова клітка; 4
             - туалет; 5- їдальня/вітальня; 6 - учбовий клас.
+          </p>
+          <br />
+          <p>
+            &ensp; Нижче йде більш детальний опис спогадів про кожну
+            особистість. Прошу звернути увагу на позначку "
+            <TiSocialFacebookCircular className="hover:scale-125 ease-in-out duration-300 mr-1 inline " />
+            " напроти деяких прізвищ - це значить, що ця людина присутня в
+            соціальній мережі facebook. Натиснувши на прізвище, або фото цієї
+            людини - потрапляєте на її сторінку, де можна побачити її сучасні
+            фото/статус та іншу інформацію.
           </p>
         </article>
       </Block>

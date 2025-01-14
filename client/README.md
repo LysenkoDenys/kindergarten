@@ -21,11 +21,15 @@
 <li>⭐https://mhnpd.github.io/react-loader-spinner/</li>
 </ul>
 
-<p>Build with TailwindCSS and totally responsive to most popular devices.</p>
+<p>Built with Tailwind CSS (adaptive designed), and suitable for most popular devices.</p>
 
-issues of performance:
+<p>To run the project on your PC you must have installed Node.js also you should write in the VSC terminal following:</p>
+<li>npm install</li>
+<li>in first bash: 1) cd server 2) npm run devStart</li>
+<li>in second bash: 1) cd client 2) npm start</li>
+<br>
 
-<ul>
-<li>⭐Reduce unused JavaScript Potential savings of 50 KiB</li>
-<li>⭐Serve static assets with an efficient cache policy 11 resources found</li>
-</ul>
+### License
+
+<hr>
+<p>The app is free to use for personal and commercial purposes, but attribution is required. Please credit the app and its creators in any blog posts or other content generated using the app.</p>
