@@ -24,4 +24,15 @@ https://berizka.vercel.app
 <li>⭐https://www.npmjs.com/package/framer-motion/</li>
 </ul>
 
-<p>Built with Tailwind CSS (responsive designed), and suitable for most popular devices.</p>
+<p>Built with Tailwind CSS (adaptive designed), and suitable for most popular devices.</p>
+
+<p>To run the project on your PC you must have installed Node.js also you should write in the VSC terminal following:</p>
+<li>npm install</li>
+<li>in first bash: 1) cd server 2) npm run devStart</li>
+<li>in second bash: 1) cd client 2) npm start</li>
+<br>
+
+### License
+
+<hr>
+<p>The app is free to use for personal and commercial purposes, but attribution is required. Please credit the app and its creators in any blog posts or other content generated using the app.</p>
