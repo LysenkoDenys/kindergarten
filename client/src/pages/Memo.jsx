@@ -165,7 +165,7 @@ const Memo = () => {
           <p>
             &ensp; Нижче йде більш детальний опис спогадів про кожну
             особистість. Прошу звернути увагу на позначку "
-            <TiSocialFacebookCircular className="hover:scale-125 ease-in-out duration-300 mr-1 inline " />
+            <TiSocialFacebookCircular className="hover:scale-125 ease-in-out duration-300 inline " />
             " напроти деяких прізвищ - це значить, що ця людина присутня в
             соціальній мережі facebook. Натиснувши на прізвище, або фото цієї
             людини - потрапляєте на її сторінку, де можна побачити її сучасні
