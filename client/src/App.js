@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { DNA } from 'react-loader-spinner';
 import MainNavigation from './components/layout/MainNavigation';
 import MainFooter from './components/layout/MainFooter';
-import Comments from './components/layout/Comments';
+// import Comments from './components/layout/Comments';
 // import Home from './pages/Home';
 // import Memo from './pages/Memo';
 import NotFound from './pages/NotFound';
@@ -55,7 +55,7 @@ function App() {
             </Routes>
 
             {/* <PostProvider> */}
-            <Comments />
+            {/* <Comments /> */}
             {/* </PostProvider> */}
           </Suspense>
         </main>

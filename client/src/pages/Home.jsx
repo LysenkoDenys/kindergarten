@@ -94,7 +94,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       import('../components/layout/MateItem').then((module) =>
-        setMateItem(() => module.default)
+        setMateItem(() => module.default),
       );
     }, 100);
 
@@ -158,13 +158,13 @@ const Home = () => {
       setMates(
         filteredMatesPhoto.map((el) => (
           <MateItem element={el} key={el.id} className={className} />
-        ))
+        )),
       );
     } else {
       setMates(
         filteredMatesPhoto.map((el) => (
           <MateItem element={el} key={el.id} className={className} />
-        ))
+        )),
       );
       setTimeout(() => {
         setMates([]);
@@ -324,7 +324,7 @@ const Home = () => {
                 src={require('../assets/faces-teachers/victorivna.avif')}
                 alt="valentina viktorivna"
               />
-              <div className="m-1">Валентина Вікторівна undefined</div>
+              <div className="m-1">Валентина Вікторівна Кравцова</div>
             </div>
             <div className="flex items-center m-2">
               <img
@@ -610,12 +610,16 @@ const Home = () => {
             <li>Костюченко Наталія - надані спогади, фото та уточнення;</li>
             <li>Плужник Наталія - надані спогади та фото;</li>
             <li>Мадика Світлана - наданий відгук та фото;</li>
+            <li>Іванчук Євген - наданий відгук та уточнення;</li>
           </ul>
         </article>
       </Block>
       <Block>
         <article className=" flex items-center flex-col">
-          <p>Якщо душа просить продовження банкету, то Вам сюди: </p>
+          <p>
+            Якщо душа просить продовження банкету, то Вам сюди (це мій
+            блог):{' '}
+          </p>
           <p>
             <span className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}>
               <Link

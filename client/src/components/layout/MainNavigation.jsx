@@ -91,7 +91,7 @@ const MainNavigation = () => {
             <FiSearch className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
           </Link>
         </div>
-        <div onClick={getUrl} title="коментувати">
+        {/* <div onClick={getUrl} title="коментувати">
           <Link
             to={
               linkToComments().includes('/memo')
@@ -102,7 +102,7 @@ const MainNavigation = () => {
           >
             <FaRegCommentDots className="cursor-pointer text-[30px] hover:scale-110 ease-in-out duration-300" />
           </Link>
-        </div>
+        </div> */}
         <nav className="navigation">
           <ul
             className={`list-none flex items-baseline m-0 p-0 md:hidden transition-transform duration-300 ease-in-out ${
