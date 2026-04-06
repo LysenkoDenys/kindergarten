@@ -18,6 +18,9 @@
     "web-vitals": "^2.1.4",
     "react-loader-spinner": "^6.1.6"
   },
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
