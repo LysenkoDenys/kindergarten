@@ -484,9 +484,9 @@ const Home = () => {
           {/* working */}
           <p>
             &ensp; Частину одногрупників (в складі 31 особи, які пішли в перший
-            клас на базі садочку), а також окрім виховательок і вчительки
-            завідуючу садочком і вчительку музики по класу фортепіано
-            представлено на фото-03 нижче:
+            клас на базі садочку), а також виховательок і вчительки завідуючу
+            садочком та вчительку музики по класу фортепіано представлено на
+            фото-03 нижче:
           </p>
           <div className="flex items-center flex-col">
             <figure className="flex items-center flex-col">
@@ -578,19 +578,6 @@ const Home = () => {
             <li>дівчинка, родичка Валентини Василівни - Діна - прізвище;</li>
             <li>хлопчик В'ячеслав (руденький) - прізвище;</li>
           </ul>
-          <hr className="border-cyan-600 my-1" />
-          <p className="text-xl font-bold text-center">
-            &ensp; Ось фото деяких (вже дорослих) одногрупників, яких я не
-            знайшов в соціальній мережі:&nbsp;
-            <span className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}>
-              <Link
-                to="https://photos.app.goo.gl/H3kwVZiTDuQkMzUW8"
-                target="_blank"
-              >
-                одногрупники-однокласники
-              </Link>
-            </span>
-          </p>
         </article>
       </Block>
       <Block>
@@ -598,7 +585,7 @@ const Home = () => {
           <h3 className="text-xl font-bold text-center">Окрема подяка:</h3>
           <ul className="ml-6">
             <li>
-              Васильєв Сергій - надані спогади, уточнення та натхнення (
+              <b>Васильєв Сергій</b> - надані спогади, уточнення та натхнення (
               <span className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}>
                 <Link
                   to="https://www.youtube.com/watch?v=zMRVM0cD-FI"
@@ -609,30 +596,55 @@ const Home = () => {
               </span>
               );
             </li>
-            <li>Іонко Ольга - надані спогади, уточнення;</li>
-            <li>Костюченко Наталія - надані спогади, фото та уточнення;</li>
-            <li>Плужник Наталія - надані спогади та фото;</li>
-            <li>Мадика Світлана - наданий відгук та фото;</li>
-            <li>Іванчук Євген - наданий відгук та уточнення;</li>
+            <li>
+              <b>Іонко Ольга</b> - надані спогади, уточнення;
+            </li>
+            <li>
+              <b>Костюченко Наталія</b> - надані спогади, фото та уточнення;
+            </li>
+            <li>
+              <b>Плужник Наталія</b> - надані спогади та фото;
+            </li>
+            <li>
+              <b>Мадика Світлана</b> - наданий відгук та фото;
+            </li>
+            <li>
+              <b>Іванчук Євген</b> - наданий відгук та уточнення;
+            </li>
           </ul>
         </article>
       </Block>
       <Block>
         <article className=" flex items-center flex-col">
-          <p>
-            Якщо душа просить продовження банкету, то Вам сюди (це мій
-            блог):{' '}
-          </p>
-          <p>
-            <span className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}>
-              <Link
-                to="https://lysenko-blog.onrender.com/post/school-2-grade-4-a"
-                target="_blank"
-              >
-                наш 4 клас станом на 1989/1990 роки
-              </Link>
-            </span>
-          </p>
+          <h3 className="text-xl font-bold text-center">А що ж там далі...</h3>
+          <div className="my-2 p-4 rounded-2xl shadow-md bg-slate-400 dark:from-gray-800 dark:to-gray-900 text-center">
+            <p className="text-md font-semibold mb-3 text-slate-800">
+              Якщо душа просить продовження банкету, то Вам сюди (це мій блог):
+            </p>
+
+            <Link
+              to="https://lysenko-blog.onrender.com/post/school-2-grade-4-a"
+              target="_blank"
+              className="inline-block px-4 py-2 rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition"
+            >
+              наш 4 клас станом на 1989/1990 роки 💬
+            </Link>
+          </div>
+
+          <div className="my-2 p-4 rounded-2xl shadow-md bg-slate-400 dark:from-gray-800 dark:to-gray-900 text-center">
+            <p className="text-md font-semibold mb-3 text-slate-800">
+              Ось фото деяких (вже дорослих) одногрупників, яких я не занйшов
+              соціальних мережах:
+            </p>
+
+            <Link
+              to="https://photos.app.goo.gl/H3kwVZiTDuQkMzUW8"
+              target="_blank"
+              className="inline-block px-4 py-2 rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition"
+            >
+              Переглянути фото 📸
+            </Link>
+          </div>
         </article>
       </Block>
     </section>
