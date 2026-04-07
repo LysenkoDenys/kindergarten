@@ -7,9 +7,9 @@ import MainFooter from './components/layout/MainFooter';
 // import Home from './pages/Home';
 // import Memo from './pages/Memo';
 import NotFound from './pages/NotFound';
-// import Post from './components/layout/Post';
-import { PostProvider } from './context/PostContext';
-import { ThemeProvider } from './ThemeContext';
+// import Post from './components/layout/Post.jsx';
+import { PostProvider } from './context/PostContext.jsx';
+import { ThemeProvider } from './ThemeContext.jsx';
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));

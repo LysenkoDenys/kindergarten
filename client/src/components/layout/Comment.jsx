@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import IconBtn from './IconBtn';
+import IconBtn from './IconBtn.jsx';
 import { FaHeart, FaReply, FaTrash } from 'react-icons/fa6';
 import { FaEdit, FaRegHeart } from 'react-icons/fa';
-import { usePost } from '../../context/PostContext';
-import CommentList from './CommentList';
-import CommentForm from './CommentForm';
-import { useAsyncFn } from '../../hooks/useAsync';
-import { useUser } from '../../hooks/useUser';
+import { usePost } from '../../context/PostContext.jsx';
+import CommentList from './CommentList.jsx';
+import CommentForm from './CommentForm.jsx';
+import { useAsyncFn } from '../../hooks/useAsync.js';
+import { useUser } from '../../hooks/useUser.js';
 
 import {
   createComment,
   updateComment,
   deleteComment,
   toggleCommentLike,
-} from '../../services/comments';
+} from '../../services/comments.js';
 
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
   dateStyle: 'short',

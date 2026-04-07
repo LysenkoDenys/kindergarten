@@ -1,14 +1,13 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { PiArrowFatRightBold } from 'react-icons/pi';
 import groupMates from '../../data/groupMates';
 import { useTheme } from '../../ThemeContext';
+import faces from '../../assets/faces/faces.js';
 
 const MateItem = ({ element, className }) => {
   const index = groupMates.findIndex((el) => el.id === element.id);
-  const imageView = groupMates[index].image
-    ? groupMates[index].image
-    : `undefined.avif`;
+  const imageView = groupMates[index].image || 'undefined.avif';
+  const imgSrc = faces[imageView] || faces['undefined.avif'];
 
   const darkTheme = useTheme();
 
@@ -24,13 +23,21 @@ const MateItem = ({ element, className }) => {
     <div className={`relative pr-3 py-3 mb-[2%] ${className}`}>
       <Link to={`/memo/#${groupMates[index].id}`}>
         <div>
-          <img
-            src={require(`../../assets/faces/${imageView}`)}
-            height="50px"
-            width="50px"
-            alt={`my group mate ${groupMates[index].lastName}`}
-            className={themePhoto}
-          />
+          {imgSrc ? (
+            <img
+              src={imgSrc}
+              height="50px"
+              width="50px"
+              alt={`my group mate ${groupMates[index].lastName}`}
+              className={themePhoto}
+            />
+          ) : (
+            <div
+              className={`${themePhoto} bg-gray-300 flex items-center justify-center`}
+            >
+              ?
+            </div>
+          )}
         </div>
         <div className={themeBlock}>
           {`${groupMates[index].lastName} ${groupMates[index].firstName}`}

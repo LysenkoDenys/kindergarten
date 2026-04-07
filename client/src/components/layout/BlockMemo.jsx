@@ -3,6 +3,8 @@ import { TiSocialFacebookCircular } from 'react-icons/ti';
 import { v4 as uuidv4 } from 'uuid';
 import groupMates from '../../data/groupMates';
 import { useTheme } from '../../ThemeContext';
+import faces from '../../assets/faces/faces.js';
+import stories from '../../assets/stories/stories.js';
 // import { motion, useScroll, useTransform } from 'framer-motion';
 
 const BlockMemo = ({ element }) => {
@@ -52,7 +54,7 @@ const BlockMemo = ({ element }) => {
         </span>
       ) : (
         part
-      )
+      ),
     );
   }
   //================================
@@ -69,7 +71,7 @@ const BlockMemo = ({ element }) => {
           >
             <div className="flex justify-start items-center mb-1">
               <img
-                src={require(`../../assets/faces/${imageView}`)}
+                src={faces[imageView] || faces['undefined.avif']}
                 alt={`my group mate ${groupMates[index].lastName}`}
                 className={themePhoto}
               />
@@ -88,7 +90,7 @@ const BlockMemo = ({ element }) => {
         ) : (
           <div className="flex justify-start items-center mb-1">
             <img
-              src={require(`../../assets/faces/${imageView}`)}
+              src={faces[imageView] || faces['undefined.avif']}
               alt={`my group mate ${groupMates[index].lastName}`}
               className={themePhoto}
             />
@@ -112,7 +114,7 @@ const BlockMemo = ({ element }) => {
               {el.img.length > 0 && (
                 <div className="flex justify-center items-center">
                   <img
-                    src={require(`../../assets/stories/${el.img}`)}
+                    src={stories[el.img] || stories['undefined.avif']}
                     alt={el.img}
                   />
                 </div>

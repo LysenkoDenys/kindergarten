@@ -36,6 +36,10 @@ import mediumMediumImage3 from '../assets/main-03-1730.avif';
 import largeImage3 from '../assets/main-03-1920.avif';
 import extraLargeImage3 from '../assets/main-03-2048.avif';
 
+import victorivna from '../assets/faces-teachers/victorivna.avif';
+import vasylivna from '../assets/faces-teachers/vasylivna.avif';
+import andriivna from '../assets/faces-teachers/andriivna.avif';
+
 const Home = () => {
   const [matesOne, setMatesOne] = useState([]);
   const [matesTwo, setMatesTwo] = useState([]);
@@ -321,7 +325,7 @@ const Home = () => {
                 width="80"
                 height="80"
                 className="rounded-lg hover:scale-110 ease-in-out duration-300"
-                src={require('../assets/faces-teachers/victorivna.avif')}
+                src={victorivna}
                 alt="valentina viktorivna"
               />
               <div className="m-1">Валентина Вікторівна Кравцова</div>
@@ -331,7 +335,7 @@ const Home = () => {
                 loading="lazy"
                 width="80"
                 height="80"
-                src={require('../assets/faces-teachers/vasylivna.avif')}
+                src={vasylivna}
                 alt="valentina vasylivna"
                 className="rounded-lg hover:scale-110 ease-in-out duration-300"
               />
@@ -342,7 +346,7 @@ const Home = () => {
                 loading="lazy"
                 width="80"
                 height="80"
-                src={require('../assets/faces-teachers/andriivna.avif')}
+                src={andriivna}
                 alt="valentina andriivna tsareva"
                 className="rounded-lg hover:scale-110 ease-in-out duration-300"
               />
@@ -574,8 +578,8 @@ const Home = () => {
             <li>дівчинка, родичка Валентини Василівни - Діна - прізвище;</li>
             <li>хлопчик В'ячеслав (руденький) - прізвище;</li>
           </ul>
-          <p>
-            <hr />
+          <hr className="border-cyan-600 my-1" />
+          <p className="text-xl font-bold text-center">
             &ensp; Ось фото деяких (вже дорослих) одногрупників, яких я не
             знайшов в соціальній мережі:&nbsp;
             <span className={darkTheme ? 'text-[#59b3f3]' : 'text-[#0c5ca1]'}>

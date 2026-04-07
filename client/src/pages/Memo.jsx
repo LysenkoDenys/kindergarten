@@ -23,6 +23,8 @@ import mediumLargeScheme02 from '../assets/scheme-02-1670.avif';
 import largeScheme02 from '../assets/scheme-02-1920.avif';
 import extraLargeScheme02 from '../assets/scheme-02-2048.avif';
 
+import building from '../assets/building.avif';
+
 const Memo = () => {
   const darkTheme = useTheme();
 
@@ -44,7 +46,7 @@ const Memo = () => {
     const groupMatesFiltered = groupMates.filter((item) =>
       (item.lastName + ' ' + item.firstName + ' ' + JSON.stringify(item.story))
         .toLowerCase()
-        .includes(textToSearch.toLowerCase())
+        .includes(textToSearch.toLowerCase()),
     );
     setMatesAll(groupMatesFiltered);
   }
@@ -80,7 +82,7 @@ const Memo = () => {
           </a>
           <figure className="flex items-center flex-col">
             <img
-              src={require('../assets/building.avif')}
+              src={building}
               alt="building of berizka"
               className="rounded-sm"
             />

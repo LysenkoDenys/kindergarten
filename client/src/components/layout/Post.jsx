@@ -1,8 +1,8 @@
 import { usePost } from '../../context/PostContext';
 import { useAsyncFn } from '../../hooks/useAsync';
 import { createComment } from '../../services/comments';
-import CommentForm from './CommentForm';
-import CommentList from './CommentList';
+import CommentForm from './CommentForm.jsx';
+import CommentList from './CommentList.jsx';
 
 const Post = () => {
   const { post, rootComments, createLocalComment } = usePost();
@@ -14,7 +14,7 @@ const Post = () => {
 
   function onCommentCreate(message) {
     return createCommentFn({ postId: post.id, message }).then(
-      createLocalComment
+      createLocalComment,
     );
   }
 

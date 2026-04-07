@@ -49,19 +49,19 @@ const COMMENT_SELECT_FIELDS = {
 
 // we do not need it in our project============================
 //it is just returns posts
-app.get('/posts', async (req, res) => {
+app.get('/api/posts', async (req, res) => {
   return await commitToDb(
     prisma.post.findMany({
       select: {
         id: true,
         title: true,
       },
-    })
+    }),
   );
 });
 // we do not need it in our project============================
 
-app.get('/posts/:id', async (req, res) => {
+app.get('/api/posts/:id', async (req, res) => {
   return await commitToDb(
     prisma.post
       .findUnique({
@@ -101,11 +101,11 @@ app.get('/posts/:id', async (req, res) => {
             };
           }),
         };
-      })
+      }),
   );
 });
 
-app.post('/posts/:id/comments', async (req, res) => {
+app.post('/api/posts/:id/comments', async (req, res) => {
   if (req.body.message === '' || req.body.message == null) {
     return res.send(app.httpErrors.badRequest('Message is required'));
   }
@@ -126,11 +126,11 @@ app.post('/posts/:id/comments', async (req, res) => {
           likeCount: 0,
           likedByMe: false,
         };
-      })
+      }),
   );
 });
 
-app.put('/posts/:postId/comments/:commentId', async (req, res) => {
+app.put('/api/posts/:postId/comments/:commentId', async (req, res) => {
   if (req.body.message === '' || req.body.message == null) {
     return res.send(app.httpErrors.badRequest('Message is required'));
   }
@@ -142,8 +142,8 @@ app.put('/posts/:postId/comments/:commentId', async (req, res) => {
   if (userId !== req.cookies.userId) {
     return res.send(
       app.httpErrors.unauthorized(
-        'You do not have permission to edit this message'
-      )
+        'You do not have permission to edit this message',
+      ),
     );
   }
   return await commitToDb(
@@ -151,11 +151,11 @@ app.put('/posts/:postId/comments/:commentId', async (req, res) => {
       where: { id: req.params.commentId },
       data: { message: req.body.message },
       select: { message: true },
-    })
+    }),
   );
 });
 
-app.delete('/posts/:postId/comments/:commentId', async (req, res) => {
+app.delete('/api/posts/:postId/comments/:commentId', async (req, res) => {
   const { userId } = await prisma.comment.findUnique({
     where: { id: req.params.commentId },
     select: { userId: true },
@@ -163,8 +163,8 @@ app.delete('/posts/:postId/comments/:commentId', async (req, res) => {
   if (userId !== req.cookies.userId) {
     return res.send(
       app.httpErrors.unauthorized(
-        'You do not have permission to delete this message'
-      )
+        'You do not have permission to delete this message',
+      ),
     );
   }
 
@@ -172,11 +172,11 @@ app.delete('/posts/:postId/comments/:commentId', async (req, res) => {
     prisma.comment.delete({
       where: { id: req.params.commentId },
       select: { id: true },
-    })
+    }),
   );
 });
 
-app.post('/posts/:id/comments/:commentId/toggleLike', async (req, res) => {
+app.post('/api/posts/:id/comments/:commentId/toggleLike', async (req, res) => {
   const data = {
     commentId: req.params.commentId,
     userId: req.cookies.userId,
@@ -190,7 +190,7 @@ app.post('/posts/:id/comments/:commentId/toggleLike', async (req, res) => {
     });
   } else {
     return await commitToDb(
-      prisma.like.delete({ where: { userId_commentId: data } })
+      prisma.like.delete({ where: { userId_commentId: data } }),
     ).then(() => {
       return { addLike: false };
     });
