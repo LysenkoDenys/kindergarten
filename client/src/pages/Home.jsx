@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TbGenderDemiboy, TbGenderDemigirl } from 'react-icons/tb';
+import { FiExternalLink } from 'react-icons/fi';
+import { HiOutlinePhotograph } from 'react-icons/hi';
 import groupMates from '../data/groupMates';
 import { useTheme } from '../ThemeContext';
 import Button from '../components/layout/Button';
@@ -287,7 +289,7 @@ const Home = () => {
     <section className="select-none lg:text-[24px]">
       <h1 className={themeHeaderOne}>Група 1979-1980 років народження.</h1>
       <Block>
-        <article>
+        <article className="px-2">
           <h2 className="text-xl font-bold text-center lg:text-[36px] lg:mb-3">
             Загальна інформація.
           </h2>
@@ -568,7 +570,7 @@ const Home = () => {
         </article>
       </Block>
       <Block>
-        <article>
+        <article className="px-2">
           <h3 className="text-xl font-bold text-center">
             Допоможіть пригадати.
           </h3>
@@ -581,7 +583,7 @@ const Home = () => {
         </article>
       </Block>
       <Block>
-        <article>
+        <article className="px-2">
           <h3 className="text-xl font-bold text-center">Окрема подяка:</h3>
           <ul className="ml-6">
             <li>
@@ -615,36 +617,44 @@ const Home = () => {
         </article>
       </Block>
       <Block>
-        <article className=" flex items-center flex-col">
+        <article className=" flex items-center flex-col px-2">
           <h3 className="text-xl font-bold text-center">А що ж там далі...</h3>
-          <div className="my-2 p-4 rounded-2xl shadow-md bg-slate-400 dark:from-gray-800 dark:to-gray-900 text-center">
-            <p className="text-md font-semibold mb-3 text-slate-800">
-              Якщо душа просить продовження банкету, то Вам сюди (це мій блог):
-            </p>
 
-            <Link
-              to="https://lysenko-blog.onrender.com/post/school-2-grade-4-a"
-              target="_blank"
-              className="inline-block px-4 py-2 rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition"
-            >
-              наш 4 клас станом на 1989/1990 роки 💬
-            </Link>
-          </div>
-
-          <div className="my-2 p-4 rounded-2xl shadow-md bg-slate-400 dark:from-gray-800 dark:to-gray-900 text-center">
-            <p className="text-md font-semibold mb-3 text-slate-800">
-              Ось фото деяких (вже дорослих) одногрупників, яких я не занйшов
-              соціальних мережах:
-            </p>
-
-            <Link
-              to="https://photos.app.goo.gl/H3kwVZiTDuQkMzUW8"
-              target="_blank"
-              className="inline-block px-4 py-2 rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition"
-            >
-              Переглянути фото 📸
-            </Link>
-          </div>
+          <p>
+            Якщо душа просить продовження банкету, то Вам сюди (це мій блог, він
+            вантажиться 1-2 хвилини через те, що безкоштовний і сервери
+            розташовані в Америці):
+          </p>
+          <Button
+            label=<span className="flex items-center gap-2">
+              Наш 4 клас
+              <FiExternalLink className="text-3xl" />
+            </span>
+            actionOnClick={() =>
+              window.open(
+                'https://lysenko-blog.onrender.com/post/school-2-grade-4-a',
+                '_blank',
+              )
+            }
+          />
+          <p>
+            Ось фото деяких (вже дорослих) одногрупників, яких я не занйшов
+            соціальних мережах:
+          </p>
+          <Button
+            label={
+              <span className="flex items-center gap-2">
+                Переглянути фото
+                <HiOutlinePhotograph className="text-3xl" />
+              </span>
+            }
+            actionOnClick={() =>
+              window.open(
+                'https://photos.app.goo.gl/H3kwVZiTDuQkMzUW8',
+                '_blank',
+              )
+            }
+          />
         </article>
       </Block>
     </section>

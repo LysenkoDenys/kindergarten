@@ -2,6 +2,7 @@ import {
   TiSocialAtCircular,
   TiSocialFacebookCircular,
   TiSocialLinkedinCircular,
+  TiSocialYoutubeCircular,
 } from 'react-icons/ti';
 
 import Block from './Block';
@@ -41,6 +42,18 @@ const MainFooter = () => {
             aria-label="LinkedIn Link"
           >
             <TiSocialLinkedinCircular
+              className={iconStyle}
+              title="LinkedIn Profile"
+              style={{ width: 50, height: 50 }}
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UChftSny7fENDw-2dfonlCPw"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube Link"
+          >
+            <TiSocialYoutubeCircular
               className={iconStyle}
               title="LinkedIn Profile"
               style={{ width: 50, height: 50 }}
