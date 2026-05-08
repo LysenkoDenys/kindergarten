@@ -281,21 +281,20 @@ const Home = () => {
 
   const darkTheme = useTheme();
 
-  const themeHeaderOne = darkTheme
-    ? 'text-3xl font-bold text-center mb-3 mt-3 text-[#CCCCCC]'
-    : 'text-3xl font-bold text-center mb-3 mt-3 text-[#333333]';
-
-  const themeHeaderTwo = darkTheme
-    ? 'text-xl font-bold text-center mb-3 mt-3 text-[#CCCCCC]'
-    : 'text-xl font-bold text-center mb-3 mt-3 text-[#333333]';
+  const titleClass = (size) =>
+    `${size} font-bold text-center mb-3 mt-3 ${
+      darkTheme ? 'text-[#CCCCCC]' : 'text-[#333333]'
+    }`;
 
   return (
     <section className="select-none lg:text-[24px]">
-      <h1 className={themeHeaderOne}>ДС "Берізка"</h1>
-      <h2 className={themeHeaderTwo}>Група 1979-1980 років народження.</h2>
+      <h1 className={titleClass('text-3xl')}>ДС "Берізка"</h1>
+      <h2 className={titleClass('text-2xl')}>
+        Група 1979-1980 років народження.
+      </h2>
       <Block>
         <article className="px-2">
-          <h2 className="text-xl font-bold text-center lg:text-[36px] lg:mb-3">
+          <h2 className={`${titleClass('text-3xl')} lg:mb-3`}>
             Загальна інформація.
           </h2>
           <p>
