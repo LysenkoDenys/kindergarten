@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { TbGenderDemiboy, TbGenderDemigirl } from 'react-icons/tb';
+import {
+  TbGenderDemiboy,
+  TbGenderDemigirl,
+  TbFileSymlink,
+} from 'react-icons/tb';
 import { FiExternalLink } from 'react-icons/fi';
 import { HiOutlinePhotograph } from 'react-icons/hi';
 import groupMates from '../data/groupMates';
@@ -584,6 +588,28 @@ const Home = () => {
             <li>дівчинка, родичка Валентини Василівни - Діна - прізвище;</li>
             <li>хлопчик В'ячеслав (руденький) - прізвище;</li>
           </ul>
+        </article>
+      </Block>
+      <Block>
+        <article className=" flex items-center flex-col px-2">
+          <h3 className="text-xl font-bold text-center">Memo</h3>
+
+          <p>
+            Більш детальна інформація по кожному одногрупнику, а також фото і
+            спогади, розміщені на наступній сторінці (Memo):
+          </p>
+          <Button
+            label=<span className="flex items-center gap-2">
+              Дктально про одногрупників
+              <TbFileSymlink className="text-3xl" />
+            </span>
+            actionOnClick={() =>
+              window.open(
+                'https://lysenko-blog.onrender.com/post/school-2-grade-4-a',
+                '_blank',
+              )
+            }
+          />
         </article>
       </Block>
       <Block>

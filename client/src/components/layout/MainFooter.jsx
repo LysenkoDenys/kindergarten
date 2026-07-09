@@ -55,7 +55,7 @@ const MainFooter = () => {
           >
             <TiSocialYoutubeCircular
               className={iconStyle}
-              title="LinkedIn Profile"
+              title="YouTube Channel"
               style={{ width: 50, height: 50 }}
             />
           </a>
