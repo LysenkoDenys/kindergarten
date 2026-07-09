@@ -600,7 +600,7 @@ const Home = () => {
           </p>
           <Button
             label=<span className="flex items-center gap-2">
-              Дктально про одногрупників
+              Детально про одногрупників
               <TbFileSymlink className="text-3xl" />
             </span>
             actionOnClick={() =>
