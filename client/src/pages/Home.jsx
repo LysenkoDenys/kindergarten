@@ -598,18 +598,16 @@ const Home = () => {
             Більш детальна інформація по кожному одногрупнику, а також фото і
             спогади, розміщені на наступній сторінці (Memo):
           </p>
-          <Button
-            label=<span className="flex items-center gap-2">
-              Детально про одногрупників
-              <TbFileSymlink className="text-3xl" />
-            </span>
-            actionOnClick={() =>
-              window.open(
-                'https://lysenko-blog.onrender.com/post/school-2-grade-4-a',
-                '_blank',
-              )
-            }
-          />
+          <Link to="/memo">
+            <Button
+              label={
+                <span className="flex items-center gap-2">
+                  Детально про одногрупників
+                  <TbFileSymlink className="text-3xl" />
+                </span>
+              }
+            />
+          </Link>
         </article>
       </Block>
       <Block>
@@ -656,10 +654,12 @@ const Home = () => {
             розташовані в Америці):
           </p>
           <Button
-            label=<span className="flex items-center gap-2">
-              Наш 4 клас
-              <FiExternalLink className="text-3xl" />
-            </span>
+            label={
+              <span className="flex items-center gap-2">
+                Наш 4 клас
+                <FiExternalLink className="text-3xl" />
+              </span>
+            }
             actionOnClick={() =>
               window.open(
                 'https://lysenko-blog.onrender.com/post/school-2-grade-4-a',
