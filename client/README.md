@@ -6,9 +6,11 @@
 <ul>
 <li>⭐recall some forgotten names of kindergarten`s mates</li>
 <li>⭐recall some actions and stories</li>
-<li>⭐add your own memories and stories</li>
+<!-- <li>⭐add your own memories and stories</li> -->
 <!-- <li>⭐add your comments (coming soon)</li> -->
 </ul>
+
+<p>The project is deployed here: <a href='https://berizka.vercel.app/' target='_blank' aria='link to the deployed project'>berizka.vercel.app</a></p>
 
 📸 Sample
 
@@ -36,12 +38,16 @@ npm install
 
 Open two terminals in VS Code:
 
-1️⃣ First terminal (Server)
-cd server
-npm start
-2️⃣ Second terminal (Client)
-cd client
-npm run dev
+<p>1️⃣ First terminal (Server):</p>
+<ol>
+<li>cd server</li>
+<li>npm start</li>
+</ol>
+<p>2️⃣ Second terminal (Client):</p>
+<ol>
+<li>cd client</li>
+<li>npm run dev</li>
+</ol>
 
 ### License
 
